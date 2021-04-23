@@ -22,9 +22,11 @@ namespace MSSMSpirometer
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static MainPage Current;
         public MainPage()
         {
             this.InitializeComponent();
+            Current = this;
         }
 
         private void findDevice(object sender, RoutedEventArgs e)
@@ -34,6 +36,11 @@ namespace MSSMSpirometer
         private void findDevice2(object sender, RoutedEventArgs e)
         {
             InnerFrame.Navigate(typeof(BlankPage1));
+        }
+
+        private void findDevice3(object sender, RoutedEventArgs e)
+        {
+            InnerFrame.Navigate(typeof(DeviceVidPid));
         }
     }
 }

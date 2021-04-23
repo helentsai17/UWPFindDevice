@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3</PackageIdentityName>
     <PackageIdentityPublisher>CN=tsait06</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>0650413C1B067DA4E33587C322F600333D09A1F8A57FECFD26F8480C3BA9C862</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3_1.0.0.0_x86__fpqcpkxhjspvw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3_fpqcpkxhjspvw!App</RegisteredUserModeAppID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-04-21T17:00:18.543</Modified>
+      <Modified>2021-04-23T17:56:08.068</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.exe">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.exe">
       <PackagePath>entrypoint\MSSMSpirometer.exe</PackagePath>
-      <Modified>2021-04-21T17:00:18.195</Modified>
+      <Modified>2021-04-23T17:56:06.826</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.11\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -46,75 +46,73 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2019-03-18T22:36:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2021-04-21T14:21:46.836</Modified>
+      <Modified>2021-04-23T13:45:57.022</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2021-03-30T18:10:35.171</Modified>
+      <Modified>2021-04-23T13:45:56.638</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-30T18:10:35.174</Modified>
+      <Modified>2021-04-23T13:45:56.661</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-30T18:10:35.175</Modified>
+      <Modified>2021-04-23T13:45:56.680</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-30T18:10:35.176</Modified>
+      <Modified>2021-04-23T13:45:56.699</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-30T18:10:35.177</Modified>
+      <Modified>2021-04-23T13:45:56.718</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-30T18:10:35.178</Modified>
+      <Modified>2021-04-23T13:45:56.748</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-30T18:10:35.179</Modified>
+      <Modified>2021-04-23T13:45:56.766</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.xr.xml">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.xr.xml">
       <PackagePath>MSSMSpirometer.xr.xml</PackagePath>
-      <Modified>2021-04-21T15:38:52.461</Modified>
+      <Modified>2021-04-23T17:53:05.441</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-04-21T15:41:37.786</Modified>
+      <Modified>2021-04-23T17:56:06.643</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\BlankPage.xbf">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\BlankPage.xbf">
       <PackagePath>BlankPage.xbf</PackagePath>
-      <Modified>2021-04-21T15:41:37.786</Modified>
+      <Modified>2021-04-23T17:56:06.653</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\BlankPage1.xbf">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\BlankPage1.xbf">
       <PackagePath>BlankPage1.xbf</PackagePath>
-      <Modified>2021-04-21T15:41:37.786</Modified>
+      <Modified>2021-04-23T17:56:06.660</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\DeviceVidPid.xbf">
+      <PackagePath>DeviceVidPid.xbf</PackagePath>
+      <Modified>2021-04-23T17:56:06.670</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-04-21T15:41:37.786</Modified>
+      <Modified>2021-04-23T17:56:06.678</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2019-03-18T21:33:42.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-04-21T15:38:52.828</Modified>
+      <Modified>2021-04-23T17:53:57.328</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\bin\x86\Debug\Core\MSSMSpirometer.exe">
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Core\MSSMSpirometer.exe">
       <PackagePath>MSSMSpirometer.exe</PackagePath>
-      <Modified>2021-04-21T17:00:18.540</Modified>
+      <Modified>2021-04-23T17:56:07.894</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

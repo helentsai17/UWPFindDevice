@@ -8166,11 +8166,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tsait06\\source\\repos\\MSSMSpirometer\\MSSMSpirometer\\MSSMSpirometer.csproj",
+      "projectUniqueName": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
       "projectName": "MSSMSpirometer",
-      "projectPath": "C:\\Users\\tsait06\\source\\repos\\MSSMSpirometer\\MSSMSpirometer\\MSSMSpirometer.csproj",
+      "projectPath": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
       "packagesPath": "C:\\Users\\tsait06\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tsait06\\source\\repos\\MSSMSpirometer\\MSSMSpirometer\\obj\\",
+      "outputPath": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

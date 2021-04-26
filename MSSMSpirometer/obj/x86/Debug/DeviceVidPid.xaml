@@ -40,11 +40,12 @@
                         
                         <StackPanel Orientation="Vertical" Margin="0,10" Grid.Row="1">
                             <StackPanel x:ConnectionId='13' x:Name="StackDeviceButtons" Orientation="Horizontal">
-                                <Button x:ConnectionId='16' x:Name="ButtonConnectToDevice" Content="Connect to device"                              />
-                                <Button x:ConnectionId='17' x:Name="ButtonDisconnectFromDevice" Content="Disconnect from device"                                   />
+                                <Button x:ConnectionId='17' x:Name="ButtonConnectToDevice" Content="Connect to device"                              />
+                                <Button x:ConnectionId='18' x:Name="ButtonDisconnectFromDevice" Content="Disconnect from device"                                   />
                             </StackPanel>
                             <TextBlock Text="Select a Usb Device:" Margin="0,10"/>
-                            <ListBox x:ConnectionId='14' x:Name="ConnectDevices" ItemsSource="{Binding Source={StaticResource DeviceListSource}}" Height="250">
+                            <TextBlock x:ConnectionId='14' x:Name="testStatus" TextWrapping="Wrap" Text="test connect status:" Margin="0,10"/>
+                            <ListBox x:ConnectionId='15' x:Name="ConnectDevices" ItemsSource="{Binding Source={StaticResource DeviceListSource}}" Height="250">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding InstanceId}"/>
@@ -55,10 +56,10 @@
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='18' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='19' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='20' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='21' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='19' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='20' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='21' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='22' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>

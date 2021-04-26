@@ -59,10 +59,10 @@ namespace MSSMSpirometer
         }
 
 
-        #region onNavigatedTo
+        #region onNavigatedTo getting all the device that can connect to 
 
 
-        #endregion
+       
         protected override void OnNavigatedTo(NavigationEventArgs eventArgs)
         {
             // If we are connected to the device or planning to reconnect, we should disable the list of devices
@@ -260,18 +260,18 @@ namespace MSSMSpirometer
 
                         ButtonDisconnectFromDevice.Content = ButtonNameDisconnectFromDevice;
 
-                        //rootPage.NotifyUser("Connected to - " + EventHandlerForDevice.Current.DeviceInformation.Id, NotifyType.StatusMessage);
+                        testStatus.Text = "Connected to - " + EventHandlerForDevice.Current.DeviceInformation.Id;
                     }
                     else if (EventHandlerForDevice.Current.IsEnabledAutoReconnect && EventHandlerForDevice.Current.DeviceInformation != null)
                     {
                         // We will be reconnecting to a device
                         ButtonDisconnectFromDevice.Content = ButtonNameDisableReconnectToDevice;
 
-                        //rootPage.NotifyUser("Waiting to reconnect to device -  " + EventHandlerForDevice.Current.DeviceInformation.Id, NotifyType.StatusMessage);
+                        testStatus.Text = "Waiting to reconnect to device -  " + EventHandlerForDevice.Current.DeviceInformation.Id;
                     }
                     else
                     {
-                        //rootPage.NotifyUser("No device is currently connected", NotifyType.StatusMessage);
+                        testStatus.Text = "No device is currently connected";
                     }
                 }));
         }
@@ -339,8 +339,37 @@ namespace MSSMSpirometer
             return null;
         }
 
-        private void ConnectToDevice_Click(object sender, RoutedEventArgs e)
+        #endregion
+
+        private async void ConnectToDevice_Click(object sender, RoutedEventArgs e)
         {
+            var selection = ConnectDevices.SelectedItems;
+            DeviceListEntry entry = null;
+
+            if (selection.Count > 0)
+            {
+                var obj = selection[0];
+                entry = (DeviceListEntry)obj;
+
+                if (entry != null)
+                {
+                    // Create an EventHandlerForDevice to watch for the device we are connecting to
+                    EventHandlerForDevice.CreateNewEventHandlerForDevice();
+
+                    // Get notified when the device was successfully connected to or about to be closed
+                    EventHandlerForDevice.Current.OnDeviceConnected = this.OnDeviceConnected;
+                    EventHandlerForDevice.Current.OnDeviceClose = this.OnDeviceClosing;
+
+                    // It is important that the FromIdAsync call is made on the UI thread because the consent prompt, when present,
+                    // can only be displayed on the UI thread. Since this method is invoked by the UI, we are already in the UI thread.
+                    Boolean openSuccess = await EventHandlerForDevice.Current.OpenDeviceAsync(entry.DeviceInformation, entry.DeviceSelector);
+
+                    // Disable connect button if we connected to the device
+                    UpdateConnectDisconnectButtonsAndList(!openSuccess);
+
+                    testStatus.Text = "device is connected "+ entry.DeviceSelector; 
+                }
+            }
 
         }
 

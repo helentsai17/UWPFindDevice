@@ -188,14 +188,17 @@ namespace MSSMSpirometer
 
         async void DisplayDeviceInterface(DeviceInformation deviceInterface)
         {
-            var id = "Id:" + deviceInterface.Id;
-            var name = deviceInterface.Name;
-            var isEnabled = "IsEnabled:" + deviceInterface.IsEnabled;
+           
+                var id = "Id:" + deviceInterface.Id;
+                var name = deviceInterface.Name;
+                var isEnabled = "IsEnabled:" + deviceInterface.IsEnabled;
 
 
-            var item = id + " is \n" + name + " and \n" + isEnabled;
+                var item = id + " is \n" + name + " and \n" + isEnabled;
 
-            DeviceInterfacesOutputList.Items.Add(item);
+                DeviceInterfacesOutputList.Items.Add(item);
+            
+            
         }
     }
 

@@ -44,6 +44,7 @@
                                 <Button x:Name="ButtonDisconnectFromDevice" Content="Disconnect from device" Click="DisconnectFromDevice_Click"/>
                             </StackPanel>
                             <TextBlock Text="Select a Usb Device:" Margin="0,10"/>
+                            <TextBlock x:Name="testStatus" TextWrapping="Wrap" Text="test connect status:" Margin="0,10"/>
                             <ListBox x:Name="ConnectDevices" ItemsSource="{Binding Source={StaticResource DeviceListSource}}" Height="250">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>

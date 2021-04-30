@@ -1,1 +1,1 @@
-C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\MSSMSpirometer.csproj;x86
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\MSSMSpirometer.csproj;x86

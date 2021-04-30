@@ -65,7 +65,10 @@
             </ScrollViewer>
 
             <ScrollViewer Grid.Row="2" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
-                <TextBlock x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
+                <StackPanel>
+                    <TextBlock x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
+                    <TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display"/>
+                </StackPanel>
             </ScrollViewer>
             
         </Grid>

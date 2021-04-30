@@ -92,9 +92,19 @@ namespace MSSMSpirometer
             DeviceListSource.Source = listOfDevices;
         }
 
-        private void OnDeviceClosing(EventHandlerForDevice sender, DeviceInformation args)
+        private async void OnDeviceClosing(EventHandlerForDevice sender, DeviceInformation args)
         {
-            throw new NotImplementedException();
+            await rootPage.Dispatcher.RunAsync(
+               CoreDispatcherPriority.Normal,
+               new DispatchedHandler(() =>
+               {
+                    // We were connected to the device that was unplugged, so change the "Disconnect from device" button
+                    // to "Do not reconnect to device"
+                    if (ButtonDisconnectFromDevice.IsEnabled && EventHandlerForDevice.Current.IsEnabledAutoReconnect)
+                   {
+                       ButtonDisconnectFromDevice.Content = ButtonNameDisableReconnectToDevice;
+                   }
+               }));
         }
 
         private void OnDeviceConnected(EventHandlerForDevice sender, DeviceInformation args)

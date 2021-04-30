@@ -74,7 +74,7 @@ namespace MSSMSpirometer
             // If no devices are connected, none of the scenarios will be shown and an error will be displayed
             Dictionary<DeviceType, UIElement> deviceScenarios = new Dictionary<DeviceType, UIElement>();
             deviceScenarios.Add(DeviceType.OsrFx2, GeneralScenario);
-            
+
 
             Utilities.SetUpDeviceScenarios(deviceScenarios, DeviceScenarioContainer);
 
@@ -128,7 +128,7 @@ namespace MSSMSpirometer
                 {
                     ButtonBulkRead.IsEnabled = false;
                     ButtonBulkWrite.IsEnabled = false;
-                    
+
                     ButtonCancelAllIoTasks.IsEnabled = false;
 
                     if (!navigatedAway)
@@ -140,7 +140,7 @@ namespace MSSMSpirometer
 
         private void UpdateButtonStates()
         {
-           
+
             ButtonBulkRead.IsEnabled = !runningReadWriteTask && !runningReadTask;
             ButtonBulkWrite.IsEnabled = !runningReadWriteTask && !runningWriteTask;
             ButtonCancelAllIoTasks.IsEnabled = IsPerformingIo();
@@ -242,9 +242,10 @@ namespace MSSMSpirometer
             using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
             {
                 dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                StatusBlock.Text = dataReader.ReadString(buffer.Length);
+                DataDisplay.Text = dataReader.ReadString(buffer.Length);
             }
 
+            
 
         }
 
@@ -258,13 +259,13 @@ namespace MSSMSpirometer
                     // we move to a different page.
                     if (!navigatedAway)
                     {
-                        StatusBlock.Text =  "Total bytes read: " + totalBytesRead.ToString("D", NumberFormatInfo.InvariantInfo) + "; Total bytes written: "
+                        StatusBlock.Text = "Total bytes read: " + totalBytesRead.ToString("D", NumberFormatInfo.InvariantInfo) + "; Total bytes written: "
                             + totalBytesWritten.ToString("D", NumberFormatInfo.InvariantInfo);
                     }
                 }));
         }
 
-        
+
         //==============================Write data =================================================================
 
         private async void BulkWrite_Click(object sender, RoutedEventArgs e)
@@ -304,12 +305,13 @@ namespace MSSMSpirometer
         private async Task BulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
         {
             var Memoinfo = new byte[] { 0x02, 0x4d, 0x56, 0x4d, 0x49, 0x03, 0x01 };
+            var DeviceName = new byte[] { 0x02, 0x56, 0x56, 0x44, 0x49, 0x03, 0xC };
 
             var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
 
             var writer = new DataWriter(stream);
-           
-            writer.WriteBytes(Memoinfo);
+
+            writer.WriteBytes(DeviceName);
 
             Task<UInt32> storeAsyncTask;
 
@@ -327,7 +329,7 @@ namespace MSSMSpirometer
             PrintTotalReadWriteBytes();
         }
 
-        
+
 
         //================================ force Cancel input ================================================
         private void CancelAllIoTasks_Click(object sender, RoutedEventArgs e)

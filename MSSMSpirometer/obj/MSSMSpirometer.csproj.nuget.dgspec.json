@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Helen Tsai\\Project\\C#Project\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj": {}
+    "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Helen Tsai\\Project\\C#Project\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj": {
+    "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Helen Tsai\\Project\\C#Project\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
+        "projectUniqueName": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
         "projectName": "MSSMSpirometer",
-        "projectPath": "C:\\Users\\Helen Tsai\\Project\\C#Project\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
-        "packagesPath": "C:\\Users\\Helen Tsai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Helen Tsai\\Project\\C#Project\\UWPFindDevice\\MSSMSpirometer\\obj\\",
+        "projectPath": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
+        "packagesPath": "C:\\Users\\tsait06\\.nuget\\packages\\",
+        "outputPath": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Helen Tsai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tsait06\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

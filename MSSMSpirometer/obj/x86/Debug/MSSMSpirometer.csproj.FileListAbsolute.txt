@@ -178,3 +178,8 @@ C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug
 C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.g.cs
 C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xaml
 C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xbf
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\USBDataDisplay.xbf
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.g.i.cs
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.g.cs
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xaml
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xbf

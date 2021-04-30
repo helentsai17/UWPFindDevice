@@ -12,6 +12,14 @@ namespace MSSMSpirometer
         public const String DeviceInstanceId = "System.Devices.DeviceInstanceId";
     }
 
+    public enum DeviceType
+    {
+        OsrFx2,
+        SuperMutt,
+        All,    // Can be any device
+        None
+    };
+
     public class OsrFx2
     {
         public static class VendorCommand

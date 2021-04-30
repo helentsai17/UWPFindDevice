@@ -49,6 +49,8 @@
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Inlines" />
+      <RootProperty Name="FontSize" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
       <RootProperty Name="Name" />
@@ -100,5 +102,6 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="MSSMSpirometer.MainPage" />
+    <RootType FullName="MSSMSpirometer.USBDataDisplay" />
   </Roots.RootTypes>
 </Roots>

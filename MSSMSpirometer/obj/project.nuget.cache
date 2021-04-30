@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "74JW1clX5mji3QfmEIdiaZuWZ05CJMujqre/bnT/25u52LqTSVIvT3Pr4PX/KcFt+VPhI7CekoI1xtM350YUaQ==",
+  "dgSpecHash": "/nB2QrwlZJrhIgfcFT/TNP5yaPP8+nOs1d0pVqmoCX/aFZT+DPtFLA4NmZhNng40db8GYBHLFzw0Cp/KrCO7dg==",
   "success": true,
-  "projectFilePath": "\\\\users9\\users9$\\tsait06\\Data\\Personal\\DesktopFiles\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
+  "projectFilePath": "C:\\Users\\Helen Tsai\\Project\\C#Project\\UWPFindDevice\\MSSMSpirometer\\MSSMSpirometer.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.9-rel-29512-01\\microsoft.net.native.compiler.2.2.9-rel-29512-01.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.11\\microsoft.net.uwpcoreruntimesdk.2.2.11.nupkg.sha512",

@@ -19,6 +19,7 @@
             <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 1" Click="findDevice"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 2" Click="findDevice2"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Find device by vid and pid" Click="findDevice3"/>
+            <Button Background="Transparent" Margin="20,10,20,10" Content="USB data display" Click="datadisplay"/>
 
         </StackPanel>
         <Frame Grid.Row="1" x:Name="InnerFrame" Margin="10"/>

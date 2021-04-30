@@ -36,7 +36,13 @@
                             <StackPanel x:Name="GeneralScenario" Orientation="Vertical">
                                 <TextBlock x:Name="GeneralScenarioText" TextWrapping="Wrap" HorizontalAlignment="Left"> This scenario shows how to read and write to bulk pipe.</TextBlock>
                                 <Button x:Name="ButtonBulkRead" Content="Read data" Click="BulkRead_Click"/>
-                                <Button x:Name="ButtonBulkWrite" Content="Write MI data" Click="BulkWrite_Click"/>
+                                <Button x:Name="ButtonBulkWrite" Content="6.1 Device Info" Click="BulkWrite_Click"/>
+                                <Button x:Name="RemoteMode" Content="6.2 Remote Mode" Click="RemoteMode_Click"/>
+                                <Button x:Name="RemoteExit" Content="6.3 Remote Exit" Click="RemoteExit_Click"/>
+                                <Button x:Name="MemoryInfo" Content="6.4 Memory Info" Click="MemoryInfo_Click"/>
+                                <Button x:Name="ReadSetting" Content="6.7 Read Setting" Click="ReadSetting_Click"/>
+                                <Button x:Name="AccouracyLog" Content="6.8 Accouracy Log" Click="AccouracyLog_Click"/>
+                                <Button x:Name="AuditTrail" Content="6.9 Audit Trail" Click="AuditTrail_Click"/>
                                 <Button x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks" Click="CancelAllIoTasks_Click"/>
                             </StackPanel>
                         </StackPanel>
@@ -67,7 +73,7 @@
             <ScrollViewer Grid.Row="2" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <TextBlock x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
-                    <TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display"/>
+                    <TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
                 </StackPanel>
             </ScrollViewer>
             

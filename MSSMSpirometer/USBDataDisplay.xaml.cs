@@ -268,6 +268,8 @@ namespace MSSMSpirometer
 
         //==============================Write data =================================================================
 
+
+        #region 6.1 Device Identification Message
         private async void BulkWrite_Click(object sender, RoutedEventArgs e)
         {
             if (EventHandlerForDevice.Current.IsDeviceConnected)
@@ -329,7 +331,428 @@ namespace MSSMSpirometer
             PrintTotalReadWriteBytes();
         }
 
+        #endregion
 
+        #region 6.2 Remote Mode buttom click 
+        private async void RemoteMode_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 512;
+
+                    await RMBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task RMBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
+        {
+            byte[] RMvalue = new byte[] { 0x02, 0x4d, 0x56, 0x52, 0x4d, 0x03, 0x01 };
+
+            byte bccValue = Getbcc(RMvalue);
+            RMvalue[6] = bccValue;
+
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
+
+            var writer = new DataWriter(stream);
+
+            writer.WriteBytes(RMvalue);
+
+            Task<UInt32> storeAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                storeAsyncTask = writer.StoreAsync().AsTask(cancellationToken);
+            }
+
+            UInt32 bytesWritten = await storeAsyncTask;
+
+            totalBytesWritten += bytesWritten;
+
+            PrintTotalReadWriteBytes();
+        }
+
+        #endregion
+
+        #region 6.3 Bluetooth Exit Remote Buttom Click
+
+        private async void RemoteExit_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 512;
+
+                    await RXBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task RXBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
+        {
+            byte[] RXvalue = new byte[] { 0x02, 0x4d, 0x56, 0x58, 0x52, 0x03, 0x10 };
+
+           
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
+
+            var writer = new DataWriter(stream);
+
+            writer.WriteBytes(RXvalue);
+
+            Task<UInt32> storeAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                storeAsyncTask = writer.StoreAsync().AsTask(cancellationToken);
+            }
+
+            UInt32 bytesWritten = await storeAsyncTask;
+
+            totalBytesWritten += bytesWritten;
+
+            PrintTotalReadWriteBytes();
+        }
+        #endregion
+
+        #region 6.4 Memory Info Message 
+
+        private async void MemoryInfo_Click(object sender, RoutedEventArgs e)
+        {
+          
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 512;
+
+                    await MIBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task MIBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
+        {
+            byte[] MIvalue = new byte[] { 0x02, 0x4d, 0x56, 0x4d, 0x49, 0x03, 0x01 };
+
+            byte bccValue = Getbcc(MIvalue);
+            MIvalue[6] = bccValue;
+
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
+
+            var writer = new DataWriter(stream);
+
+            writer.WriteBytes(MIvalue);
+
+            Task<UInt32> storeAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                storeAsyncTask = writer.StoreAsync().AsTask(cancellationToken);
+            }
+
+            UInt32 bytesWritten = await storeAsyncTask;
+
+            totalBytesWritten += bytesWritten;
+
+            PrintTotalReadWriteBytes();
+        }
+
+        #endregion
+
+        #region 6.8 Accouracy Log Info
+
+        private async void AccouracyLog_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 512;
+
+                    await ALBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task ALBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
+        {
+            byte[] value = new byte[] { 0x02, 0x4d, 0x56, 0x41, 0x4c, 0x03, 0x01 };
+
+            byte secbccValue = Getbcc(value);
+            value[6] = secbccValue;
+
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
+
+            var writer = new DataWriter(stream);
+
+            writer.WriteBytes(value);
+
+            Task<UInt32> storeAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                storeAsyncTask = writer.StoreAsync().AsTask(cancellationToken);
+            }
+
+            UInt32 bytesWritten = await storeAsyncTask;
+
+            totalBytesWritten += bytesWritten;
+
+            PrintTotalReadWriteBytes();
+        }
+
+
+
+        #endregion
+
+
+        #region 6.9 Audit Trail Message
+
+        private async void AuditTrail_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 512;
+
+                    await ATBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task ATBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
+        {
+            byte[] value = new byte[] { 0x02, 0x4d, 0x56, 0x41, 0x54, 0x03, 0x01 };
+
+            byte secbccValue = Getbcc(value);
+            value[6] = secbccValue;
+
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
+
+            var writer = new DataWriter(stream);
+
+            writer.WriteBytes(value);
+
+            Task<UInt32> storeAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                storeAsyncTask = writer.StoreAsync().AsTask(cancellationToken);
+            }
+
+            UInt32 bytesWritten = await storeAsyncTask;
+
+            totalBytesWritten += bytesWritten;
+
+            PrintTotalReadWriteBytes();
+        }
+
+
+        #endregion
+
+        #region 6.7 Read Settings Message
+
+        private async void ReadSetting_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 512;
+
+                    await RSBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task RSBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
+        {
+            byte[] value = new byte[] { 0x02, 0x4d, 0x56, 0x52, 0x53, 0x03, 0x01 };
+
+            byte secbccValue = Getbcc(value);
+            value[6] = secbccValue;
+
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkOutPipes[(int)bulkPipeIndex].OutputStream;
+
+            var writer = new DataWriter(stream);
+
+            writer.WriteBytes(value);
+
+            Task<UInt32> storeAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                storeAsyncTask = writer.StoreAsync().AsTask(cancellationToken);
+            }
+
+            UInt32 bytesWritten = await storeAsyncTask;
+
+            totalBytesWritten += bytesWritten;
+
+            PrintTotalReadWriteBytes();
+        }
+        #endregion
+
+
+        /// <summary>
+        /// counting for bcc 
+        /// </summary>
+        public byte Getbcc(byte[] inputStream)
+        {
+            byte bcc = 1;
+            if (inputStream != null && inputStream.Length > 0)
+            {
+                for (int i = 0; i < inputStream.Length; i++)
+                {
+                    bcc ^= inputStream[i];
+                }
+
+            }
+
+            return bcc;
+        }
 
         //================================ force Cancel input ================================================
         private void CancelAllIoTasks_Click(object sender, RoutedEventArgs e)
@@ -345,5 +768,7 @@ namespace MSSMSpirometer
             }
 
         }
+
+       
     }
 }

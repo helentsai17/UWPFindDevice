@@ -36,17 +36,23 @@
                             <StackPanel x:ConnectionId='12' x:Name="GeneralScenario" Orientation="Vertical">
                                 <TextBlock x:ConnectionId='13' x:Name="GeneralScenarioText" TextWrapping="Wrap" HorizontalAlignment="Left"> This scenario shows how to read and write to bulk pipe.</TextBlock>
                                 <Button x:ConnectionId='14' x:Name="ButtonBulkRead" Content="Read data"                       />
-                                <Button x:ConnectionId='15' x:Name="ButtonBulkWrite" Content="Write MI data"                        />
-                                <Button x:ConnectionId='16' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                <Button x:ConnectionId='15' x:Name="ButtonBulkWrite" Content="6.1 Device Info"                        />
+                                <Button x:ConnectionId='16' x:Name="RemoteMode" Content="6.2 Remote Mode"                         />
+                                <Button x:ConnectionId='17' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
+                                <Button x:ConnectionId='18' x:Name="MemoryInfo" Content="6.4 Memory Info"                         />
+                                <Button x:ConnectionId='19' x:Name="ReadSetting" Content="6.7 Read Setting"                          />
+                                <Button x:ConnectionId='20' x:Name="AccouracyLog" Content="6.8 Accouracy Log"                           />
+                                <Button x:ConnectionId='21' x:Name="AuditTrail" Content="6.9 Audit Trail"                         />
+                                <Button x:ConnectionId='22' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
                             </StackPanel>
                         </StackPanel>
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='17' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='18' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='19' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='20' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='23' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='24' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='25' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='26' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -67,7 +73,7 @@
             <ScrollViewer Grid.Row="2" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <TextBlock x:ConnectionId='2' x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
-                    <TextBlock x:ConnectionId='3' x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display"/>
+                    <TextBlock x:ConnectionId='3' x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
                 </StackPanel>
             </ScrollViewer>
             

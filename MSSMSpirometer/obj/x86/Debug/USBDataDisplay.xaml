@@ -43,16 +43,19 @@
                                 <Button x:ConnectionId='19' x:Name="ReadSetting" Content="6.7 Read Setting"                          />
                                 <Button x:ConnectionId='20' x:Name="AccouracyLog" Content="6.8 Accouracy Log"                           />
                                 <Button x:ConnectionId='21' x:Name="AuditTrail" Content="6.9 Audit Trail"                         />
-                                <Button x:ConnectionId='22' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                <Button x:ConnectionId='22' x:Name="CurrentTime" Content="6.10 Current Time Message"                          />
+                                <Button x:ConnectionId='23' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                <Button x:ConnectionId='24' x:Name="ReadRecord" Content="6.5 Read Record Message"                         />
+                                <Button x:ConnectionId='25' x:Name="NextBlock" Content="Next Block"                         />
                             </StackPanel>
                         </StackPanel>
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='23' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='24' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='25' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='26' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='26' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='27' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='28' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='29' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>

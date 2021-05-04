@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -11,6 +12,7 @@ using Windows.Devices.Enumeration;
 using Windows.Devices.Usb;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -56,6 +58,8 @@ namespace MSSMSpirometer
             runningReadWriteTask = false;
         }
 
+        #region OnNavigatedTo 
+        
         public void Dispose()
         {
             if (cancellationTokenSource != null)
@@ -87,6 +91,12 @@ namespace MSSMSpirometer
             EventHandlerForDevice.Current.OnDeviceConnected = new TypedEventHandler<EventHandlerForDevice, DeviceInformation>(this.OnDeviceConnected);
 
             UpdateButtonStates();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            
         }
 
         private void OnAppSuspension(object sender, SuspendingEventArgs e)
@@ -162,6 +172,35 @@ namespace MSSMSpirometer
                 }));
         }
 
+        #endregion
+
+        string memoInfo = "";
+        
+        // Read Record Message
+        string subjectInfo = "";
+        string sessionInfo = "";
+        string PredictedValues = "";
+        string LLNValues = "";
+        string ULNValues = "";
+        string BestTestResults = "";
+        string BestTestData = "";
+        string PercentageofPredicted = "";
+        string PercentagePrePost = "";
+        string Z_score = "";
+        string PrePostChange = "";
+        string RankedTestResult_1 = "";
+        string RankedTestData_1 = "";
+        string RankedTestResult_2 = "";
+        string RankedTestData_2 = "";
+        string RankedTestResult_3 = "";
+        string RankedTestData_3 = "";
+        string PreBestTestResult = "";
+        string PreBestTestData = "";
+        string PreBestPercentageofPredicted = "";
+        string PreBestZ_score = "";
+        string InterpretationInformation = "";
+
+
         //=========================Bulk Read data==================================================
 
         private async void BulkRead_Click(object sender, RoutedEventArgs e)
@@ -207,8 +246,6 @@ namespace MSSMSpirometer
         {
             var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
 
-
-
             DataReader reader = new DataReader(stream);
 
             StatusBlock.Text = reader.ToString();
@@ -238,15 +275,23 @@ namespace MSSMSpirometer
             UsbBulkInPipe readPipe = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[0];
 
             IBuffer buffer = reader.ReadBuffer(bytesRead);
+            string dataString = "";
 
             using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
             {
                 dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                DataDisplay.Text = dataReader.ReadString(buffer.Length);
+                dataString = dataReader.ReadString(buffer.Length);
+                DataDisplay.Text = dataString;
+ 
             }
 
-            
+            if (dataString.Contains("VMMI"))
+            {
+                memoInfo = dataString;
+                MemoInfordata.Text = memoInfo;
+            }
 
+           
         }
 
 
@@ -264,6 +309,39 @@ namespace MSSMSpirometer
                     }
                 }));
         }
+
+
+        //==============================Data Collect================================================================
+
+       
+
+
+        public async void WriteData()
+        {
+            string fileName = "SpirometerData.json";
+            SpirometerData[] _data = Array.Empty<SpirometerData>();
+
+            SpirometerData[] CreateData = new SpirometerData[]
+            {
+                new SpirometerData()
+                {
+                    MemoInfo = this.memoInfo
+                },
+            };
+
+            var folder = ApplicationData.Current.LocalFolder;
+            var file = await folder.TryGetItemAsync(fileName) as IStorageFile;
+
+            if (file == null)
+            {
+                _data = CreateData;
+                var newfile = await folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+                var text = JsonConvert.SerializeObject(_data);
+                await FileIO.WriteTextAsync(newfile, text);
+            }
+        }
+
+        
 
 
         //==============================Write data =================================================================
@@ -751,7 +829,7 @@ namespace MSSMSpirometer
 
             Task<UInt32> storeAsyncTask;
 
-            // Don't start any IO if we canceled the task
+          
             lock (cancelIoLock)
             {
                 cancellationToken.ThrowIfCancellationRequested();
@@ -784,6 +862,167 @@ namespace MSSMSpirometer
 
             return bcc;
         }
+
+
+
+
+        #region auto Read Record
+
+        Boolean haveNextBlock = true;
+
+        private async void ALLReadRecord_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 64;
+
+                    await RRBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+
+                    ReadData();
+                    ReadData();
+                    getNextBlock();
+                    ReadData();
+                    
+                   
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+
+
+        }
+
+        private async void getNextBlock()
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+                    UpdateButtonStates();
+
+                    UInt32 bulkOutPipeIndex = 0;
+                    UInt32 bytesToWrite = 2;
+
+                    await NEXTBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async void ReadData()
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    TestData.Text = "Reading...";
+
+                    UInt32 bulkInPipeIndex = 0;
+                    UInt32 bytesToRead = 1024;
+
+                    await autoBulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningReadTask = false;
+
+                    UpdateButtonStates();
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task autoBulkReadAsync(UInt32 bulkPipeIndex, UInt32 bytesToRead, CancellationToken cancellationToken)
+        {
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
+
+            DataReader reader = new DataReader(stream);
+
+            TestData.Text = reader.ToString();
+
+            Task<UInt32> loadAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                loadAsyncTask = reader.LoadAsync(bytesToRead).AsTask(cancellationToken);
+            }
+
+            UInt32 bytesRead = await loadAsyncTask;
+
+            totalBytesRead += bytesRead;
+
+            PrintTotalReadWriteBytes();
+
+
+
+            UsbBulkInPipe readPipe = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[0];
+
+            IBuffer buffer = reader.ReadBuffer(bytesRead);
+            string dataString;
+            byte[] databyte;
+           
+            
+            using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
+            {
+                //dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                
+
+                dataString = dataReader.ReadString(buffer.Length);
+                DataDisplay.Text = dataString;
+
+            }
+          
+        }
+
+
+        #endregion
 
         //================================ force Cancel input ================================================
         private void CancelAllIoTasks_Click(object sender, RoutedEventArgs e)

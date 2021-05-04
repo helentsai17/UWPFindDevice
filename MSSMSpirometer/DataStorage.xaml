@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="MSSMSpirometer.DataStorage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MSSMSpirometer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Margin="10" Text="Memory Information"/>
+            <TextBlock x:Name="OutputMemoInfo" Margin="10" HorizontalAlignment="Left"  Grid.Column="1" Width="300"/>
+
+            <TextBlock Grid.Column="0"  Grid.Row="1" Margin="10" Text="Last Name : "/>
+            <TextBlock x:Name="LNameOutput" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />
+
+            <TextBlock  Grid.Column="0"  Grid.Row="2" Margin="10" Text="Address : "/>
+            <TextBlock x:Name="addressOutput" Margin="10" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="2" />
+
+            <TextBlock  Grid.Column="0"  Grid.Row="3" Margin="10" Text="phone Number : "/>
+            <TextBlock x:Name="phoneOutput" Margin="10" HorizontalAlignment="Left" Grid.Column="3"  Grid.Row="3" />
+
+            <TextBlock  Grid.Column="0"  Grid.Row="4" Margin="10" Text="Email : "/>
+            <TextBlock x:Name="emailOutput" Margin="10" HorizontalAlignment="Left" Grid.Column="4"  Grid.Row="4" />
+
+        </Grid>
+
+    </Grid>
+</Page>

@@ -46,5 +46,10 @@ namespace MSSMSpirometer
         {
             InnerFrame.Navigate(typeof(USBDataDisplay));
         }
+
+        private void dataStorageDispaly(object sender, RoutedEventArgs e)
+        {
+            InnerFrame.Navigate(typeof(DataStorage));
+        }
     }
 }

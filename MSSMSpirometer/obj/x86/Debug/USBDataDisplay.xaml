@@ -22,51 +22,59 @@
             <ScrollViewer Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
                 <!-- Place scenario content here -->
 
-                <Grid x:ConnectionId='4' x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid x:ConnectionId='6' x:Name="LayoutRoot" VerticalAlignment="Top">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Grid x:ConnectionId='5' x:Name="Input" Grid.Row="0">
+                    <Grid x:ConnectionId='7' x:Name="Input" Grid.Row="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <StackPanel x:ConnectionId='11' x:Name="DeviceScenarioContainer" Orientation="Vertical" Margin="0,10,0,0" Grid.Row="0">
-                            <StackPanel x:ConnectionId='12' x:Name="GeneralScenario" Orientation="Vertical">
-                                <TextBlock x:ConnectionId='13' x:Name="GeneralScenarioText" TextWrapping="Wrap" HorizontalAlignment="Left"> This scenario shows how to read and write to bulk pipe.</TextBlock>
-                                <Button x:ConnectionId='14' x:Name="ButtonBulkRead" Content="Read data"                       />
-                                <Button x:ConnectionId='15' x:Name="ButtonBulkWrite" Content="6.1 Device Info"                        />
-                                <Button x:ConnectionId='16' x:Name="RemoteMode" Content="6.2 Remote Mode"                         />
-                                <Button x:ConnectionId='17' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
-                                <Button x:ConnectionId='18' x:Name="MemoryInfo" Content="6.4 Memory Info"                         />
-                                <Button x:ConnectionId='19' x:Name="ReadSetting" Content="6.7 Read Setting"                          />
-                                <Button x:ConnectionId='20' x:Name="AccouracyLog" Content="6.8 Accouracy Log"                           />
-                                <Button x:ConnectionId='21' x:Name="AuditTrail" Content="6.9 Audit Trail"                         />
-                                <Button x:ConnectionId='22' x:Name="CurrentTime" Content="6.10 Current Time Message"                          />
-                                <Button x:ConnectionId='23' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
-                                <Button x:ConnectionId='24' x:Name="ReadRecord" Content="6.5 Read Record Message"                         />
-                                <Button x:ConnectionId='25' x:Name="NextBlock" Content="Next Block"                         />
-                            </StackPanel>
-                        </StackPanel>
+                        <Grid x:ConnectionId='13' x:Name="DeviceScenarioContainer" Grid.Row="0">
+                            <Grid x:ConnectionId='14' x:Name="GeneralScenario">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <Button x:ConnectionId='21' x:Name="ButtonBulkRead" Content="Read data"                       />
+                                    <Button x:ConnectionId='22' x:Name="ButtonBulkWrite" Content="6.1 Device Info"                        />
+                                    <Button x:ConnectionId='23' x:Name="RemoteMode" Content="6.2 Remote Mode"                         />
+                                    <Button x:ConnectionId='24' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
+                                    <Button x:ConnectionId='25' x:Name="MemoryInfo" Content="6.4 Memory Info"                         />
+                                    <Button x:ConnectionId='26' x:Name="ReadRecord" Content="6.5 Read Record Message"                         />
+                                    <Button x:ConnectionId='27' x:Name="NextBlock" Content="Next Block"                         />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <Button x:ConnectionId='15' x:Name="ReadSetting" Content="6.7 Read Setting"                          />
+                                    <Button x:ConnectionId='16' x:Name="AccouracyLog" Content="6.8 Accouracy Log"                           />
+                                    <Button x:ConnectionId='17' x:Name="AuditTrail" Content="6.9 Audit Trail"                         />
+                                    <Button x:ConnectionId='18' x:Name="CurrentTime" Content="6.10 Current Time Message"                          />
+                                    <Button x:ConnectionId='19' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                    <Button x:ConnectionId='20' x:Name="AllReadRecord" Content="auto read record"                            />
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='26' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='27' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='28' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='29' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='28' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='29' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='30' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='31' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
-                    <Grid x:ConnectionId='6' x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+                    <Grid x:ConnectionId='8' x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the output section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='7' x:Name="OutputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='8' x:Name="OutputFilled"/>
-                                <VisualState x:ConnectionId='9' x:Name="OutputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='10' x:Name="OutputSnapped"/>
+                                <VisualState x:ConnectionId='9' x:Name="OutputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='10' x:Name="OutputFilled"/>
+                                <VisualState x:ConnectionId='11' x:Name="OutputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='12' x:Name="OutputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -77,6 +85,8 @@
                 <StackPanel>
                     <TextBlock x:ConnectionId='2' x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
                     <TextBlock x:ConnectionId='3' x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
+                    <TextBlock x:ConnectionId='4' x:Name="TestData" Margin="12, 10, 12, 10" Text="test data" TextWrapping="Wrap"/>
+                    <TextBlock x:ConnectionId='5' x:Name="MemoInfordata" Margin="12, 10, 12, 10" Text="test memory infor data storage" TextWrapping="Wrap"/>
                 </StackPanel>
             </ScrollViewer>
             

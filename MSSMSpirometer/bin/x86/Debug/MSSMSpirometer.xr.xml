@@ -15,10 +15,13 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
@@ -49,7 +52,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="Inlines" />
       <RootProperty Name="FontSize" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
@@ -79,6 +81,10 @@
     </RootType>
     <RootType FullName="MSSMSpirometer.BlankPage" />
     <RootType FullName="MSSMSpirometer.BlankPage1" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="MSSMSpirometer.DataStorage" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="Background" />

@@ -37,6 +37,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel>
                                     <Button x:Name="ButtonBulkRead" Content="Read data" Click="BulkRead_Click"/>
@@ -54,6 +55,9 @@
                                     <Button x:Name="CurrentTime" Content="6.10 Current Time Message" Click="CurrentTime_Click"/>
                                     <Button x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks" Click="CancelAllIoTasks_Click"/>
                                     <Button x:Name="AllReadRecord" Content="auto read record" Click="ALLReadRecord_Click"/>
+                                </StackPanel >
+                                <StackPanel Grid.Column="2">
+                                    <Button x:Name="dataSave" Content="save data" Click="saveData_click"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>

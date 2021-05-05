@@ -24,8 +24,8 @@
             <TextBlock Grid.Column="0" Margin="10" Text="Memory Information"/>
             <TextBlock x:Name="OutputMemoInfo" Margin="10" HorizontalAlignment="Left"  Grid.Column="1" Width="300"/>
 
-            <TextBlock Grid.Column="0"  Grid.Row="1" Margin="10" Text="Last Name : "/>
-            <TextBlock x:Name="LNameOutput" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />
+            <TextBlock Grid.Column="0"  Grid.Row="1" Margin="10" Text="Best Test Result"/>
+            <TextBlock x:Name="BestTestResultText" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />
 
             <TextBlock  Grid.Column="0"  Grid.Row="2" Margin="10" Text="Address : "/>
             <TextBlock x:Name="addressOutput" Margin="10" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="2" />

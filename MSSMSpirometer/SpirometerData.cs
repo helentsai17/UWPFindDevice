@@ -9,6 +9,6 @@ namespace MSSMSpirometer
     class SpirometerData
     {
         public string MemoInfo { get; set; }
-
+        public string BestTestResults { get; set; }
     }
 }

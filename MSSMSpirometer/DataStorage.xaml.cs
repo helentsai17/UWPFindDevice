@@ -32,6 +32,8 @@ namespace MSSMSpirometer
         string fileName = "SpirometerData.json";
         SpirometerData[] _data = Array.Empty<SpirometerData>();
 
+        string bestTestResult;
+
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
 
@@ -49,7 +51,21 @@ namespace MSSMSpirometer
         private void ShowUser()
         {
             var getdatainfo = _data[0];
+            
             OutputMemoInfo.Text = getdatainfo.MemoInfo;
+
+            bestTestResult = getdatainfo.BestTestResults;
+            BestTestResultText.Text = bestTestResult;
+            
+            testResultFormate();
+        }
+
+        private void testResultFormate()
+        {
+            if (bestTestResult != null)
+            {
+               
+            }
         }
 
     }

@@ -1,0 +1,2 @@
+cd /d "\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer" &msbuild "MSSMSpirometer.csproj" /t:sdvViewer /p:configuration="Debug" /p:platform="x86" /p:SolutionDir="\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice" 
+exit %errorlevel% 

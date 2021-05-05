@@ -37,33 +37,37 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel>
-                                    <Button x:ConnectionId='44' x:Name="ButtonBulkRead" Content="Read data"                       />
-                                    <Button x:ConnectionId='45' x:Name="ButtonBulkWrite" Content="6.1 Device Info"                        />
-                                    <Button x:ConnectionId='46' x:Name="RemoteMode" Content="6.2 Remote Mode"                         />
-                                    <Button x:ConnectionId='47' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
-                                    <Button x:ConnectionId='48' x:Name="MemoryInfo" Content="6.4 Memory Info"                         />
-                                    <Button x:ConnectionId='49' x:Name="ReadRecord" Content="6.5 Read Record Message"                         />
-                                    <Button x:ConnectionId='50' x:Name="NextBlock" Content="Next Block"                         />
+                                    <Button x:ConnectionId='45' x:Name="ButtonBulkRead" Content="Read data"                       />
+                                    <Button x:ConnectionId='46' x:Name="ButtonBulkWrite" Content="6.1 Device Info"                        />
+                                    <Button x:ConnectionId='47' x:Name="RemoteMode" Content="6.2 Remote Mode"                         />
+                                    <Button x:ConnectionId='48' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
+                                    <Button x:ConnectionId='49' x:Name="MemoryInfo" Content="6.4 Memory Info"                         />
+                                    <Button x:ConnectionId='50' x:Name="ReadRecord" Content="6.5 Read Record Message"                         />
+                                    <Button x:ConnectionId='51' x:Name="NextBlock" Content="Next Block"                         />
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
-                                    <Button x:ConnectionId='38' x:Name="ReadSetting" Content="6.7 Read Setting"                          />
-                                    <Button x:ConnectionId='39' x:Name="AccouracyLog" Content="6.8 Accouracy Log"                           />
-                                    <Button x:ConnectionId='40' x:Name="AuditTrail" Content="6.9 Audit Trail"                         />
-                                    <Button x:ConnectionId='41' x:Name="CurrentTime" Content="6.10 Current Time Message"                          />
-                                    <Button x:ConnectionId='42' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
-                                    <Button x:ConnectionId='43' x:Name="AllReadRecord" Content="auto read record"                            />
+                                    <Button x:ConnectionId='39' x:Name="ReadSetting" Content="6.7 Read Setting"                          />
+                                    <Button x:ConnectionId='40' x:Name="AccouracyLog" Content="6.8 Accouracy Log"                           />
+                                    <Button x:ConnectionId='41' x:Name="AuditTrail" Content="6.9 Audit Trail"                         />
+                                    <Button x:ConnectionId='42' x:Name="CurrentTime" Content="6.10 Current Time Message"                          />
+                                    <Button x:ConnectionId='43' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                    <Button x:ConnectionId='44' x:Name="AllReadRecord" Content="auto read record"                            />
+                                </StackPanel >
+                                <StackPanel Grid.Column="2">
+                                    <Button x:ConnectionId='38' x:Name="dataSave" Content="save data"                       />
                                 </StackPanel>
                             </Grid>
                         </Grid>
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='51' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='52' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='53' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='54' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='52' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='53' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='54' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='55' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>

@@ -307,133 +307,133 @@ namespace MSSMSpirometer
                 recordNum.Text = recordNumber;
             }
 
-            if (dataString.Contains("A"))
+            if (dataString.Contains("A:"))
             {
                 subjectInfo = dataString;
                 subjectInfoText.Text = subjectInfo;
             }
 
-            if (dataString.Contains("B"))
+            if (dataString.Contains("B:"))
             {
                 sessionInfo = dataString;
                 sessionInfoText.Text = sessionInfo;
             }
 
-            if (dataString.Contains("C"))
+            if (dataString.Contains("C:"))
             {
                 PredictedValues = dataString;
                 PredictedValuesText.Text = PredictedValues;
             }
 
-            if (dataString.Contains("D"))
+            if (dataString.Contains("D:"))
             {
                 LLNValues = dataString;
                 LLNValuesText.Text = LLNValues;
             }
 
-            if (dataString.Contains("E"))
+            if (dataString.Contains("E:"))
             {
                 ULNValues = dataString;
                 ULNValuesText.Text = ULNValues;
             }
             
-            if (dataString.Contains("F"))
+            if (dataString.Contains("F:"))
             {
                 BestTestResults = dataString;
                 BestTestResultsText.Text = BestTestResults;
             }
 
-            if (dataString.Contains("G"))
+            if (dataString.Contains("G:"))
             {
                 BestTestData = dataString;
                 BestTestDataText.Text = BestTestData;
             }
 
-            if (dataString.Contains("H"))
+            if (dataString.Contains("H:"))
             {
                 PercentageofPredicted = dataString;
                 PercentageofPredictedText.Text = PercentageofPredicted;
             }
 
-            if (dataString.Contains("I"))
+            if (dataString.Contains("I:"))
             {
                 PercentagePrePost = dataString;
                 PercentagePrePostText.Text = PercentagePrePost;
             }
 
-            if (dataString.Contains("J"))
+            if (dataString.Contains("J:"))
             {
                 Z_score= dataString;
                 Z_scoreText.Text = Z_score;
             }
 
-            if (dataString.Contains("K"))
+            if (dataString.Contains("K:"))
             {
                 PrePostChange = dataString;
                 PrePostChangeText.Text = PrePostChange;
             }
 
-            if (dataString.Contains("L"))
+            if (dataString.Contains("L:"))
             {
                 RankedTestResult_1 = dataString;
                 RankedTestResult_1Text.Text = RankedTestResult_1;
             }
 
-            if (dataString.Contains("M"))
+            if (dataString.Contains("M:"))
             {
                 RankedTestData_1 = dataString;
                 RankedTestData_1Text.Text = RankedTestData_1;
             }
 
-            if (dataString.Contains("N"))
+            if (dataString.Contains("N:"))
             {
                 RankedTestResult_2 = dataString;
                 RankedTestResult_2Text.Text = RankedTestResult_2;
             }
 
-            if (dataString.Contains("O"))
+            if (dataString.Contains("O:"))
             {
                 RankedTestData_2 = dataString;
                 RankedTestData_2Text.Text = RankedTestData_2;
             }
 
-            if (dataString.Contains("P"))
+            if (dataString.Contains("P:"))
             {
                 RankedTestResult_3 = dataString;
                 RankedTestResult_3Text.Text = RankedTestResult_3;
             }
 
-            if (dataString.Contains("Q"))
+            if (dataString.Contains("Q:"))
             {
                 RankedTestData_3 = dataString;
                 RankedTestData_3Text.Text = RankedTestData_3;
             }
 
-            if (dataString.Contains("R"))
+            if (dataString.Contains("R:"))
             {
                 PreBestTestResult = dataString;
                 PreBestTestResultText.Text = PreBestTestResult;
             }
 
-            if (dataString.Contains("S"))
+            if (dataString.Contains("S:"))
             {
                 PreBestTestData = dataString;
                 PreBestTestDataText.Text = PreBestTestData;
             }
 
-            if (dataString.Contains("T"))
+            if (dataString.Contains("T:"))
             {
                 PreBestPercentageofPredicted = dataString;
                 PreBestPercentageofPredictedText.Text = PreBestPercentageofPredicted;
             }
 
-            if (dataString.Contains("U"))
+            if (dataString.Contains("U:"))
             {
                 PreBestZ_score = dataString;
                 PreBestZ_scoreText.Text = PreBestZ_score;
             }
 
-            if (dataString.Contains("V"))
+            if (dataString.Contains("V:"))
             {
                 InterpretationInformation = dataString;
                 InterpretationInformationText.Text = InterpretationInformation;
@@ -458,19 +458,33 @@ namespace MSSMSpirometer
 
         //==============================Data Collect================================================================
 
-       
+        private void saveData_click(object sender, RoutedEventArgs e)
+        {
+            WriteData();
+        }
 
+        string fileName = "SpirometerData.json";
+        SpirometerData[] _data = Array.Empty<SpirometerData>();
+
+        public async void updatelocaldata()
+        {
+            var folder = ApplicationData.Current.LocalFolder;
+            var newfile = await folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+            var text = JsonConvert.SerializeObject(_data);
+            await FileIO.WriteTextAsync(newfile, text);
+        }
 
         public async void WriteData()
         {
-            string fileName = "SpirometerData.json";
-            SpirometerData[] _data = Array.Empty<SpirometerData>();
 
+            
+            
             SpirometerData[] CreateData = new SpirometerData[]
             {
                 new SpirometerData()
                 {
-                    MemoInfo = this.memoInfo
+                    MemoInfo = this.memoInfo,
+                    BestTestResults = this.BestTestResults
                 },
             };
 
@@ -483,6 +497,11 @@ namespace MSSMSpirometer
                 var newfile = await folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
                 var text = JsonConvert.SerializeObject(_data);
                 await FileIO.WriteTextAsync(newfile, text);
+            }
+            else
+            {
+                var text = await FileIO.ReadTextAsync(file);
+                _data = JsonConvert.DeserializeObject<SpirometerData[]>(text);
             }
         }
 
@@ -897,7 +916,7 @@ namespace MSSMSpirometer
 
         private async Task RRBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
         {
-            byte[] value = new byte[] { 0x02, 0x4d, 0x56, 0x52, 0x52, 0x30, 0x30, 0x33, 0x03, 0x01 };
+            byte[] value = new byte[] { 0x02, 0x4d, 0x56, 0x52, 0x52, 0x30, 0x30, 0x36, 0x03, 0x01 };
 
             byte bccValue = Getbcc(value);
             value[9] = bccValue;
@@ -1010,7 +1029,7 @@ namespace MSSMSpirometer
 
 
 
-#endregion
+        #endregion
 
 
         #region auto Read Record
@@ -1190,6 +1209,6 @@ namespace MSSMSpirometer
 
         }
 
-        
+       
     }
 }

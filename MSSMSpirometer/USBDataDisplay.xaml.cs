@@ -12,6 +12,7 @@ using Windows.Devices.Enumeration;
 using Windows.Devices.Usb;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Security.Cryptography;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
@@ -175,8 +176,9 @@ namespace MSSMSpirometer
         #endregion
 
         string memoInfo = "";
-        
+
         // Read Record Message
+        string recordNumber = "";
         string subjectInfo = "";
         string sessionInfo = "";
         string PredictedValues = "";
@@ -220,7 +222,7 @@ namespace MSSMSpirometer
                     UInt32 bulkInPipeIndex = 0;
 
                     // Read as much data as possible in one packet
-                    UInt32 bytesToRead = 1024;
+                    UInt32 bytesToRead = 2048;
 
                     await BulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
                 }
@@ -256,9 +258,6 @@ namespace MSSMSpirometer
             lock (cancelIoLock)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-
-                // Cancellation Token will be used so we can stop the task operation explicitly
-                // The completion function should still be called so that we can properly handle a canceled task
                 loadAsyncTask = reader.LoadAsync(bytesToRead).AsTask(cancellationToken);
             }
 
@@ -282,18 +281,164 @@ namespace MSSMSpirometer
                 dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                 dataString = dataReader.ReadString(buffer.Length);
                 DataDisplay.Text = dataString;
- 
+
+                byte[] data;
+                CryptographicBuffer.CopyToByteArray(buffer, out data);
+               // TestData.Text = BitConverter.ToString(data);
             }
 
+            storageString(dataString);
+
+           
+
+        }
+
+        private void storageString(string dataString)
+        {
             if (dataString.Contains("VMMI"))
             {
                 memoInfo = dataString;
                 MemoInfordata.Text = memoInfo;
             }
 
-           
-        }
+            if (dataString.Contains("VMRR"))
+            {
+                recordNumber = dataString;
+                recordNum.Text = recordNumber;
+            }
 
+            if (dataString.Contains("A"))
+            {
+                subjectInfo = dataString;
+                subjectInfoText.Text = subjectInfo;
+            }
+
+            if (dataString.Contains("B"))
+            {
+                sessionInfo = dataString;
+                sessionInfoText.Text = sessionInfo;
+            }
+
+            if (dataString.Contains("C"))
+            {
+                PredictedValues = dataString;
+                PredictedValuesText.Text = PredictedValues;
+            }
+
+            if (dataString.Contains("D"))
+            {
+                LLNValues = dataString;
+                LLNValuesText.Text = LLNValues;
+            }
+
+            if (dataString.Contains("E"))
+            {
+                ULNValues = dataString;
+                ULNValuesText.Text = ULNValues;
+            }
+            
+            if (dataString.Contains("F"))
+            {
+                BestTestResults = dataString;
+                BestTestResultsText.Text = BestTestResults;
+            }
+
+            if (dataString.Contains("G"))
+            {
+                BestTestData = dataString;
+                BestTestDataText.Text = BestTestData;
+            }
+
+            if (dataString.Contains("H"))
+            {
+                PercentageofPredicted = dataString;
+                PercentageofPredictedText.Text = PercentageofPredicted;
+            }
+
+            if (dataString.Contains("I"))
+            {
+                PercentagePrePost = dataString;
+                PercentagePrePostText.Text = PercentagePrePost;
+            }
+
+            if (dataString.Contains("J"))
+            {
+                Z_score= dataString;
+                Z_scoreText.Text = Z_score;
+            }
+
+            if (dataString.Contains("K"))
+            {
+                PrePostChange = dataString;
+                PrePostChangeText.Text = PrePostChange;
+            }
+
+            if (dataString.Contains("L"))
+            {
+                RankedTestResult_1 = dataString;
+                RankedTestResult_1Text.Text = RankedTestResult_1;
+            }
+
+            if (dataString.Contains("M"))
+            {
+                RankedTestData_1 = dataString;
+                RankedTestData_1Text.Text = RankedTestData_1;
+            }
+
+            if (dataString.Contains("N"))
+            {
+                RankedTestResult_2 = dataString;
+                RankedTestResult_2Text.Text = RankedTestResult_2;
+            }
+
+            if (dataString.Contains("O"))
+            {
+                RankedTestData_2 = dataString;
+                RankedTestData_2Text.Text = RankedTestData_2;
+            }
+
+            if (dataString.Contains("P"))
+            {
+                RankedTestResult_3 = dataString;
+                RankedTestResult_3Text.Text = RankedTestResult_3;
+            }
+
+            if (dataString.Contains("Q"))
+            {
+                RankedTestData_3 = dataString;
+                RankedTestData_3Text.Text = RankedTestData_3;
+            }
+
+            if (dataString.Contains("R"))
+            {
+                PreBestTestResult = dataString;
+                PreBestTestResultText.Text = PreBestTestResult;
+            }
+
+            if (dataString.Contains("S"))
+            {
+                PreBestTestData = dataString;
+                PreBestTestDataText.Text = PreBestTestData;
+            }
+
+            if (dataString.Contains("T"))
+            {
+                PreBestPercentageofPredicted = dataString;
+                PreBestPercentageofPredictedText.Text = PreBestPercentageofPredicted;
+            }
+
+            if (dataString.Contains("U"))
+            {
+                PreBestZ_score = dataString;
+                PreBestZ_scoreText.Text = PreBestZ_score;
+            }
+
+            if (dataString.Contains("V"))
+            {
+                InterpretationInformation = dataString;
+                InterpretationInformationText.Text = InterpretationInformation;
+            }
+        }
 
         private async void PrintTotalReadWriteBytes()
         {
@@ -341,8 +486,8 @@ namespace MSSMSpirometer
             }
         }
 
-        
 
+        #region all the data request button click 
 
         //==============================Write data =================================================================
 
@@ -865,10 +1010,12 @@ namespace MSSMSpirometer
 
 
 
+#endregion
+
 
         #region auto Read Record
 
-        Boolean haveNextBlock = true;
+        
 
         private async void ALLReadRecord_Click(object sender, RoutedEventArgs e)
         {
@@ -883,16 +1030,16 @@ namespace MSSMSpirometer
 
                     UInt32 bulkOutPipeIndex = 0;
 
-                    UInt32 bytesToWrite = 64;
+                    UInt32 bytesToWrite = 16;
 
                     await RRBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
 
                     ReadData();
-                    ReadData();
                     getNextBlock();
                     ReadData();
-                    
-                   
+                    getNextBlock();
+
+
                 }
                 catch (OperationCanceledException /*ex*/)
                 {
@@ -955,7 +1102,7 @@ namespace MSSMSpirometer
                     TestData.Text = "Reading...";
 
                     UInt32 bulkInPipeIndex = 0;
-                    UInt32 bytesToRead = 1024;
+                    UInt32 bytesToRead = 2048;
 
                     await autoBulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
                 }
@@ -1000,25 +1147,29 @@ namespace MSSMSpirometer
 
             PrintTotalReadWriteBytes();
 
-
-
-            UsbBulkInPipe readPipe = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[0];
-
             IBuffer buffer = reader.ReadBuffer(bytesRead);
             string dataString;
-            byte[] databyte;
-           
             
+           
             using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
             {
-                //dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                
-
+                dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                 dataString = dataReader.ReadString(buffer.Length);
                 DataDisplay.Text = dataString;
 
             }
-          
+
+            if (dataString.Contains("VMRR"))
+            {
+                recordNumber = dataString;
+                recordNum.Text = recordNumber;
+            }
+
+            if (dataString.Contains("A"))
+            {
+                subjectInfo = dataString;
+                subjectInfoText.Text = subjectInfo;
+            }
         }
 
 

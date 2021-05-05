@@ -87,6 +87,30 @@
                     <TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
                     <TextBlock x:Name="TestData" Margin="12, 10, 12, 10" Text="test data" TextWrapping="Wrap"/>
                     <TextBlock x:Name="MemoInfordata" Margin="12, 10, 12, 10" Text="test memory infor data storage" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="recordNum" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    
+                    <TextBlock x:Name="subjectInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="sessionInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PredictedValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="LLNValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="ULNValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="BestTestResultsText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="BestTestDataText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PercentageofPredictedText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PercentagePrePostText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Z_scoreText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PrePostChangeText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestResult_1Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestData_1Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestResult_2Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestData_2Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestResult_3Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestData_3Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestTestResultText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestTestDataText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestPercentageofPredictedText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestZ_scoreText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="InterpretationInformationText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
                 </StackPanel>
             </ScrollViewer>
             

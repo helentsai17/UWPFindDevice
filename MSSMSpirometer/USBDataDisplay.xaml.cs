@@ -484,7 +484,11 @@ namespace MSSMSpirometer
                 new SpirometerData()
                 {
                     MemoInfo = this.memoInfo,
-                    BestTestResults = this.BestTestResults
+                    BestTestResults = this.BestTestResults,
+                    RankResults_1 = this.RankedTestResult_1,
+                    RankResults_2 = this.RankedTestResult_2,
+                    RankResults_3 = this.RankedTestResult_3
+                    
                 },
             };
 

@@ -33,6 +33,9 @@ namespace MSSMSpirometer
         SpirometerData[] _data = Array.Empty<SpirometerData>();
 
         string bestTestResult;
+        string rankTestResult1;
+        string rankTestResult2;
+        string rankTestResult3;
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -52,11 +55,20 @@ namespace MSSMSpirometer
         {
             var getdatainfo = _data[0];
             
-            OutputMemoInfo.Text = getdatainfo.MemoInfo;
+            //OutputMemoInfo.Text = getdatainfo.MemoInfo;
 
             bestTestResult = getdatainfo.BestTestResults;
             BestTestResultText.Text = bestTestResult;
-            
+
+            rankTestResult1 = getdatainfo.RankResults_1;
+            RankTestResult_1.Text = rankTestResult1;
+
+            rankTestResult2 = getdatainfo.RankResults_2;
+            RankTestResult_2.Text = rankTestResult2;
+
+            rankTestResult3 = getdatainfo.RankResults_3;
+            RankTestResult_3.Text = rankTestResult3;
+           
             testResultFormat(bestTestResult);
         }
 
@@ -125,11 +137,28 @@ namespace MSSMSpirometer
                 Vext.Text = resultArray[57];
                 Vext_FVC.Text = resultArray[58];
 
-
-
             }
         }
 
+        private void BestResult_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(bestTestResult);
+        }
+
+        private void RankTest1_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(rankTestResult1);
+        }
+
+        private void RankTest2_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(rankTestResult2);
+        }
+
+        private void RankTest3_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(rankTestResult3);
+        }
     }
 
 

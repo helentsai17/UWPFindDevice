@@ -93,6 +93,8 @@ namespace MSSMSpirometer
 
             DataRequest("RemoteMode");
             readtwice();
+
+           
         }
         private async void readtwice()
         {
@@ -102,8 +104,9 @@ namespace MSSMSpirometer
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            DataRequest("RemoteExit");
             base.OnNavigatedFrom(e);
-            
+           
         }
 
         private void OnAppSuspension(object sender, SuspendingEventArgs e)
@@ -639,6 +642,7 @@ namespace MSSMSpirometer
             totalBytesWritten += bytesWritten;
 
             PrintTotalReadWriteBytes();
+            await ReadData();
         }
         #endregion
 

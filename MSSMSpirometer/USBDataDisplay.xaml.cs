@@ -75,8 +75,6 @@ namespace MSSMSpirometer
             navigatedAway = false;
             navigatedAway = false;
 
-            // Both the OSRFX2 and the SuperMutt use the same scenario
-            // If no devices are connected, none of the scenarios will be shown and an error will be displayed
             Dictionary<DeviceType, UIElement> deviceScenarios = new Dictionary<DeviceType, UIElement>();
             deviceScenarios.Add(DeviceType.OsrFx2, GeneralScenario);
 
@@ -92,6 +90,14 @@ namespace MSSMSpirometer
             EventHandlerForDevice.Current.OnDeviceConnected = new TypedEventHandler<EventHandlerForDevice, DeviceInformation>(this.OnDeviceConnected);
 
             UpdateButtonStates();
+
+            DataRequest("RemoteMode");
+            readtwice();
+        }
+        private async void readtwice()
+        {
+            await ReadData();
+            await ReadData();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -205,7 +211,9 @@ namespace MSSMSpirometer
 
         //=========================Bulk Read data==================================================
 
-        private async void BulkRead_Click(object sender, RoutedEventArgs e)
+      
+
+            private async void BulkRead_Click(object sender, RoutedEventArgs e)
         {
             if (EventHandlerForDevice.Current.IsDeviceConnected)
             {
@@ -284,12 +292,10 @@ namespace MSSMSpirometer
 
                 byte[] data;
                 CryptographicBuffer.CopyToByteArray(buffer, out data);
-               // TestData.Text = BitConverter.ToString(data);
+                TestData.Text = BitConverter.ToString(data);
             }
 
             storageString(dataString);
-
-           
 
         }
 
@@ -455,6 +461,7 @@ namespace MSSMSpirometer
                 }));
         }
 
+        #region data collect 
 
         //==============================Data Collect================================================================
 
@@ -477,8 +484,6 @@ namespace MSSMSpirometer
         public async void WriteData()
         {
 
-            
-            
             SpirometerData[] CreateData = new SpirometerData[]
             {
                 new SpirometerData()
@@ -487,8 +492,20 @@ namespace MSSMSpirometer
                     BestTestResults = this.BestTestResults,
                     RankResults_1 = this.RankedTestResult_1,
                     RankResults_2 = this.RankedTestResult_2,
-                    RankResults_3 = this.RankedTestResult_3
-                    
+                    RankResults_3 = this.RankedTestResult_3,
+                    SubjectInfo = this.subjectInfo,
+                    SessionInfo = this.sessionInfo,
+
+                    PredictedValues = this.PredictedValues,
+                    LLNValue = this.LLNValues,
+                    ULNValue = this.ULNValues,
+                    PercentageofPredicted = this.PercentageofPredicted,
+                    PercentagePrePost = this.PercentagePrePost,
+                    Zscore = this.Z_score,
+                    PrePostChange = this.PrePostChange,
+                    PreBestTestResult = this.PreBestTestResult,
+                    PreBestPercentageofPredicted = this.PreBestPercentageofPredicted,
+                    PreBestZscore = this.PreBestZ_score
                 },
             };
 
@@ -508,6 +525,8 @@ namespace MSSMSpirometer
                 _data = JsonConvert.DeserializeObject<SpirometerData[]>(text);
             }
         }
+
+        #endregion
 
 
         #region all the data request button click 
@@ -583,6 +602,7 @@ namespace MSSMSpirometer
             totalBytesWritten += bytesWritten;
 
             PrintTotalReadWriteBytes();
+            await ReadData();
         }
 
         #endregion
@@ -1053,16 +1073,10 @@ namespace MSSMSpirometer
 
                     UInt32 bulkOutPipeIndex = 0;
 
-                    UInt32 bytesToWrite = 16;
+                    UInt32 bytesToWrite = 512;
 
                     await RRBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
-
                     ReadData();
-                    getNextBlock();
-                    ReadData();
-                    getNextBlock();
-
-
                 }
                 catch (OperationCanceledException /*ex*/)
                 {
@@ -1098,6 +1112,7 @@ namespace MSSMSpirometer
                     UInt32 bytesToWrite = 2;
 
                     await NEXTBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                    ReadData();
                 }
                 catch (OperationCanceledException /*ex*/)
                 {
@@ -1116,7 +1131,9 @@ namespace MSSMSpirometer
             }
         }
 
-        private async void ReadData()
+        private async 
+        Task
+ReadData()
         {
             if (EventHandlerForDevice.Current.IsDeviceConnected)
             {
@@ -1151,9 +1168,7 @@ namespace MSSMSpirometer
             var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
 
             DataReader reader = new DataReader(stream);
-
             TestData.Text = reader.ToString();
-
             Task<UInt32> loadAsyncTask;
 
             // Don't start any IO if we canceled the task
@@ -1172,26 +1187,26 @@ namespace MSSMSpirometer
 
             IBuffer buffer = reader.ReadBuffer(bytesRead);
             string dataString;
-            
-           
+            byte[] data;
+            byte endcode = 0x03;
             using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
             {
                 dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                 dataString = dataReader.ReadString(buffer.Length);
                 DataDisplay.Text = dataString;
 
+                
+                CryptographicBuffer.CopyToByteArray(buffer, out data);
             }
 
-            if (dataString.Contains("VMRR"))
-            {
-                recordNumber = dataString;
-                recordNum.Text = recordNumber;
-            }
+            storageString(dataString);
 
-            if (dataString.Contains("A"))
+            for(int i = 0; i <data.Length; i++)
             {
-                subjectInfo = dataString;
-                subjectInfoText.Text = subjectInfo;
+                if(data[i]== endcode)
+                {
+                    getNextBlock();
+                }
             }
         }
 

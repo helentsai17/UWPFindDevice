@@ -58,6 +58,12 @@
                                 </StackPanel >
                                 <StackPanel Grid.Column="2">
                                     <Button x:Name="dataSave" Content="save data" Click="saveData_click"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button x:Name="preRecord" Content="Pre Record" Click="PreRecord_click"/>
+                                        <TextBlock Margin="5" x:Name="RecordNum"  Text="1"/>
+                                        <Button x:Name="nextRecord" Content="NextRecord" Click="NextRecord_click"/>
+                                    </StackPanel>
+                                    
                                 </StackPanel>
                             </Grid>
                         </Grid>

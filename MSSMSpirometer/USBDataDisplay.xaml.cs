@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
@@ -49,6 +50,8 @@ namespace MSSMSpirometer
 
         private UInt32 totalBytesWritten;
         private UInt32 totalBytesRead;
+
+        int recordcount = 1;
         public USBDataDisplay()
         {
             this.InitializeComponent();
@@ -184,7 +187,7 @@ namespace MSSMSpirometer
 
         #endregion
 
-        string memoInfo = "";
+        int memoInfo = 1;
 
         // Read Record Message
         string recordNumber = "";
@@ -295,7 +298,7 @@ namespace MSSMSpirometer
 
                 byte[] data;
                 CryptographicBuffer.CopyToByteArray(buffer, out data);
-                TestData.Text = BitConverter.ToString(data);
+                //TestData.Text = BitConverter.ToString(data);
             }
 
             storageString(dataString);
@@ -306,8 +309,9 @@ namespace MSSMSpirometer
         {
             if (dataString.Contains("VMMI"))
             {
-                memoInfo = dataString;
-                MemoInfordata.Text = memoInfo;
+                string submemoinfo = dataString.Substring(5, 3);
+                memoInfo = Int32.Parse(submemoinfo);
+                MemoInfordata.Text = submemoinfo;
             }
 
             if (dataString.Contains("VMRR"))
@@ -491,7 +495,7 @@ namespace MSSMSpirometer
             {
                 new SpirometerData()
                 {
-                    MemoInfo = this.memoInfo,
+                    MemoInfo = this.memoInfo.ToString(),
                     BestTestResults = this.BestTestResults,
                     RankResults_1 = this.RankedTestResult_1,
                     RankResults_2 = this.RankedTestResult_2,
@@ -942,9 +946,41 @@ namespace MSSMSpirometer
             }
         }
 
+        
+
+        public byte[] checkeachrecord()
+        {
+            string recordnumString = recordcount.ToString();
+
+            byte[] recordNum = Encoding.ASCII.GetBytes(recordnumString);
+
+
+            return recordNum;
+        }
+
+        
+
         private async Task RRBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
         {
             byte[] value = new byte[] { 0x02, 0x4d, 0x56, 0x52, 0x52, 0x30, 0x30, 0x36, 0x03, 0x01 };
+
+            byte[] num = checkeachrecord();
+
+            int count = num.Length-1;
+
+            value[7] = num[count];
+            if (count > 1)
+            {
+                value[6] = num[count - 1];
+                if(count > 2)
+                {
+                    value[5] = num[count - 2];
+                }
+            }
+            
+
+            TestData.Text = BitConverter.ToString(value);
+            
 
             byte bccValue = Getbcc(value);
             value[9] = bccValue;
@@ -1135,9 +1171,7 @@ namespace MSSMSpirometer
             }
         }
 
-        private async 
-        Task
-ReadData()
+        private async Task ReadData()
         {
             if (EventHandlerForDevice.Current.IsDeviceConnected)
             {
@@ -1232,6 +1266,24 @@ ReadData()
 
         }
 
-       
+        private void NextRecord_click(object sender, RoutedEventArgs e)
+        {
+            if (recordcount < memoInfo)
+            {
+                recordcount += 1;
+                RecordNum.Text = recordcount.ToString();
+            }
+            
+        }
+
+        private void PreRecord_click(object sender, RoutedEventArgs e)
+        {
+            if (recordcount > 1)
+            {
+                recordcount -= 1;
+                RecordNum.Text = recordcount.ToString();
+            }
+                
+        }
     }
 }

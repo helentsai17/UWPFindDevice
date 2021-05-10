@@ -93,29 +93,46 @@ namespace MSSMSpirometer
             EventHandlerForDevice.Current.OnDeviceConnected = new TypedEventHandler<EventHandlerForDevice, DeviceInformation>(this.OnDeviceConnected);
 
             UpdateButtonStates();
+            WriteData();
 
+            autoremotemode();
+
+
+            autoReadMemoInfo();
+
+           
+        }
+
+        private async void autoReadMemoInfo()
+        {
+            System.Threading.Thread.Sleep(500);
+            DataRequest("MemoryInfo");
+            await ReadData();
+        }
+
+        //protected override void OnNavigatedFrom(NavigationEventArgs e)
+        //{
+        //    ReadData();
+        //    DataRequest("RemoteExit");
+        //    ReadData();
+        //    ReadData();
+        //    base.OnNavigatedFrom(e);
+           
+        //}
+        private async void autoremotemode()
+        {
             DataRequest("RemoteMode");
-            readtwice();
-
-           
-        }
-        private async void readtwice()
-        {
             await ReadData();
             await ReadData();
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            DataRequest("RemoteExit");
-            base.OnNavigatedFrom(e);
-           
-        }
 
         private void OnAppSuspension(object sender, SuspendingEventArgs e)
         {
             CancelAllIoTasks();
         }
+
+
 
         private void CancelAllIoTasks()
         {
@@ -474,7 +491,7 @@ namespace MSSMSpirometer
 
         private void saveData_click(object sender, RoutedEventArgs e)
         {
-            WriteData();
+            updatelocaldata();
         }
 
         string fileName = "SpirometerData.json";
@@ -482,6 +499,31 @@ namespace MSSMSpirometer
 
         public async void updatelocaldata()
         {
+            SpirometerData[] CreateData = new SpirometerData[]
+            {
+                new SpirometerData()
+                {
+                    MemoInfo = this.memoInfo.ToString(),
+                    BestTestResults = this.BestTestResults,
+                    RankResults_1 = this.RankedTestResult_1,
+                    RankResults_2 = this.RankedTestResult_2,
+                    RankResults_3 = this.RankedTestResult_3,
+                    SubjectInfo = this.subjectInfo,
+                    SessionInfo = this.sessionInfo,
+
+                    PredictedValues = this.PredictedValues,
+                    LLNValue = this.LLNValues,
+                    ULNValue = this.ULNValues,
+                    PercentageofPredicted = this.PercentageofPredicted,
+                    PercentagePrePost = this.PercentagePrePost,
+                    Zscore = this.Z_score,
+                    PrePostChange = this.PrePostChange,
+                    PreBestTestResult = this.PreBestTestResult,
+                    PreBestPercentageofPredicted = this.PreBestPercentageofPredicted,
+                    PreBestZscore = this.PreBestZ_score
+                },
+            };
+            _data = CreateData;
             var folder = ApplicationData.Current.LocalFolder;
             var newfile = await folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
             var text = JsonConvert.SerializeObject(_data);
@@ -645,8 +687,8 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
-            await ReadData();
+            //PrintTotalReadWriteBytes();
+            ReadData();
         }
         #endregion
 
@@ -684,6 +726,9 @@ namespace MSSMSpirometer
             totalBytesWritten += bytesWritten;
 
             PrintTotalReadWriteBytes();
+
+            await ReadData();
+
         }
 
         #endregion
@@ -1285,5 +1330,7 @@ namespace MSSMSpirometer
             }
                 
         }
+
+      
     }
 }

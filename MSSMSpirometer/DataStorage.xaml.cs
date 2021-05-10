@@ -68,13 +68,14 @@ namespace MSSMSpirometer
 
             rankTestResult3 = getdatainfo.RankResults_3;
             RankTestResult_3.Text = rankTestResult3;
-           
+
+            
             testResultFormat(bestTestResult);
         }
 
         private void testResultFormat(string result)
         {
-            if (result != null)
+            if (result != null && result != "")
             {
                 var resultArray = result.Split(",");
                 VCtext.Text = resultArray[0];

@@ -36,6 +36,9 @@ namespace MSSMSpirometer
         string rankTestResult1;
         string rankTestResult2;
         string rankTestResult3;
+        string subjectInfomation;
+        string sessionInformation;
+
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -69,7 +72,13 @@ namespace MSSMSpirometer
             rankTestResult3 = getdatainfo.RankResults_3;
             RankTestResult_3.Text = rankTestResult3;
 
-            
+            subjectInfomation = getdatainfo.SubjectInfo;
+            subjectInfo.Text = subjectInfomation;
+
+            sessionInformation = getdatainfo.SessionInfo;
+            SessionInfo.Text = sessionInformation;
+
+
             testResultFormat(bestTestResult);
         }
 

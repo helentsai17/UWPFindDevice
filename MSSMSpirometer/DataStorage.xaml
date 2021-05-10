@@ -33,6 +33,8 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <!--<TextBlock Grid.Column="0" Margin="10" Text="Memory Information"/>
             <TextBlock x:Name="OutputMemoInfo" Margin="10" HorizontalAlignment="Left"  Grid.Column="1" Width="300"/>-->
@@ -48,6 +50,12 @@
 
             <TextBlock Grid.Column="0"  Grid.Row="4" Margin="10" Text="Rank Test Result 3"/>
             <TextBlock x:Name="RankTestResult_3" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" />
+            
+            <TextBlock Grid.Column="0"  Grid.Row="5" Margin="10" Text="Subject Infomation"/>
+            <TextBlock x:Name="subjectInfo" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5" />
+            
+            <TextBlock Grid.Column="0"  Grid.Row="6" Margin="10" Text="Session Information"/>
+            <TextBlock x:Name="SessionInfo" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="6" />
         </Grid>
         
         <ScrollViewer Grid.Row="2">

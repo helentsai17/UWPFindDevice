@@ -16,10 +16,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <Button x:ConnectionId='65' Margin="0,0,10,0" Content="Best Result"                         />
-            <Button x:ConnectionId='66' Margin="0,0,10,0" Content="Rank Test 1"                        />
-            <Button x:ConnectionId='67' Margin="0,0,10,0" Content="Rank Test 2"                        />
-            <Button x:ConnectionId='68' Margin="0,0,10,0" Content="Rank Tsat 3"                        />
+            <Button x:ConnectionId='67' Margin="0,0,10,0" Content="Best Result"                         />
+            <Button x:ConnectionId='68' Margin="0,0,10,0" Content="Rank Test 1"                        />
+            <Button x:ConnectionId='69' Margin="0,0,10,0" Content="Rank Test 2"                        />
+            <Button x:ConnectionId='70' Margin="0,0,10,0" Content="Rank Tsat 3"                        />
         </StackPanel>
         
         <Grid Grid.Row="1">
@@ -28,6 +28,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -48,6 +50,12 @@
 
             <TextBlock Grid.Column="0"  Grid.Row="4" Margin="10" Text="Rank Test Result 3"/>
             <TextBlock x:ConnectionId='64' x:Name="RankTestResult_3" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" />
+            
+            <TextBlock Grid.Column="0"  Grid.Row="5" Margin="10" Text="Subject Infomation"/>
+            <TextBlock x:ConnectionId='65' x:Name="subjectInfo" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5" />
+            
+            <TextBlock Grid.Column="0"  Grid.Row="6" Margin="10" Text="Session Information"/>
+            <TextBlock x:ConnectionId='66' x:Name="SessionInfo" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="6" />
         </Grid>
         
         <ScrollViewer Grid.Row="2">

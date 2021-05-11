@@ -9,6 +9,8 @@ namespace MSSMSpirometer
     class SpirometerData
     {
         public string MemoInfo { get; set; }
+
+        //public string SessionNum { get; set; }
         public string SubjectInfo { get; set; }
         public string SessionInfo { get; set; }
 

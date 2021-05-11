@@ -171,6 +171,7 @@
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,20">
+            <Button Margin="0,0,10,0" Content="Prediced Value" Click="PredictedValue_click"/>
             <Button Margin="0,0,10,0" Content="Best Result" Click="BestResult_click"/>
             <Button Margin="0,0,10,0" Content="Rank Test 1" Click="RankTest1_click"/>
             <Button Margin="0,0,10,0" Content="Rank Test 2" Click="RankTest2_click"/>

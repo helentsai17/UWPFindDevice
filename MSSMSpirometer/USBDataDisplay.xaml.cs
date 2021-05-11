@@ -124,8 +124,8 @@ namespace MSSMSpirometer
         {
             DataRequest("RemoteMode");
             await ReadData();
-            //getNextBlock();
-            await ReadData();
+            getNextBlock();
+            //await ReadData();
         }
 
 
@@ -506,6 +506,7 @@ namespace MSSMSpirometer
                 new SpirometerData()
                 {
                     MemoInfo = this.memoInfo.ToString(),
+                   // SessionNum = this.sessionInfo
                     BestTestResults = this.BestTestResults,
                     RankResults_1 = this.RankedTestResult_1,
                     RankResults_2 = this.RankedTestResult_2,

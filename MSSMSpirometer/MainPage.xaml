@@ -10,17 +10,17 @@
 
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="9*"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Background="AliceBlue">
 
-            <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 1" Click="findDevice"/>
-            <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 2" Click="findDevice2"/>
-            <Button Background="Transparent" Margin="20,10,20,10" Content="Find device by vid and pid" Click="findDevice3"/>
-            <Button Background="Transparent" Margin="20,10,20,10" Content="USB data display" Click="datadisplay"/>
-            <Button Background="Transparent" Margin="20,10,20,10" Content="Data Storage" Click="dataStorageDispaly"/>
+            <!--<Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 1" Click="findDevice"/>
+            <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 2" Click="findDevice2"/>-->
+            <Button Background="Transparent" Margin="20,10,20,10" Content="Device Connect" Click="findDevice3"/>
+            <Button Background="Transparent" Margin="20,10,20,10" Content="Check session Data" Click="datadisplay"/>
+            <Button Background="Transparent" Margin="20,10,20,10" Content="Detail Disply" Click="dataStorageDispaly"/>
 
         </StackPanel>
         <Frame Grid.Row="1" x:Name="InnerFrame" Margin="10"/>

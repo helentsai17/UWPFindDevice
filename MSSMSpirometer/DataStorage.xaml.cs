@@ -32,6 +32,8 @@ namespace MSSMSpirometer
         string fileName = "SpirometerData.json";
         SpirometerData[] _data = Array.Empty<SpirometerData>();
 
+        string PredictedValue;
+
         string bestTestResult;
         string rankTestResult1;
         string rankTestResult2;
@@ -60,8 +62,9 @@ namespace MSSMSpirometer
         private void ShowUser()
         {
             var getdatainfo = _data[0];
-            
+
             //OutputMemoInfo.Text = getdatainfo.MemoInfo;
+            PredictedValue = getdatainfo.PredictedValues;
 
             bestTestResult = getdatainfo.BestTestResults;
             //BestTestResultText.Text = bestTestResult;
@@ -80,6 +83,7 @@ namespace MSSMSpirometer
 
             sessionInformation = getdatainfo.SessionInfo;
             //SessionInfo.Text = sessionInformation;
+
 
             LLN = getdatainfo.LLNValue;
             ULN = getdatainfo.ULNValue;
@@ -228,6 +232,11 @@ namespace MSSMSpirometer
         private void ULN_click(object sender, RoutedEventArgs e)
         {
             testResultFormat(ULN);
+        }
+
+        private void PredictedValue_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(PredictedValue);
         }
     }
 

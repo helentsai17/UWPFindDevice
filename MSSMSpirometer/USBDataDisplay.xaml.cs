@@ -124,6 +124,7 @@ namespace MSSMSpirometer
         {
             DataRequest("RemoteMode");
             await ReadData();
+            //getNextBlock();
             await ReadData();
         }
 

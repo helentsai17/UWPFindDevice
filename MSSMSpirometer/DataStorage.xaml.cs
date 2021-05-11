@@ -39,6 +39,9 @@ namespace MSSMSpirometer
         string subjectInfomation;
         string sessionInformation;
 
+        string LLN;
+        string ULN;
+
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -61,7 +64,7 @@ namespace MSSMSpirometer
             //OutputMemoInfo.Text = getdatainfo.MemoInfo;
 
             bestTestResult = getdatainfo.BestTestResults;
-            BestTestResultText.Text = bestTestResult;
+            //BestTestResultText.Text = bestTestResult;
 
             rankTestResult1 = getdatainfo.RankResults_1;
             //RankTestResult_1.Text = rankTestResult1;
@@ -73,16 +76,33 @@ namespace MSSMSpirometer
             //RankTestResult_3.Text = rankTestResult3;
 
             subjectInfomation = getdatainfo.SubjectInfo;
-            subjectInfo.Text = subjectInfomation;
+            //subjectInfo.Text = subjectInfomation;
 
             sessionInformation = getdatainfo.SessionInfo;
-            SessionInfo.Text = sessionInformation;
+            //SessionInfo.Text = sessionInformation;
 
+            LLN = getdatainfo.LLNValue;
+            ULN = getdatainfo.ULNValue;
 
             sessionInfoFormat(sessionInformation, subjectInfomation);
 
+            subjectFormat(subjectInfomation);
 
             testResultFormat(bestTestResult);
+        }
+
+        private void subjectFormat(string subjectInfomation)
+        {
+            var subject = subjectInfomation.Split(",");
+            DateofBirth.Text = subject[1];
+            Gender.Text = subject[2];
+            Age.Text = subject[3];
+            HeightText.Text = subject[4];
+            Weight.Text = subject[5];
+            SomkingHistory.Text = subject[6];
+            PopulationGroup.Text = subject[7];
+            RegressionSet.Text = subject[8];
+            CorrectionFactor.Text = subject[9];
         }
 
         private void sessionInfoFormat(string sessionInformation, string subjectinfo)
@@ -198,6 +218,16 @@ namespace MSSMSpirometer
         private void RankTest3_click(object sender, RoutedEventArgs e)
         {
             testResultFormat(rankTestResult3);
+        }
+
+        private void LLN_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(LLN);
+        }
+
+        private void ULN_click(object sender, RoutedEventArgs e)
+        {
+            testResultFormat(ULN);
         }
     }
 

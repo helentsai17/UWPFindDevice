@@ -64,13 +64,13 @@ namespace MSSMSpirometer
             BestTestResultText.Text = bestTestResult;
 
             rankTestResult1 = getdatainfo.RankResults_1;
-            RankTestResult_1.Text = rankTestResult1;
+            //RankTestResult_1.Text = rankTestResult1;
 
             rankTestResult2 = getdatainfo.RankResults_2;
-            RankTestResult_2.Text = rankTestResult2;
+            //RankTestResult_2.Text = rankTestResult2;
 
             rankTestResult3 = getdatainfo.RankResults_3;
-            RankTestResult_3.Text = rankTestResult3;
+            //RankTestResult_3.Text = rankTestResult3;
 
             subjectInfomation = getdatainfo.SubjectInfo;
             subjectInfo.Text = subjectInfomation;
@@ -79,7 +79,37 @@ namespace MSSMSpirometer
             SessionInfo.Text = sessionInformation;
 
 
+            sessionInfoFormat(sessionInformation, subjectInfomation);
+
+
             testResultFormat(bestTestResult);
+        }
+
+        private void sessionInfoFormat(string sessionInformation, string subjectinfo)
+        {
+            if(sessionInformation!= null && sessionInformation != "")
+            {
+                var subject = subjectinfo.Split(",");
+                SubjectID.Text = subject[0].Substring(3);
+
+                var session = sessionInformation.Split(",");
+                AccuracyDataTime.Text = session[0].Substring(3);
+                CalibrationDateTime.Text = session[1];
+                SessionDataTime.Text = session[3];
+                SessionType.Text = session[8];
+                SessionPosture.Text = session[9];
+                SessionGrade.Text = session[10];
+                PreSessionGrade.Text = session[11];
+                NumberofBlowsPerformed.Text = session[12];
+                FEV1Repeatability.Text = session[13];
+                FEV1RepeatabilityP.Text = session[14] + " %";
+                PEFRepeatability.Text = session[15];
+                PEFRepeatabilityP.Text = session[16] + " %";
+                FVCRepeatability.Text = session[17];
+                FVCRepeatabilityP.Text = session[18] + " %";
+
+
+            }
         }
 
         private void testResultFormat(string result)
@@ -87,7 +117,7 @@ namespace MSSMSpirometer
             if (result != null && result != "")
             {
                 var resultArray = result.Split(",");
-                VCtext.Text = resultArray[0];
+                VCtext.Text = resultArray[0].Substring(3);
                 EVC.Text = resultArray[1];
                 IVC.Text = resultArray[2];
                 FVC.Text = resultArray[3];

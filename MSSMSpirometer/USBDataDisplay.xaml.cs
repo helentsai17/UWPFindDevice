@@ -108,6 +108,7 @@ namespace MSSMSpirometer
             System.Threading.Thread.Sleep(500);
             DataRequest("MemoryInfo");
             await ReadData();
+            getNextBlock();
         }
 
         //protected override void OnNavigatedFrom(NavigationEventArgs e)

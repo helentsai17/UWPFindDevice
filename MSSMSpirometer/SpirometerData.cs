@@ -31,5 +31,10 @@ namespace MSSMSpirometer
         public string RankResults_1 { get; set; }
         public string RankResults_2 { get; set; }
         public string RankResults_3 { get; set; }
+
+        public string BestTestData { get; set; }
+        public string RankData_1 { get; set; }
+        public string RankData_2 { get; set; }
+        public string RankData_3 { get; set; }
     }
 }

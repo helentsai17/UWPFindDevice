@@ -1,0 +1,76 @@
+﻿<Page
+    x:Name="page"
+    x:Class="MSSMSpirometer.DataGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MSSMSpirometer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+
+    <Grid>
+        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="data of test"/>
+            <!--<TextBlock Grid.Row="1" Text="test index"/>
+            <TextBlock Grid.Row="2" Text="test rank"/>
+            <TextBlock Grid.Row="3" Text="test quality flags"/>
+            <TextBlock Grid.Row="4" Text="acceptability flags"/>
+            <TextBlock Grid.Row="5" Text="fet"/> -->
+            <TextBlock Grid.Row="6" Text="fvc"/>
+            <TextBlock Grid.Row="7" Text="expiratory curve"/>
+            <TextBlock Grid.Row="8" Text="inspiratory time"/>
+            <TextBlock Grid.Row="9" Text="fivc"/>
+            <TextBlock Grid.Row="10" Text="inspiratory curve"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="dataoftest"/>
+            <!--<TextBlock Grid.Row="1" Grid.Column="1" x:Name="testindex"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="testrank"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="testqualityflags"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" x:Name="acceptabilityflags"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" x:Name="fetg"/> -->
+            <TextBlock Grid.Row="6" Grid.Column="1" x:Name="fvcg"/>
+            <TextBlock Grid.Row="7" Grid.Column="1" x:Name="expiratorycurve" TextWrapping="wrap"/>
+            <TextBlock Grid.Row="8" Grid.Column="1" x:Name="inspiratorytime"/>
+            <TextBlock Grid.Row="9" Grid.Column="1" x:Name="fivcg"/>
+            <TextBlock Grid.Row="10" Grid.Column="1" x:Name="inspiratorycurve" TextWrapping="wrap"/>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Loading="Page_Load">
+            <Charting:Chart  x:Name="LineChart" Title ="line" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Height="400" Width="700" >
+                <Charting:LineSeries Title="Expiratory Curve" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Ecurve" IsSelectionEnabled="True"/>
+            </Charting:Chart>
+
+            <Charting:Chart  x:Name="LineChartCurve" Title ="line" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,0,0,0" Height="400" Width="700" >
+                <Charting:LineSeries Title="Inspiratory Curve" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Icurve" IsSelectionEnabled="True"/>
+            </Charting:Chart>
+        </Grid>
+    </Grid>
+
+
+    
+</Page>

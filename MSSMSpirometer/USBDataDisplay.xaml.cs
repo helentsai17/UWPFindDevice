@@ -233,6 +233,7 @@ namespace MSSMSpirometer
         string PreBestZ_score = "";
         string InterpretationInformation = "";
 
+        
 
         //=========================Bulk Read data==================================================
 
@@ -523,7 +524,12 @@ namespace MSSMSpirometer
                     PrePostChange = this.PrePostChange,
                     PreBestTestResult = this.PreBestTestResult,
                     PreBestPercentageofPredicted = this.PreBestPercentageofPredicted,
-                    PreBestZscore = this.PreBestZ_score
+                    PreBestZscore = this.PreBestZ_score,
+
+                    BestTestData = this.BestTestData,
+                    RankData_1 = this.RankedTestData_1,
+                    RankData_2 = this.RankedTestData_2,
+                    RankData_3 = this.RankedTestData_3,
                 },
             };
             _data = CreateData;
@@ -557,7 +563,12 @@ namespace MSSMSpirometer
                     PrePostChange = this.PrePostChange,
                     PreBestTestResult = this.PreBestTestResult,
                     PreBestPercentageofPredicted = this.PreBestPercentageofPredicted,
-                    PreBestZscore = this.PreBestZ_score
+                    PreBestZscore = this.PreBestZ_score,
+
+                    BestTestData = this.BestTestData,
+                    RankData_1 = this.RankedTestData_1,
+                    RankData_2 = this.RankedTestData_2,
+                    RankData_3 = this.RankedTestData_3,
                 },
             };
 

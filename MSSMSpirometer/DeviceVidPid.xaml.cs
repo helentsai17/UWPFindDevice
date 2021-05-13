@@ -385,7 +385,25 @@ namespace MSSMSpirometer
 
         private void DisconnectFromDevice_Click(object sender, RoutedEventArgs e)
         {
+            var selection = ConnectDevices.SelectedItems;
+            DeviceListEntry entry = null;
 
+            // Prevent auto reconnect because we are voluntarily closing it
+            // Re-enable the ConnectDevice list and ConnectToDevice button if the connected/opened device was removed.
+            EventHandlerForDevice.Current.IsEnabledAutoReconnect = false;
+
+            if (selection.Count > 0)
+            {
+                var obj = selection[0];
+                entry = (DeviceListEntry)obj;
+
+                if (entry != null)
+                {
+                    EventHandlerForDevice.Current.CloseDevice();
+                }
+            }
+
+            UpdateConnectDisconnectButtonsAndList(true);
         }
     }
 }

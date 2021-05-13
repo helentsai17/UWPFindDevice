@@ -97,16 +97,20 @@ namespace MSSMSpirometer
 
         private void subjectFormat(string subjectInfomation)
         {
-            var subject = subjectInfomation.Split(",");
-            DateofBirth.Text = subject[1];
-            Gender.Text = subject[2];
-            Age.Text = subject[3];
-            HeightText.Text = subject[4];
-            Weight.Text = subject[5];
-            SomkingHistory.Text = subject[6];
-            PopulationGroup.Text = subject[7];
-            RegressionSet.Text = subject[8];
-            CorrectionFactor.Text = subject[9];
+            if(subjectInfomation != "" && subjectInfomation != null)
+            {
+                var subject = subjectInfomation.Split(",");
+                DateofBirth.Text = subject[1];
+                Gender.Text = subject[2];
+                Age.Text = subject[3];
+                HeightText.Text = subject[4];
+                Weight.Text = subject[5];
+                SomkingHistory.Text = subject[6];
+                PopulationGroup.Text = subject[7];
+                RegressionSet.Text = subject[8];
+                CorrectionFactor.Text = subject[9];
+            }
+            
         }
 
         private void sessionInfoFormat(string sessionInformation, string subjectinfo)

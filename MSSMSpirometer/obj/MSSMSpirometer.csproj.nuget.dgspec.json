@@ -43,11 +43,19 @@
           "dependencies": {
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
-              "version": "[6.2.11, )"
+              "version": "[6.2.12, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "WinRTXamlToolkit.Controls.DataVisualization.UWP": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "WinRTXamlToolkit.UWP": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             }
           },
           "imports": [

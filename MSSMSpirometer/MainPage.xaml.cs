@@ -51,5 +51,10 @@ namespace MSSMSpirometer
         {
             InnerFrame.Navigate(typeof(DataStorage));
         }
+
+        private void graphDisplay(object sender, RoutedEventArgs e)
+        {
+            InnerFrame.Navigate(typeof(DataGraph));
+        }
     }
 }

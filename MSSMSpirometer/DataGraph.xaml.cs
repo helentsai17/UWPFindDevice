@@ -198,6 +198,8 @@ namespace MSSMSpirometer
             (LineChartCurve.Series[1] as LineSeries).ItemsSource = inspiratory;
             (LineChartCurve.Series[2] as LineSeries).ItemsSource = inspiratory;
             (LineChartCurve.Series[3] as LineSeries).ItemsSource = inspiratory;
+
+            
         }
 
         private void Page_Load(FrameworkElement sender, object args)

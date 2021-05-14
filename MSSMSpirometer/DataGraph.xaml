@@ -10,6 +10,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
 
+
     <Grid>
         
             <Grid.RowDefinitions>
@@ -61,12 +62,13 @@
 
 
         <Grid Grid.Row="1" Loading="Page_Load">
+         
             <Charting:Chart  x:Name="LineChart" Title ="Expiratory 100pt Curve" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Height="400" Width="700" >
 
                 <Charting:LineSeries Title="Rank Data 1" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Ecurve1" IsSelectionEnabled="False"/>
                 <Charting:LineSeries Title="Rank Data 1" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Ecurve2" IsSelectionEnabled="False"/>
                 <Charting:LineSeries Title="Rank Data 1" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Ecurve3" IsSelectionEnabled="False"/>
-                <Charting:LineSeries Title="Best test Data" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Ecurve" IsSelectionEnabled="False"/>
+                <Charting:LineSeries Title="Best test Data" Margin="0"  IndependentValuePath="Time"  DependentValuePath="Ecurve" IsSelectionEnabled="False" />
             </Charting:Chart>
 
             <Charting:Chart  x:Name="LineChartCurve" Title ="Inspiratory 100pt Curve" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="700,0,0,0" Height="400" Width="700" >

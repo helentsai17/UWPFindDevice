@@ -96,35 +96,37 @@ namespace MSSMSpirometer
             WriteData();
 
             autoremotemode();
+            
 
-
-            autoReadMemoInfo();
-
-           
+          
         }
 
         private async void autoReadMemoInfo()
         {
-            System.Threading.Thread.Sleep(500);
+           
+             
             DataRequest("MemoryInfo");
             await ReadData();
             getNextBlock();
+           
         }
 
-        //protected override void OnNavigatedFrom(NavigationEventArgs e)
-        //{
-        //    ReadData();
-        //    DataRequest("RemoteExit");
-        //    ReadData();
-        //    ReadData();
-        //    base.OnNavigatedFrom(e);
-           
-        //}
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            ReadData();
+            DataRequest("RemoteExit");
+            //ReadData();
+            base.OnNavigatedFrom(e);
+
+        }
         private async void autoremotemode()
         {
             DataRequest("RemoteMode");
             await ReadData();
-            getNextBlock();
+            System.Threading.Thread.Sleep(500);
+            autoReadMemoInfo();
+            //await ReadData();
+            //getNextBlock();
             //await ReadData();
         }
 
@@ -168,8 +170,8 @@ namespace MSSMSpirometer
             await rootPage.Dispatcher.RunAsync(CoreDispatcherPriority.High,
                 new DispatchedHandler(() =>
                 {
-                    ButtonBulkRead.IsEnabled = false;
-                    ButtonBulkWrite.IsEnabled = false;
+                    //ButtonBulkRead.IsEnabled = false;
+                    //ButtonBulkWrite.IsEnabled = false;
 
                     ButtonCancelAllIoTasks.IsEnabled = false;
 
@@ -183,8 +185,8 @@ namespace MSSMSpirometer
         private void UpdateButtonStates()
         {
 
-            ButtonBulkRead.IsEnabled = !runningReadWriteTask && !runningReadTask;
-            ButtonBulkWrite.IsEnabled = !runningReadWriteTask && !runningWriteTask;
+            //ButtonBulkRead.IsEnabled = !runningReadWriteTask && !runningReadTask;
+            //ButtonBulkWrite.IsEnabled = !runningReadWriteTask && !runningWriteTask;
             ButtonCancelAllIoTasks.IsEnabled = IsPerformingIo();
         }
         private Boolean IsPerformingIo()
@@ -233,13 +235,14 @@ namespace MSSMSpirometer
         string PreBestZ_score = "";
         string InterpretationInformation = "";
 
-        
+
+        #region Bulk Read data
 
         //=========================Bulk Read data==================================================
 
-      
 
-            private async void BulkRead_Click(object sender, RoutedEventArgs e)
+
+        private async void BulkRead_Click(object sender, RoutedEventArgs e)
         {
             if (EventHandlerForDevice.Current.IsDeviceConnected)
             {
@@ -299,7 +302,7 @@ namespace MSSMSpirometer
 
             totalBytesRead += bytesRead;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
 
             // The data that is read is stored in the reader object
             // e.g. To read a string from the buffer:
@@ -332,6 +335,8 @@ namespace MSSMSpirometer
                 string submemoinfo = dataString.Substring(5, 3);
                 memoInfo = Int32.Parse(submemoinfo);
                 MemoInfordata.Text = submemoinfo;
+                recordcount = memoInfo;
+                RecordNum.Text = recordcount.ToString();
             }
 
             if (dataString.Contains("VMRR"))
@@ -487,6 +492,9 @@ namespace MSSMSpirometer
                     }
                 }));
         }
+
+        #endregion
+
 
         #region data collect 
 
@@ -664,8 +672,9 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
             await ReadData();
+            
         }
 
         #endregion
@@ -675,6 +684,7 @@ namespace MSSMSpirometer
         private void RemoteExit_Click(object sender, RoutedEventArgs e)
         {
             DataRequest("RemoteExit");
+            //ReadData();
         }
 
         private async Task RXBulkWriteAsync(UInt32 bulkPipeIndex, UInt32 bytesToWrite, CancellationToken cancellationToken)
@@ -702,7 +712,8 @@ namespace MSSMSpirometer
             totalBytesWritten += bytesWritten;
 
             //PrintTotalReadWriteBytes();
-            ReadData();
+             ReadData();
+             
         }
         #endregion
 
@@ -739,9 +750,9 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
 
-            await ReadData();
+            //await ReadData();
 
         }
 

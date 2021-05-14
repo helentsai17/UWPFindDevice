@@ -40,10 +40,15 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel>
-                                    <Button x:Name="ButtonBulkRead" Content="Read data" Click="BulkRead_Click"/>
-                                    <Button x:Name="ButtonBulkWrite" Content="6.1 Device Info" Click="BulkWrite_Click"/>
+                                    <!--<Button x:Name="ButtonBulkRead" Content="Read data" Click="BulkRead_Click"/>-->
+                                    <!--<Button x:Name="ButtonBulkWrite" Content="6.1 Device Info" Click="BulkWrite_Click"/>-->
                                     <!--<Button x:Name="RemoteMode" Content="6.2 Remote Mode" Click="RemoteMode_Click"/>-->
-                                    <Button x:Name="RemoteExit" Content="6.3 Remote Exit" Click="RemoteExit_Click"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button x:Name="preRecord" Content="pre" Click="PreRecord_click"/>
+                                        <TextBlock Margin="5" x:Name="RecordNum"  Text="1"/>
+                                        <Button x:Name="nextRecord" Content=">" Click="NextRecord_click"/>
+                                    </StackPanel>
+                                    <Button x:Name="AllReadRecord" Content="auto read record" Click="ALLReadRecord_Click"/>
                                     <!--<Button x:Name="MemoryInfo" Content="6.4 Memory Info" Click="MemoryInfo_Click"/>-->
                                     <!--<Button x:Name="ReadRecord" Content="6.5 Read Record Message" Click="ReadRecord_Click"/>
                                     <Button x:Name="NextBlock" Content="Next Block" Click="NextBlock_Click" />-->
@@ -54,15 +59,12 @@
                                     <Button x:Name="AuditTrail" Content="6.9 Audit Trail" Click="AuditTrail_Click"/>
                                     <Button x:Name="CurrentTime" Content="6.10 Current Time Message" Click="CurrentTime_Click"/>-->
                                     <Button x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks" Click="CancelAllIoTasks_Click"/>
-                                    <Button x:Name="AllReadRecord" Content="auto read record" Click="ALLReadRecord_Click"/>
+                                    
                                 </StackPanel >
                                 <StackPanel Grid.Column="2">
                                     <Button x:Name="dataSave" Content="save data" Click="saveData_click"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button x:Name="preRecord" Content="Pre Record" Click="PreRecord_click"/>
-                                        <TextBlock Margin="5" x:Name="RecordNum"  Text="1"/>
-                                        <Button x:Name="nextRecord" Content="NextRecord" Click="NextRecord_click"/>
-                                    </StackPanel>
+                                    <Button x:Name="RemoteExit" Content="6.3 Remote Exit" Click="RemoteExit_Click"/>
+                                    
                                     
                                 </StackPanel>
                             </Grid>

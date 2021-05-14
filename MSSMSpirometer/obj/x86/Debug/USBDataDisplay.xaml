@@ -40,10 +40,15 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel>
-                                    <Button x:ConnectionId='44' x:Name="ButtonBulkRead" Content="Read data"                       />
-                                    <Button x:ConnectionId='45' x:Name="ButtonBulkWrite" Content="6.1 Device Info"                        />
+                                    <!--<Button x:Name="ButtonBulkRead" Content="Read data" Click="BulkRead_Click"/>-->
+                                    <!--<Button x:Name="ButtonBulkWrite" Content="6.1 Device Info" Click="BulkWrite_Click"/>-->
                                     <!--<Button x:Name="RemoteMode" Content="6.2 Remote Mode" Click="RemoteMode_Click"/>-->
-                                    <Button x:ConnectionId='46' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button x:ConnectionId='42' x:Name="preRecord" Content="pre"                        />
+                                        <TextBlock x:ConnectionId='43' Margin="5" x:Name="RecordNum"  Text="1"/>
+                                        <Button x:ConnectionId='44' x:Name="nextRecord" Content=">"                         />
+                                    </StackPanel>
+                                    <Button x:ConnectionId='41' x:Name="AllReadRecord" Content="auto read record"                            />
                                     <!--<Button x:Name="MemoryInfo" Content="6.4 Memory Info" Click="MemoryInfo_Click"/>-->
                                     <!--<Button x:Name="ReadRecord" Content="6.5 Read Record Message" Click="ReadRecord_Click"/>
                                     <Button x:Name="NextBlock" Content="Next Block" Click="NextBlock_Click" />-->
@@ -53,16 +58,13 @@
                                     <Button x:Name="AccouracyLog" Content="6.8 Accouracy Log" Click="AccouracyLog_Click"/>
                                     <Button x:Name="AuditTrail" Content="6.9 Audit Trail" Click="AuditTrail_Click"/>
                                     <Button x:Name="CurrentTime" Content="6.10 Current Time Message" Click="CurrentTime_Click"/>-->
-                                    <Button x:ConnectionId='42' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
-                                    <Button x:ConnectionId='43' x:Name="AllReadRecord" Content="auto read record"                            />
+                                    <Button x:ConnectionId='40' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                    
                                 </StackPanel >
                                 <StackPanel Grid.Column="2">
                                     <Button x:ConnectionId='38' x:Name="dataSave" Content="save data"                       />
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button x:ConnectionId='39' x:Name="preRecord" Content="Pre Record"                        />
-                                        <TextBlock x:ConnectionId='40' Margin="5" x:Name="RecordNum"  Text="1"/>
-                                        <Button x:ConnectionId='41' x:Name="nextRecord" Content="NextRecord"                         />
-                                    </StackPanel>
+                                    <Button x:ConnectionId='39' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
+                                    
                                     
                                 </StackPanel>
                             </Grid>
@@ -70,10 +72,10 @@
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='47' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='48' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='49' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='50' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='45' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='46' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='47' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='48' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>

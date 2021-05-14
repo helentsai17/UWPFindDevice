@@ -27,6 +27,7 @@ namespace MSSMSpirometer
         {
             this.InitializeComponent();
             Current = this;
+            InnerFrame.Navigate(typeof(DeviceVidPid));
         }
 
         private void findDevice(object sender, RoutedEventArgs e)

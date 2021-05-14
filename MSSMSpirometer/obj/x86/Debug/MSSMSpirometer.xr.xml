@@ -128,6 +128,11 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="MSSMSpirometer.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="NineGrid" />
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="MSSMSpirometer.USBDataDisplay" />
   </Roots.RootTypes>
 </Roots>

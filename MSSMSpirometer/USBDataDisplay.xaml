@@ -44,9 +44,13 @@
                                     <!--<Button x:Name="ButtonBulkWrite" Content="6.1 Device Info" Click="BulkWrite_Click"/>-->
                                     <!--<Button x:Name="RemoteMode" Content="6.2 Remote Mode" Click="RemoteMode_Click"/>-->
                                     <StackPanel Orientation="Horizontal">
-                                        <Button x:Name="preRecord" Content="pre" Click="PreRecord_click"/>
-                                        <TextBlock Margin="5" x:Name="RecordNum"  Text="1"/>
-                                        <Button x:Name="nextRecord" Content=">" Click="NextRecord_click"/>
+                                        <Button x:Name="preRecord" Click="PreRecord_click" Background="Transparent">
+                                            <Image Source="/Assets/left.png" NineGrid="1,0,0,0" Width="30"/>
+                                        </Button>
+                                        <TextBlock Margin="5" x:Name="RecordNum"  Text="1" FontSize="20"/>
+                                        <Button x:Name="nextRecord"  Click="NextRecord_click" Background="Transparent">
+                                            <Image Source="/Assets/right.png" NineGrid="1,0,0,0" Width="30"/>
+                                        </Button>
                                     </StackPanel>
                                     <Button x:Name="AllReadRecord" Content="auto read record" Click="ALLReadRecord_Click"/>
                                     <!--<Button x:Name="MemoryInfo" Content="6.4 Memory Info" Click="MemoryInfo_Click"/>-->
@@ -96,11 +100,11 @@
             <ScrollViewer Grid.Row="2" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <TextBlock x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
-                    <TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
+                    <!--<TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
                     <TextBlock x:Name="TestData" Margin="12, 10, 12, 10" Text="test data" TextWrapping="Wrap"/>
                     <TextBlock x:Name="MemoInfordata" Margin="12, 10, 12, 10" Text="test memory infor data storage" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="recordNum" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    
+                    <TextBlock x:Name="recordNum" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>-->
+
                     <TextBlock x:Name="subjectInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
                     <TextBlock x:Name="sessionInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
                     <TextBlock x:Name="PredictedValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>

@@ -55,8 +55,11 @@
     <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\winrtxamltoolkit.controls.datavisualization\2.3.0\lib\uap10.0\WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml">
       <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\left.png">
+      <PackagePath>Assets\left.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\right.png">
+      <PackagePath>Assets\right.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -78,6 +81,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.xr.xml">
       <PackagePath>MSSMSpirometer.xr.xml</PackagePath>

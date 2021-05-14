@@ -317,7 +317,7 @@ namespace MSSMSpirometer
             {
                 dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                 dataString = dataReader.ReadString(buffer.Length);
-                DataDisplay.Text = dataString;
+              //DataDisplay.Text = dataString;
 
                 byte[] data;
                 CryptographicBuffer.CopyToByteArray(buffer, out data);
@@ -334,7 +334,7 @@ namespace MSSMSpirometer
             {
                 string submemoinfo = dataString.Substring(5, 3);
                 memoInfo = Int32.Parse(submemoinfo);
-                MemoInfordata.Text = submemoinfo;
+             // MemoInfordata.Text = submemoinfo;
                 recordcount = memoInfo;
                 RecordNum.Text = recordcount.ToString();
             }
@@ -342,7 +342,7 @@ namespace MSSMSpirometer
             if (dataString.Contains("VMRR"))
             {
                 recordNumber = dataString;
-                recordNum.Text = recordNumber;
+              //recordNum.Text = recordNumber;
             }
 
             if (dataString.Contains("A:"))
@@ -1049,7 +1049,7 @@ namespace MSSMSpirometer
             }
             
 
-            TestData.Text = BitConverter.ToString(value);
+          //TestData.Text = BitConverter.ToString(value);
             
 
             byte bccValue = Getbcc(value);
@@ -1247,7 +1247,7 @@ namespace MSSMSpirometer
             {
                 try
                 {
-                    TestData.Text = "Reading...";
+                  //TestData.Text = "Reading...";
 
                     UInt32 bulkInPipeIndex = 0;
                     UInt32 bytesToRead = 2048;
@@ -1276,7 +1276,7 @@ namespace MSSMSpirometer
             var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
 
             DataReader reader = new DataReader(stream);
-            TestData.Text = reader.ToString();
+         // TestData.Text = reader.ToString();
             Task<UInt32> loadAsyncTask;
 
             // Don't start any IO if we canceled the task
@@ -1301,7 +1301,7 @@ namespace MSSMSpirometer
             {
                 dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
                 dataString = dataReader.ReadString(buffer.Length);
-                DataDisplay.Text = dataString;
+             // DataDisplay.Text = dataString;
 
                 
                 CryptographicBuffer.CopyToByteArray(buffer, out data);

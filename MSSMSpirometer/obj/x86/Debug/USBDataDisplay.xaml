@@ -13,6 +13,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -20,20 +21,19 @@
                 <TextBlock Text="Spirometer Data" FontSize="40"/>
             </StackPanel>
             <ScrollViewer Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
-                <!-- Place scenario content here -->
 
-                <Grid x:ConnectionId='25' x:Name="LayoutRoot" VerticalAlignment="Top">
+                <Grid x:ConnectionId='63' x:Name="LayoutRoot" VerticalAlignment="Top">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Grid x:ConnectionId='26' x:Name="Input" Grid.Row="0">
+                    <Grid x:ConnectionId='64' x:Name="Input" Grid.Row="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Grid x:ConnectionId='32' x:Name="DeviceScenarioContainer" Grid.Row="0">
-                            <Grid x:ConnectionId='33' x:Name="GeneralScenario">
+                        <Grid x:ConnectionId='70' x:Name="DeviceScenarioContainer" Grid.Row="0">
+                            <Grid x:ConnectionId='71' x:Name="GeneralScenario">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
@@ -44,15 +44,16 @@
                                     <!--<Button x:Name="ButtonBulkWrite" Content="6.1 Device Info" Click="BulkWrite_Click"/>-->
                                     <!--<Button x:Name="RemoteMode" Content="6.2 Remote Mode" Click="RemoteMode_Click"/>-->
                                     <StackPanel Orientation="Horizontal">
-                                        <Button x:ConnectionId='38' x:Name="preRecord"                         Background="Transparent">
+                                        <Button x:ConnectionId='73' x:Name="preRecord"                         Background="Transparent">
                                             <Image Source="/Assets/left.png" NineGrid="1,0,0,0" Width="30"/>
                                         </Button>
-                                        <TextBlock x:ConnectionId='39' Margin="5" x:Name="RecordNum"  Text="1" FontSize="20"/>
-                                        <Button x:ConnectionId='40' x:Name="nextRecord"                           Background="Transparent">
+                                        <TextBlock x:ConnectionId='74' Margin="5" x:Name="RecordNum"  Text="1" FontSize="20"/>
+                                        <Button x:ConnectionId='75' x:Name="nextRecord"                           Background="Transparent">
                                             <Image Source="/Assets/right.png" NineGrid="1,0,0,0" Width="30"/>
                                         </Button>
+                                        <Button x:ConnectionId='76' x:Name="AllReadRecord" Content="read record"                            />
                                     </StackPanel>
-                                    <Button x:ConnectionId='37' x:Name="AllReadRecord" Content="auto read record"                            />
+                                  
                                     <!--<Button x:Name="MemoryInfo" Content="6.4 Memory Info" Click="MemoryInfo_Click"/>-->
                                     <!--<Button x:Name="ReadRecord" Content="6.5 Read Record Message" Click="ReadRecord_Click"/>
                                     <Button x:Name="NextBlock" Content="Next Block" Click="NextBlock_Click" />-->
@@ -62,35 +63,34 @@
                                     <Button x:Name="AccouracyLog" Content="6.8 Accouracy Log" Click="AccouracyLog_Click"/>
                                     <Button x:Name="AuditTrail" Content="6.9 Audit Trail" Click="AuditTrail_Click"/>
                                     <Button x:Name="CurrentTime" Content="6.10 Current Time Message" Click="CurrentTime_Click"/>-->
-                                    <Button x:ConnectionId='36' x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks"                               />
+                                    <!--<Button x:Name="ButtonCancelAllIoTasks" Content="Cancel all Read/Write tasks" Click="CancelAllIoTasks_Click"/>-->
                                     
                                 </StackPanel >
                                 <StackPanel Grid.Column="2">
-                                    <Button x:ConnectionId='34' x:Name="dataSave" Content="save data"                       />
-                                    <Button x:ConnectionId='35' x:Name="RemoteExit" Content="6.3 Remote Exit"                         />
-                                    
-                                    
+                                    <Button x:ConnectionId='72' x:Name="dataSave" Content="save and read detail"                       />
+                                    <!--<Button x:Name="RemoteExit" Content="6.3 Remote Exit" Click="RemoteExit_Click"/>-->
+                                   
                                 </StackPanel>
                             </Grid>
                         </Grid>
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the input section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='41' x:Name="InputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='42' x:Name="InputFilled"/>
-                                <VisualState x:ConnectionId='43' x:Name="InputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='44' x:Name="InputSnapped"/>
+                                <VisualState x:ConnectionId='77' x:Name="InputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='78' x:Name="InputFilled"/>
+                                <VisualState x:ConnectionId='79' x:Name="InputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='80' x:Name="InputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
-                    <Grid x:ConnectionId='27' x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+                    <Grid x:ConnectionId='65' x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
                         <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts for the output section -->
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup>
-                                <VisualState x:ConnectionId='28' x:Name="OutputFullScreenLandscape"/>
-                                <VisualState x:ConnectionId='29' x:Name="OutputFilled"/>
-                                <VisualState x:ConnectionId='30' x:Name="OutputFullScreenPortrait"/>
-                                <VisualState x:ConnectionId='31' x:Name="OutputSnapped"/>
+                                <VisualState x:ConnectionId='66' x:Name="OutputFullScreenLandscape"/>
+                                <VisualState x:ConnectionId='67' x:Name="OutputFilled"/>
+                                <VisualState x:ConnectionId='68' x:Name="OutputFullScreenPortrait"/>
+                                <VisualState x:ConnectionId='69' x:Name="OutputSnapped"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -99,37 +99,385 @@
 
             <ScrollViewer Grid.Row="2" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
-                    <TextBlock x:ConnectionId='2' x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
+                    <TextBlock x:ConnectionId='61' x:Name="StatusBlock" Margin="12, 10, 12, 10" Text="status display"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="12, 10, 12, 10" FontSize="20" Text="Best test result display"/>
+                        <TextBlock x:ConnectionId='62' x:Name="sessionDateTime" Margin="12, 18, 12, 10" FontSize="15"/>
+                    </StackPanel>
+                    
                     <!--<TextBlock x:Name="DataDisplay" Margin="12, 10, 12, 10" Text="data display" TextWrapping="Wrap"/>
                     <TextBlock x:Name="TestData" Margin="12, 10, 12, 10" Text="test data" TextWrapping="Wrap"/>
                     <TextBlock x:Name="MemoInfordata" Margin="12, 10, 12, 10" Text="test memory infor data storage" TextWrapping="Wrap"/>
                     <TextBlock x:Name="recordNum" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>-->
 
-                    <TextBlock x:ConnectionId='3' x:Name="subjectInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='4' x:Name="sessionInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='5' x:Name="PredictedValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='6' x:Name="LLNValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='7' x:Name="ULNValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='8' x:Name="BestTestResultsText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='9' x:Name="BestTestDataText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='10' x:Name="PercentageofPredictedText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='11' x:Name="PercentagePrePostText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='12' x:Name="Z_scoreText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='13' x:Name="PrePostChangeText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='14' x:Name="RankedTestResult_1Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='15' x:Name="RankedTestData_1Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='16' x:Name="RankedTestResult_2Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='17' x:Name="RankedTestData_2Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='18' x:Name="RankedTestResult_3Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='19' x:Name="RankedTestData_3Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='20' x:Name="PreBestTestResultText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='21' x:Name="PreBestTestDataText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='22' x:Name="PreBestPercentageofPredictedText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='23' x:Name="PreBestZ_scoreText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
-                    <TextBlock x:ConnectionId='24' x:Name="InterpretationInformationText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <!--<TextBlock x:Name="subjectInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="sessionInfoText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PredictedValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="LLNValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="ULNValuesText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="BestTestResultsText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>-->
+                    <!--<TextBlock x:Name="BestTestDataText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PercentageofPredictedText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PercentagePrePostText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Z_scoreText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PrePostChangeText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestResult_1Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestData_1Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestResult_2Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestData_2Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestResult_3Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="RankedTestData_3Text" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestTestResultText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestTestDataText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestPercentageofPredictedText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="PreBestZ_scoreText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="InterpretationInformationText" Margin="12, 10, 12, 10" Text="record number" TextWrapping="Wrap"/>-->
+     
                 </StackPanel>
             </ScrollViewer>
-            
+
+            <ScrollViewer Grid.Row="3">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Column="0" Grid.Row="0" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="0" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="1" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="2" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="3" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="2" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="3" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="4" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="5" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="4" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="5" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="6" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="7" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="6" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="7" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="8" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="9" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="8" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="9" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="10" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="11" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="10" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="11" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="12" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="13" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="12" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="13" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="14" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="15" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="14" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="15" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="16" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="17" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="16" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="17" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="18" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="19" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="18" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="19" Fill="LightYellow" />
+
+                        <TextBlock HorizontalAlignment="Right" Text="VC"/>
+                        <TextBlock HorizontalAlignment="Right" Text="EVC" Grid.Row="1"/>
+                        <TextBlock HorizontalAlignment="Right" Text="IVC" Grid.Row="2"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FVC" Grid.Row="3"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIVC" Grid.Row="4"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIVC/FVC" Grid.Row="5"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV0.5" Grid.Row="6"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV0.5/FVC" Grid.Row="7"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV0.75" Grid.Row="8"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV0.75/FVC" Grid.Row="9"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1" Grid.Row="10"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1R" Grid.Row="11"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/VC" Grid.Row="12"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/EVC" Grid.Row="13"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/IVC" Grid.Row="14"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/FVC" Grid.Row="15"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/FIVC" Grid.Row="16"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/FEV6" Grid.Row="17"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV1/PEF" Grid.Row="18"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV3" Grid.Row="19"/>
+
+                        <TextBlock x:ConnectionId='41' HorizontalAlignment="Center" Grid.Column="1" x:Name="VCtext" />
+                        <TextBlock x:ConnectionId='42' HorizontalAlignment="Center" Grid.Column="1" x:Name="EVC" Grid.Row="1"/>
+                        <TextBlock x:ConnectionId='43' HorizontalAlignment="Center" Grid.Column="1" x:Name="IVC" Grid.Row="2"/>
+                        <TextBlock x:ConnectionId='44' HorizontalAlignment="Center" Grid.Column="1" x:Name="FVC" Grid.Row="3"/>
+                        <TextBlock x:ConnectionId='45' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIVC" Grid.Row="4"/>
+                        <TextBlock x:ConnectionId='46' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIVC_FVC" Grid.Row="5"/>
+                        <TextBlock x:ConnectionId='47' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV05" Grid.Row="6"/>
+                        <TextBlock x:ConnectionId='48' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV05_FVC" Grid.Row="7"/>
+                        <TextBlock x:ConnectionId='49' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV075" Grid.Row="8"/>
+                        <TextBlock x:ConnectionId='50' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV075_FVC" Grid.Row="9"/>
+                        <TextBlock x:ConnectionId='51' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1" Grid.Row="10"/>
+                        <TextBlock x:ConnectionId='52' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1R" Grid.Row="11"/>
+                        <TextBlock x:ConnectionId='53' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_VC" Grid.Row="12"/>
+                        <TextBlock x:ConnectionId='54' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_EVC" Grid.Row="13"/>
+                        <TextBlock x:ConnectionId='55' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_IVC" Grid.Row="14"/>
+                        <TextBlock x:ConnectionId='56' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_FVC" Grid.Row="15"/>
+                        <TextBlock x:ConnectionId='57' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_FIVC" Grid.Row="16"/>
+                        <TextBlock x:ConnectionId='58' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_FEV6" Grid.Row="17"/>
+                        <TextBlock x:ConnectionId='59' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_PEF" Grid.Row="18"/>
+                        <TextBlock x:ConnectionId='60' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV3" Grid.Row="19"/>
+                    </Grid>
+                    <Grid Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Rectangle Grid.Column="0" Grid.Row="0" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="0" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="1" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="2" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="3" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="2" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="3" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="4" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="5" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="4" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="5" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="6" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="7" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="6" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="7" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="8" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="9" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="8" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="9" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="10" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="11" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="10" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="11" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="12" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="13" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="12" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="13" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="14" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="15" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="14" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="15" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="16" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="17" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="16" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="17" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="18" Fill="MintCream" />
+                        <Rectangle Grid.Column="1" Grid.Row="19" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="18" Fill="MintCream" />
+                        <Rectangle Grid.Column="0" Grid.Row="19" Fill="AliceBlue" />
+                        <TextBlock HorizontalAlignment="Right" Text="FEV3/VC" />
+                        <TextBlock HorizontalAlignment="Right" Text="FEV3/FVC" Grid.Row="1"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEV6" Grid.Row="2"/>
+                        <TextBlock HorizontalAlignment="Right" Text="PEV(l/s)" Grid.Row="3"/>
+                        <TextBlock HorizontalAlignment="Right" Text="PEF(l/min)" Grid.Row="4"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF25" Grid.Row="5"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF50" Grid.Row="6"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF75" Grid.Row="7"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF0.2-1.2" Grid.Row="8"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF2575" Grid.Row="9"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF2575/FVC" Grid.Row="10"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF7586" Grid.Row="11"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIV1" Grid.Row="12"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIV1/FVC" Grid.Row="13"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIV1/FIVC" Grid.Row="14"/>
+                        <TextBlock HorizontalAlignment="Right" Text="PIF(l/S)" Grid.Row="15"/>
+                        <TextBlock HorizontalAlignment="Right" Text="PIF(L/MIN)" Grid.Row="16"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIF25" Grid.Row="17"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIF50" Grid.Row="18"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FIF75" Grid.Row="19"/>
+
+                        <TextBlock x:ConnectionId='21' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV3_VC"/>
+                        <TextBlock x:ConnectionId='22' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV3_FVC" Grid.Row="1"/>
+                        <TextBlock x:ConnectionId='23' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV6" Grid.Row="2"/>
+                        <TextBlock x:ConnectionId='24' HorizontalAlignment="Center" Grid.Column="1" x:Name="PEV_l_s" Grid.Row="3"/>
+                        <TextBlock x:ConnectionId='25' HorizontalAlignment="Center" Grid.Column="1" x:Name="PEF_l_min" Grid.Row="4"/>
+                        <TextBlock x:ConnectionId='26' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF25" Grid.Row="5"/>
+                        <TextBlock x:ConnectionId='27' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF50" Grid.Row="6"/>
+                        <TextBlock x:ConnectionId='28' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF75" Grid.Row="7"/>
+                        <TextBlock x:ConnectionId='29' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF02_12" Grid.Row="8"/>
+                        <TextBlock x:ConnectionId='30' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF2575" Grid.Row="9"/>
+                        <TextBlock x:ConnectionId='31' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF2575_FVC" Grid.Row="10"/>
+                        <TextBlock x:ConnectionId='32' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF7586" Grid.Row="11"/>
+                        <TextBlock x:ConnectionId='33' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIV1" Grid.Row="12"/>
+                        <TextBlock x:ConnectionId='34' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIV1_FVC" Grid.Row="13"/>
+                        <TextBlock x:ConnectionId='35' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIV1_FIVC" Grid.Row="14"/>
+                        <TextBlock x:ConnectionId='36' HorizontalAlignment="Center" Grid.Column="1" x:Name="PIF_l_S" Grid.Row="15"/>
+                        <TextBlock x:ConnectionId='37' HorizontalAlignment="Center" Grid.Column="1" x:Name="PIF_l_MIN" Grid.Row="16"/>
+                        <TextBlock x:ConnectionId='38' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF25" Grid.Row="17"/>
+                        <TextBlock x:ConnectionId='39' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF50" Grid.Row="18"/>
+                        <TextBlock x:ConnectionId='40' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF75" Grid.Row="19"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Column="0" Grid.Row="0" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="0" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="1" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="2" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="3" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="2" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="3" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="4" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="5" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="4" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="5" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="6" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="7" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="6" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="7" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="8" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="9" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="8" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="9" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="10" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="11" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="10" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="11" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="12" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="13" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="12" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="13" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="14" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="15" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="14" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="15" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="16" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="17" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="16" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="17" Fill="LightYellow" />
+                        <Rectangle Grid.Column="0" Grid.Row="18" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="1" Grid.Row="19" Fill="LightYellow" />
+                        <Rectangle Grid.Column="1" Grid.Row="18" Fill="AliceBlue" />
+                        <Rectangle Grid.Column="0" Grid.Row="19" Fill="LightYellow" />
+                        <TextBlock HorizontalAlignment="Right" Text="FIF50FEF50"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FEF50FIF50" Grid.Row="1"/>
+                        <TextBlock HorizontalAlignment="Right" Text="MVVind" Grid.Row="2"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FMFT" Grid.Row="3"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FET" Grid.Row="4"/>
+                        <TextBlock HorizontalAlignment="Right" Text="FRC" Grid.Row="5"/>
+                        <TextBlock HorizontalAlignment="Right" Text="TV" Grid.Row="6"/>
+                        <TextBlock HorizontalAlignment="Right" Text="RV" Grid.Row="7"/>
+                        <TextBlock HorizontalAlignment="Right" Text="TLC" Grid.Row="8"/>
+                        <TextBlock HorizontalAlignment="Right" Text="IRV" Grid.Row="9"/>
+                        <TextBlock HorizontalAlignment="Right" Text="ERV" Grid.Row="10"/>
+                        <TextBlock HorizontalAlignment="Right" Text="IC" Grid.Row="11"/>
+                        <TextBlock HorizontalAlignment="Right" Text="Rind" Grid.Row="12"/>
+                        <TextBlock HorizontalAlignment="Right" Text="LungAge" Grid.Row="13"/>
+                        <TextBlock HorizontalAlignment="Right" Text="tPEF" Grid.Row="14"/>
+                        <TextBlock HorizontalAlignment="Right" Text="Tidal_PEF" Grid.Row="15"/>
+                        <TextBlock HorizontalAlignment="Right" Text="Text" Grid.Row="16"/>
+                        <TextBlock HorizontalAlignment="Right" Text="Vext" Grid.Row="17"/>
+                        <TextBlock HorizontalAlignment="Right" Text="Vext_FVC" Grid.Row="18"/>
+
+                        <TextBlock x:ConnectionId='2' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF50FEF50"/>
+                        <TextBlock x:ConnectionId='3' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF50FIF50" Grid.Row="1"/>
+                        <TextBlock x:ConnectionId='4' HorizontalAlignment="Center" Grid.Column="1" x:Name="MVVind" Grid.Row="2"/>
+                        <TextBlock x:ConnectionId='5' HorizontalAlignment="Center" Grid.Column="1" x:Name="FMFT" Grid.Row="3"/>
+                        <TextBlock x:ConnectionId='6' HorizontalAlignment="Center" Grid.Column="1" x:Name="FET" Grid.Row="4"/>
+                        <TextBlock x:ConnectionId='7' HorizontalAlignment="Center" Grid.Column="1" x:Name="FRC" Grid.Row="5"/>
+                        <TextBlock x:ConnectionId='8' HorizontalAlignment="Center" Grid.Column="1" x:Name="TV" Grid.Row="6"/>
+                        <TextBlock x:ConnectionId='9' HorizontalAlignment="Center" Grid.Column="1" x:Name="RV" Grid.Row="7"/>
+                        <TextBlock x:ConnectionId='10' HorizontalAlignment="Center" Grid.Column="1" x:Name="TLC" Grid.Row="8"/>
+                        <TextBlock x:ConnectionId='11' HorizontalAlignment="Center" Grid.Column="1" x:Name="IRV" Grid.Row="9"/>
+                        <TextBlock x:ConnectionId='12' HorizontalAlignment="Center" Grid.Column="1" x:Name="ERV" Grid.Row="10"/>
+                        <TextBlock x:ConnectionId='13' HorizontalAlignment="Center" Grid.Column="1" x:Name="IC" Grid.Row="11"/>
+                        <TextBlock x:ConnectionId='14' HorizontalAlignment="Center" Grid.Column="1" x:Name="Rind" Grid.Row="12"/>
+                        <TextBlock x:ConnectionId='15' HorizontalAlignment="Center" Grid.Column="1" x:Name="LungAge" Grid.Row="13"/>
+                        <TextBlock x:ConnectionId='16' HorizontalAlignment="Center" Grid.Column="1" x:Name="tPEF" Grid.Row="14"/>
+                        <TextBlock x:ConnectionId='17' HorizontalAlignment="Center" Grid.Column="1" x:Name="Tidal_PEF" Grid.Row="15"/>
+                        <TextBlock x:ConnectionId='18' HorizontalAlignment="Center" Grid.Column="1" x:Name="Text" Grid.Row="16"/>
+                        <TextBlock x:ConnectionId='19' HorizontalAlignment="Center" Grid.Column="1" x:Name="Vext" Grid.Row="17"/>
+                        <TextBlock x:ConnectionId='20' HorizontalAlignment="Center" Grid.Column="1" x:Name="Vext_FVC" Grid.Row="18"/>
+
+                    </Grid>
+
+                </Grid>
+
+            </ScrollViewer>
+
+
+
         </Grid>
 
     </Grid>

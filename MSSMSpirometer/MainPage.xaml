@@ -19,7 +19,7 @@
             <!--<Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 1" Click="findDevice"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 2" Click="findDevice2"/>-->
             <Button Background="Transparent" Margin="20,10,20,10" Content="Device Connect" Click="findDevice3"/>
-            <Button Background="Transparent" Margin="20,10,20,10" Content="Check session Data" Click="datadisplay"/>
+            <Button x:Name="checkSesstion" Background="Transparent" Margin="20,10,20,10" Content="Check session Data" Click="datadisplay"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Detail Disply" Click="dataStorageDispaly"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Graph" Click="graphDisplay"/>
 

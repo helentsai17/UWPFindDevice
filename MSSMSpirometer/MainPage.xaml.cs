@@ -42,20 +42,25 @@ namespace MSSMSpirometer
         private void findDevice3(object sender, RoutedEventArgs e)
         {
             InnerFrame.Navigate(typeof(DeviceVidPid));
+            checkSesstion.IsEnabled = true;
         }
         private void datadisplay(object sender, RoutedEventArgs e)
         {
             InnerFrame.Navigate(typeof(USBDataDisplay));
+            
+            checkSesstion.IsEnabled = false;
         }
 
         private void dataStorageDispaly(object sender, RoutedEventArgs e)
         {
             InnerFrame.Navigate(typeof(DataStorage));
+            checkSesstion.IsEnabled = true;
         }
 
         private void graphDisplay(object sender, RoutedEventArgs e)
         {
             InnerFrame.Navigate(typeof(DataGraph));
+            checkSesstion.IsEnabled = true;
         }
     }
 }

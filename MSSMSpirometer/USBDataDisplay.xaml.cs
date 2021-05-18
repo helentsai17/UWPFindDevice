@@ -96,26 +96,28 @@ namespace MSSMSpirometer
             WriteData();
 
             autoremotemode();
-            
 
-          
+            StatusBlock.Text = "Please connect to the device first";
+
+
         }
 
         private async void autoReadMemoInfo()
         {
            
-             
             DataRequest("MemoryInfo");
             await ReadData();
             getNextBlock();
-           
+            StatusBlock.Text = "Device had successfully connected. you can now read the data.";
+
+
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             ReadData();
             DataRequest("RemoteExit");
-            //ReadData();
+            
             base.OnNavigatedFrom(e);
 
         }
@@ -125,9 +127,7 @@ namespace MSSMSpirometer
             await ReadData();
             System.Threading.Thread.Sleep(500);
             autoReadMemoInfo();
-            //await ReadData();
-            //getNextBlock();
-            //await ReadData();
+            
         }
 
 
@@ -173,7 +173,7 @@ namespace MSSMSpirometer
                     //ButtonBulkRead.IsEnabled = false;
                     //ButtonBulkWrite.IsEnabled = false;
 
-                    ButtonCancelAllIoTasks.IsEnabled = false;
+                    //ButtonCancelAllIoTasks.IsEnabled = false;
 
                     if (!navigatedAway)
                     {
@@ -184,10 +184,9 @@ namespace MSSMSpirometer
 
         private void UpdateButtonStates()
         {
-
             //ButtonBulkRead.IsEnabled = !runningReadWriteTask && !runningReadTask;
             //ButtonBulkWrite.IsEnabled = !runningReadWriteTask && !runningWriteTask;
-            ButtonCancelAllIoTasks.IsEnabled = IsPerformingIo();
+            //ButtonCancelAllIoTasks.IsEnabled = IsPerformingIo();
         }
         private Boolean IsPerformingIo()
         {
@@ -248,7 +247,7 @@ namespace MSSMSpirometer
             {
                 try
                 {
-                    StatusBlock.Text = "Reading...";
+                    //StatusBlock.Text = "Reading...";
 
                     // We need to set this to true so that the buttons can be updated to disable the read button. We will not be able to
                     // update the button states until after the read completes.
@@ -342,140 +341,290 @@ namespace MSSMSpirometer
             if (dataString.Contains("VMRR"))
             {
                 recordNumber = dataString;
-              //recordNum.Text = recordNumber;
+                if (recordNumber.Contains("VMRRDLT"))
+                {
+                    setdisplayBestResultToNull();
+                    AllReadRecord.IsEnabled = false;
+                    dataSave.IsEnabled = false;
+                    StatusBlock.Text = "This session has been delected";
+                }
             }
 
             if (dataString.Contains("A:"))
             {
                 subjectInfo = dataString;
-                subjectInfoText.Text = subjectInfo;
+                //subjectInfoText.Text = subjectInfo;
             }
 
             if (dataString.Contains("B:"))
             {
                 sessionInfo = dataString;
-                sessionInfoText.Text = sessionInfo;
+                //sessionInfoText.Text = sessionInfo;
+                showSessionDateTime(sessionInfo);
             }
 
             if (dataString.Contains("C:"))
             {
                 PredictedValues = dataString;
-                PredictedValuesText.Text = PredictedValues;
+                //PredictedValuesText.Text = PredictedValues;
             }
 
             if (dataString.Contains("D:"))
             {
                 LLNValues = dataString;
-                LLNValuesText.Text = LLNValues;
+                //LLNValuesText.Text = LLNValues;
             }
 
             if (dataString.Contains("E:"))
             {
                 ULNValues = dataString;
-                ULNValuesText.Text = ULNValues;
+                //ULNValuesText.Text = ULNValues;
             }
             
             if (dataString.Contains("F:"))
             {
                 BestTestResults = dataString;
-                BestTestResultsText.Text = BestTestResults;
+                //BestTestResultsText.Text = BestTestResults;
+                
+                DisplayBestTestResault(BestTestResults);
             }
 
             if (dataString.Contains("G:"))
             {
                 BestTestData = dataString;
-                BestTestDataText.Text = BestTestData;
+                //BestTestDataText.Text = BestTestData;
             }
 
             if (dataString.Contains("H:"))
             {
                 PercentageofPredicted = dataString;
-                PercentageofPredictedText.Text = PercentageofPredicted;
+                //PercentageofPredictedText.Text = PercentageofPredicted;
             }
 
             if (dataString.Contains("I:"))
             {
                 PercentagePrePost = dataString;
-                PercentagePrePostText.Text = PercentagePrePost;
+                //PercentagePrePostText.Text = PercentagePrePost;
             }
 
             if (dataString.Contains("J:"))
             {
                 Z_score= dataString;
-                Z_scoreText.Text = Z_score;
+                //Z_scoreText.Text = Z_score;
             }
 
             if (dataString.Contains("K:"))
             {
                 PrePostChange = dataString;
-                PrePostChangeText.Text = PrePostChange;
+                //PrePostChangeText.Text = PrePostChange;
             }
 
             if (dataString.Contains("L:"))
             {
                 RankedTestResult_1 = dataString;
-                RankedTestResult_1Text.Text = RankedTestResult_1;
+                //RankedTestResult_1Text.Text = RankedTestResult_1;
             }
 
             if (dataString.Contains("M:"))
             {
                 RankedTestData_1 = dataString;
-                RankedTestData_1Text.Text = RankedTestData_1;
+                //RankedTestData_1Text.Text = RankedTestData_1;
             }
 
             if (dataString.Contains("N:"))
             {
                 RankedTestResult_2 = dataString;
-                RankedTestResult_2Text.Text = RankedTestResult_2;
+                //RankedTestResult_2Text.Text = RankedTestResult_2;
             }
 
             if (dataString.Contains("O:"))
             {
                 RankedTestData_2 = dataString;
-                RankedTestData_2Text.Text = RankedTestData_2;
+                //RankedTestData_2Text.Text = RankedTestData_2;
             }
 
             if (dataString.Contains("P:"))
             {
                 RankedTestResult_3 = dataString;
-                RankedTestResult_3Text.Text = RankedTestResult_3;
+                //RankedTestResult_3Text.Text = RankedTestResult_3;
             }
 
             if (dataString.Contains("Q:"))
             {
                 RankedTestData_3 = dataString;
-                RankedTestData_3Text.Text = RankedTestData_3;
+                //RankedTestData_3Text.Text = RankedTestData_3;
             }
 
             if (dataString.Contains("R:"))
             {
                 PreBestTestResult = dataString;
-                PreBestTestResultText.Text = PreBestTestResult;
+                //PreBestTestResultText.Text = PreBestTestResult;
             }
 
             if (dataString.Contains("S:"))
             {
                 PreBestTestData = dataString;
-                PreBestTestDataText.Text = PreBestTestData;
+                //PreBestTestDataText.Text = PreBestTestData;
             }
 
             if (dataString.Contains("T:"))
             {
                 PreBestPercentageofPredicted = dataString;
-                PreBestPercentageofPredictedText.Text = PreBestPercentageofPredicted;
+                //PreBestPercentageofPredictedText.Text = PreBestPercentageofPredicted;
             }
 
             if (dataString.Contains("U:"))
             {
                 PreBestZ_score = dataString;
-                PreBestZ_scoreText.Text = PreBestZ_score;
+                //PreBestZ_scoreText.Text = PreBestZ_score;
             }
 
             if (dataString.Contains("V:"))
             {
                 InterpretationInformation = dataString;
-                InterpretationInformationText.Text = InterpretationInformation;
+                //InterpretationInformationText.Text = InterpretationInformation;
+                AllReadRecord.IsEnabled = true;
+                dataSave.IsEnabled = true;
+                StatusBlock.Text = "Session data read completed";
             }
+        }
+
+        private void showSessionDateTime(string sessionInfo)
+        {
+            var sessionInfoArray = sessionInfo.Split(",");
+            sessionDateTime.Text = sessionInfoArray[0].Substring(3);
+        }
+
+        private void setdisplayBestResultToNull()
+        {
+            VCtext.Text = "";
+            EVC.Text = "";
+            IVC.Text = "";
+            FVC.Text = "";
+            FIVC.Text = "";
+            FIVC_FVC.Text = "";
+            FEV05.Text = "";
+            FEV05_FVC.Text = "";
+            FEV075.Text = "";
+            FEV075_FVC.Text = "";
+            FEV1.Text = "";
+            FEV1R.Text = "";
+            FEV1_VC.Text = "";
+            FEV1_EVC.Text = "";
+            FEV1_IVC.Text = "";
+            FEV1_FVC.Text = "";
+            FEV1_FIVC.Text = "";
+            FEV1_FEV6.Text = "";
+            FEV1_PEF.Text = "";
+            FEV3.Text = "";
+            FEV3_VC.Text = "";
+            FEV3_FVC.Text = "";
+            FEV6.Text = "";
+            PEV_l_s.Text = "";
+            PEF_l_min.Text = "";
+            FEF25.Text = "";
+            FEF50.Text = "";
+            FEF75.Text = "";
+            FEF02_12.Text = "";
+            FEF2575.Text = "";
+            FEF2575_FVC.Text = "";
+            FEF7586.Text = "";
+            FIV1.Text = "";
+            FIV1_FVC.Text = "";
+            FIV1_FIVC.Text = "";
+            PIF_l_S.Text = "";
+            PIF_l_MIN.Text = "";
+            FIF25.Text = "";
+            FIF50.Text = "";
+            FIF75.Text = "";
+            FIF50FEF50.Text = "";
+            FEF50FIF50.Text = "";
+            MVVind.Text = "";
+            FMFT.Text = "";
+            FET.Text = "";
+            FRC.Text = "";
+            TV.Text = "";
+            RV.Text = "";
+            TLC.Text = "";
+            IRV.Text = "";
+            ERV.Text = "";
+            IC.Text = "";
+            Rind.Text = "";
+            LungAge.Text = "";
+            tPEF.Text = "";
+            Tidal_PEF.Text = "";
+            Text.Text = "";
+            Vext.Text = "";
+            Vext_FVC.Text = "";
+        }
+
+        private void DisplayBestTestResault(string result)
+        {
+            if (result != null && result != "")
+            {
+                var resultArray = result.Split(",");
+                VCtext.Text = resultArray[0].Substring(3);
+                EVC.Text = resultArray[1];
+                IVC.Text = resultArray[2];
+                FVC.Text = resultArray[3];
+                FIVC.Text = resultArray[4];
+                FIVC_FVC.Text = resultArray[5];
+                FEV05.Text = resultArray[6];
+                FEV05_FVC.Text = resultArray[7];
+                FEV075.Text = resultArray[8];
+                FEV075_FVC.Text = resultArray[9];
+                FEV1.Text = resultArray[10];
+                FEV1R.Text = resultArray[11];
+                FEV1_VC.Text = resultArray[12];
+                FEV1_EVC.Text = resultArray[13];
+                FEV1_IVC.Text = resultArray[14];
+                FEV1_FVC.Text = resultArray[15];
+                FEV1_FIVC.Text = resultArray[16];
+                FEV1_FEV6.Text = resultArray[17];
+                FEV1_PEF.Text = resultArray[18];
+                FEV3.Text = resultArray[19];
+                FEV3_VC.Text = resultArray[20];
+                FEV3_FVC.Text = resultArray[21];
+                FEV6.Text = resultArray[22];
+                PEV_l_s.Text = resultArray[23];
+                PEF_l_min.Text = resultArray[24];
+                FEF25.Text = resultArray[25];
+                FEF50.Text = resultArray[26];
+                FEF75.Text = resultArray[27];
+                FEF02_12.Text = resultArray[28];
+                FEF2575.Text = resultArray[29];
+                FEF2575_FVC.Text = resultArray[30];
+                FEF7586.Text = resultArray[31];
+                FIV1.Text = resultArray[32];
+                FIV1_FVC.Text = resultArray[33];
+                FIV1_FIVC.Text = resultArray[34];
+                PIF_l_S.Text = resultArray[35];
+                PIF_l_MIN.Text = resultArray[36];
+                FIF25.Text = resultArray[37];
+                FIF50.Text = resultArray[38];
+                FIF75.Text = resultArray[39];
+                FIF50FEF50.Text = resultArray[40];
+                FEF50FIF50.Text = resultArray[41];
+                MVVind.Text = resultArray[42];
+                FMFT.Text = resultArray[43];
+                FET.Text = resultArray[44];
+                FRC.Text = resultArray[45];
+                TV.Text = resultArray[46];
+                RV.Text = resultArray[47];
+                TLC.Text = resultArray[48];
+                IRV.Text = resultArray[49];
+                ERV.Text = resultArray[50];
+                IC.Text = resultArray[51];
+                Rind.Text = resultArray[52];
+                LungAge.Text = resultArray[53];
+                tPEF.Text = resultArray[54];
+                Tidal_PEF.Text = resultArray[55];
+                Text.Text = resultArray[56];
+                Vext.Text = resultArray[57];
+                Vext_FVC.Text = resultArray[58];
+
+            }
+          
         }
 
         private async void PrintTotalReadWriteBytes()
@@ -635,7 +784,7 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
         }
 
         #endregion
@@ -791,7 +940,7 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+           // PrintTotalReadWriteBytes();
         }
         #endregion
 
@@ -828,7 +977,8 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+        
+           //PrintTotalReadWriteBytes();
         }
 
 
@@ -868,7 +1018,7 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
         }
 
 
@@ -906,7 +1056,7 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
         }
         #endregion
 
@@ -921,7 +1071,7 @@ namespace MSSMSpirometer
             {
                 try
                 {
-                    StatusBlock.Text = "Writing...";
+                    //StatusBlock.Text = "Reading...";
 
                     runningWriteTask = true;
                     UpdateButtonStates();
@@ -1074,7 +1224,7 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+           // PrintTotalReadWriteBytes();
         }
 
         #endregion
@@ -1138,7 +1288,7 @@ namespace MSSMSpirometer
 
             totalBytesWritten += bytesWritten;
 
-            PrintTotalReadWriteBytes();
+            //PrintTotalReadWriteBytes();
         }
 
         #endregion
@@ -1176,7 +1326,10 @@ namespace MSSMSpirometer
             {
                 try
                 {
-                    StatusBlock.Text = "Writing...";
+                    StatusBlock.Text = "Reading...";
+
+                    AllReadRecord.IsEnabled = false;
+                    dataSave.IsEnabled = false;
 
                     runningWriteTask = true;
                     UpdateButtonStates();
@@ -1213,7 +1366,7 @@ namespace MSSMSpirometer
             {
                 try
                 {
-                    StatusBlock.Text = "Writing...";
+                    //StatusBlock.Text = "Writing...";
 
                     runningWriteTask = true;
                     UpdateButtonStates();
@@ -1247,10 +1400,13 @@ namespace MSSMSpirometer
             {
                 try
                 {
-                  //TestData.Text = "Reading...";
+                    //TestData.Text = "Reading...";
+
+                    //StatusBlock.Text = "Reading...";
 
                     UInt32 bulkInPipeIndex = 0;
                     UInt32 bytesToRead = 2048;
+                    
 
                     await autoBulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
                 }
@@ -1291,7 +1447,7 @@ namespace MSSMSpirometer
 
             totalBytesRead += bytesRead;
 
-            PrintTotalReadWriteBytes();
+           // PrintTotalReadWriteBytes();
 
             IBuffer buffer = reader.ReadBuffer(bytesRead);
             string dataString;
@@ -1342,6 +1498,7 @@ namespace MSSMSpirometer
             {
                 recordcount += 1;
                 RecordNum.Text = recordcount.ToString();
+        
             }
             
         }
@@ -1352,6 +1509,7 @@ namespace MSSMSpirometer
             {
                 recordcount -= 1;
                 RecordNum.Text = recordcount.ToString();
+             
             }
                 
         }

@@ -128,6 +128,9 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="MSSMSpirometer.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="Fill" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="NineGrid" />

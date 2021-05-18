@@ -19,7 +19,7 @@
             <!--<Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 1" Click="findDevice"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Find device test 2" Click="findDevice2"/>-->
             <Button x:ConnectionId='3' Background="Transparent" Margin="20,10,20,10" Content="Device Connect"                    />
-            <Button x:ConnectionId='4' Background="Transparent" Margin="20,10,20,10" Content="Check session Data"                    />
+            <Button x:ConnectionId='4' x:Name="checkSesstion" Background="Transparent" Margin="20,10,20,10" Content="Check session Data"                    />
             <Button x:ConnectionId='5' Background="Transparent" Margin="20,10,20,10" Content="Detail Disply"                           />
             <Button x:ConnectionId='6' Background="Transparent" Margin="20,10,20,10" Content="Graph"                     />
 

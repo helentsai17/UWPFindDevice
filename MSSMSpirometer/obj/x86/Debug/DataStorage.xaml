@@ -171,13 +171,13 @@
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,20">
-            <Button x:ConnectionId='61' Margin="0,0,10,0" Content="Prediced Value"                             />
-            <Button x:ConnectionId='62' Margin="0,0,10,0" Content="Best Result"                         />
-            <Button x:ConnectionId='63' Margin="0,0,10,0" Content="Rank Test 1"                        />
-            <Button x:ConnectionId='64' Margin="0,0,10,0" Content="Rank Test 2"                        />
-            <Button x:ConnectionId='65' Margin="0,0,10,0" Content="Rank Tsat 3"                        />
-            <Button x:ConnectionId='66' Margin="0,0,10,0" Content="LLN Values"                  />
-            <Button x:ConnectionId='67' Margin="0,0,10,0" Content="ULN Values"                  />
+            <Button x:ConnectionId='61' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Prediced Value"                             />
+            <Button x:ConnectionId='62' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Best Result"                         />
+            <Button x:ConnectionId='63' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Test 1"                        />
+            <Button x:ConnectionId='64' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Test 2"                        />
+            <Button x:ConnectionId='65' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Tsat 3"                        />
+            <Button x:ConnectionId='66' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="LLN Values"                  />
+            <Button x:ConnectionId='67' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="ULN Values"                  />
         </StackPanel>
         
         <Grid Grid.Row="3">

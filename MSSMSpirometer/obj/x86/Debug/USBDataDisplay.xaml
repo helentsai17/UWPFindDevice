@@ -51,7 +51,7 @@
                                         <Button x:ConnectionId='75' x:Name="nextRecord"                           Background="Transparent">
                                             <Image Source="/Assets/right.png" NineGrid="1,0,0,0" Width="30"/>
                                         </Button>
-                                        <Button x:ConnectionId='76' x:Name="AllReadRecord" Content="read record"                            />
+                                        <Button x:ConnectionId='76' Style="{StaticResource ButtonStyle}" x:Name="AllReadRecord" Content="read record"                            />
                                     </StackPanel>
                                   
                                     <!--<Button x:Name="MemoryInfo" Content="6.4 Memory Info" Click="MemoryInfo_Click"/>-->
@@ -67,7 +67,7 @@
                                     
                                 </StackPanel >
                                 <StackPanel Grid.Column="2">
-                                    <Button x:ConnectionId='72' x:Name="dataSave" Content="save and read detail"                       />
+                                    <Button x:ConnectionId='72' x:Name="dataSave" Style="{StaticResource ButtonStyle}" Content="save and read detail"                       />
                                     <!--<Button x:Name="RemoteExit" Content="6.3 Remote Exit" Click="RemoteExit_Click"/>-->
                                    
                                 </StackPanel>

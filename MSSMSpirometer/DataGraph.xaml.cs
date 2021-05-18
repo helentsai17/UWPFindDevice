@@ -102,7 +102,7 @@ namespace MSSMSpirometer
                // expiratorycurve.Text = dataformat[7];
                 //inspiratorytime.Text = dataformat[8];
                 //fivcg.Text = dataformat[9];
-                inspiratorycurve.Text = dataformat[10];
+                //inspiratorycurve.Text = dataformat[10];
                 ECurveData = dataformat[7];
                 ICurveData = dataformat[10];
                 
@@ -121,17 +121,17 @@ namespace MSSMSpirometer
             if (rankData2 != null && rankData2 != "")
             {
                 var rankdata2Array = rankData2.Split(",");
-                dataoftest.Text = rankdata2Array[0];
-                testindex.Text = rankdata2Array[1];
-                testrank.Text = rankdata2Array[2];
-                testqualityflags.Text = rankdata2Array[3];
-                acceptabilityflags.Text = rankdata2Array[4];
-                fetg.Text = rankdata2Array[5];
-                fvcg.Text = rankdata2Array[6];
-                expiratorycurve.Text = rankdata2Array[7];
-                inspiratorytime.Text = rankdata2Array[8];
-                fivcg.Text = rankdata2Array[9];
-                inspiratorycurve.Text = rankdata2Array[10];
+                dataoftest.Text = rankdata2Array[0].Substring(3);
+                //testindex.Text = rankdata2Array[1];
+                //testrank.Text = rankdata2Array[2];
+                //testqualityflags.Text = rankdata2Array[3];
+                //acceptabilityflags.Text = rankdata2Array[4];
+                //fetg.Text = rankdata2Array[5];
+                //fvcg.Text = rankdata2Array[6];
+                //expiratorycurve.Text = rankdata2Array[7];
+                //inspiratorytime.Text = rankdata2Array[8];
+                //fivcg.Text = rankdata2Array[9];
+                //inspiratorycurve.Text = rankdata2Array[10];
                 ECurveData2 = rankdata2Array[7];
                 ICurveData2 = rankdata2Array[10];
             }

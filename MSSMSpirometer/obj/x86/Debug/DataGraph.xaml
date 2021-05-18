@@ -35,29 +35,29 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="data of test"/>
-            <TextBlock Grid.Row="1" Text="test index"/>
-            <TextBlock Grid.Row="2" Text="test rank"/>
-            <TextBlock Grid.Row="3" Text="test quality flags"/>
-            <TextBlock Grid.Row="4" Text="acceptability flags"/>
-            <TextBlock Grid.Row="5" Text="fet"/>
-            <TextBlock Grid.Row="6" Text="fvc"/>
-            <TextBlock Grid.Row="7" Text="expiratory curve"/>
-            <TextBlock Grid.Row="8" Text="inspiratory time"/>
-            <TextBlock Grid.Row="9" Text="fivc"/>
-            <TextBlock Grid.Row="10" Text="inspiratory curve"/>
+            <TextBlock Grid.Row="0" Text="data of Test"/>
+            <!--<TextBlock Grid.Row="1" Text="Test Index"/>
+            <TextBlock Grid.Row="2" Text="Test Rank"/>
+            <TextBlock Grid.Row="3" Text="Test Quality Flags"/>
+            <TextBlock Grid.Row="4" Text="Acceptability Flags"/>
+            <TextBlock Grid.Row="5" Text="FET"/>
+            <TextBlock Grid.Row="6" Text="FVC"/>-->
+            <!--<TextBlock Grid.Row="7" Text="Expiratory curve"/>-->
+            <!--<TextBlock Grid.Row="8" Text="Inspiratory time"/>
+            <TextBlock Grid.Row="9" Text="FIVC"/>-->
+            <!--<TextBlock Grid.Row="10" Text="Inspiratory curve"/>-->
 
             <TextBlock x:ConnectionId='5' Grid.Row="0" Grid.Column="1" x:Name="dataoftest"/>
-            <TextBlock x:ConnectionId='6' Grid.Row="1" Grid.Column="1" x:Name="testindex"/>
-            <TextBlock x:ConnectionId='7' Grid.Row="2" Grid.Column="1" x:Name="testrank"/>
-            <TextBlock x:ConnectionId='8' Grid.Row="3" Grid.Column="1" x:Name="testqualityflags"/>
-            <TextBlock x:ConnectionId='9' Grid.Row="4" Grid.Column="1" x:Name="acceptabilityflags"/>
-            <TextBlock x:ConnectionId='10' Grid.Row="5" Grid.Column="1" x:Name="fetg"/>
-            <TextBlock x:ConnectionId='11' Grid.Row="6" Grid.Column="1" x:Name="fvcg"/>
-            <TextBlock x:ConnectionId='12' Grid.Row="7" Grid.Column="1" x:Name="expiratorycurve" TextWrapping="wrap"/>
-            <TextBlock x:ConnectionId='13' Grid.Row="8" Grid.Column="1" x:Name="inspiratorytime"/>
-            <TextBlock x:ConnectionId='14' Grid.Row="9" Grid.Column="1" x:Name="fivcg"/>
-            <TextBlock x:ConnectionId='15' Grid.Row="10" Grid.Column="1" x:Name="inspiratorycurve" TextWrapping="wrap"/>
+            <!--<TextBlock Grid.Row="1" Grid.Column="1" x:Name="testindex"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="testrank"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="testqualityflags"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" x:Name="acceptabilityflags"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" x:Name="fetg"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" x:Name="fvcg"/>-->
+            <!--<TextBlock Grid.Row="7" Grid.Column="1" x:Name="expiratorycurve" TextWrapping="wrap"/>-->
+            <!--<TextBlock Grid.Row="8" Grid.Column="1" x:Name="inspiratorytime"/>
+            <TextBlock Grid.Row="9" Grid.Column="1" x:Name="fivcg"/>-->
+            <!--<TextBlock Grid.Row="10" Grid.Column="1" x:Name="inspiratorycurve" TextWrapping="wrap"/>-->
         </Grid>
 
 

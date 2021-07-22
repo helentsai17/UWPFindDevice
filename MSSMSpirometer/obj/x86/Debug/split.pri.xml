@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3" version="1.0" primary="true">
+		<Qualifiers>
+			<AlternateForm>UNPLATED</AlternateForm>
+			<Language>EN-US</Language>
+			<Scale>200</Scale>
+			<TargetSize>24</TargetSize>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/App.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="BlankPage.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/BlankPage.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="BlankPage1.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/BlankPage1.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataGraph.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/DataGraph.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataStorage.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/DataStorage.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeviceVidPid.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/DeviceVidPid.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MainPage.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/MainPage.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MSSMSpirometer.xr.xml" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/MSSMSpirometer.xr.xml">
+				<Candidate type="Path">
+					<Value>MSSMSpirometer.xr.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="USBDataDisplay.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/USBDataDisplay.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="left.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/left.png">
+					<Candidate type="Path">
+						<Value>Assets\left.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LockScreenLogo.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/LockScreenLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\LockScreenLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="right.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/right.png">
+					<Candidate type="Path">
+						<Value>Assets\right.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/SplashScreen.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\SplashScreen.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square150x150Logo.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/Square150x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square150x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square44x44Logo.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/Square44x44Logo.png">
+					<Candidate qualifiers="TargetSize-24, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/StoreLogo.png"/>
+				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Assets/Wide310x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Wide310x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Properties">
+				<NamedResource name="Default.rd.xml" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/Properties/Default.rd.xml">
+					<Candidate type="Path">
+						<Value>Properties\Default.rd.xml</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinMetadata">
+				<NamedResource name="Windows.winmd" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinMetadata/Windows.winmd">
+					<Candidate type="Path">
+						<Value>WinMetadata\Windows.winmd</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinRTXamlToolkit">
+				<NamedResource name="WinRTXamlToolkit.xr.xml" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/WinRTXamlToolkit.xr.xml">
+					<Candidate type="Path">
+						<Value>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Controls">
+					<ResourceMapSubtree name="AlternativeFrame">
+						<NamedResource name="AlternativeFrame.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/AlternativeFrame/AlternativeFrame.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="AnimatingContainer">
+						<NamedResource name="AnimatingContainer.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/AnimatingContainer/AnimatingContainer.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="AutoCompleteTextBox">
+						<NamedResource name="AutoCompleteTextBox.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/AutoCompleteTextBox/AutoCompleteTextBox.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="CameraCaptureControl">
+						<NamedResource name="CameraCaptureControl.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/CameraCaptureControl/CameraCaptureControl.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="CascadingImageControl">
+						<NamedResource name="CascadingImageControl.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/CascadingImageControl/CascadingImageControl.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="CascadingTextBlock">
+						<NamedResource name="CascadingTextBlock.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/CascadingTextBlock/CascadingTextBlock.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ColorPicker">
+						<NamedResource name="ColorPicker.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/ColorPicker/ColorPicker.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="CountdownControl">
+						<NamedResource name="CountdownControl.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/CountdownControl/CountdownControl.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="CustomAppBar">
+						<NamedResource name="CustomAppBar.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/CustomAppBar/CustomAppBar.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="CustomGridSplitter">
+						<NamedResource name="CustomGridSplitter.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/CustomGridSplitter/CustomGridSplitter.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="DelayedLoadControl">
+						<NamedResource name="DelayedLoadControl.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/DelayedLoadControl/DelayedLoadControl.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="FocusVisualizer">
+						<NamedResource name="FocusVisualizer.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/FocusVisualizer/FocusVisualizer.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="FxContentControl">
+						<NamedResource name="FxContentControl.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/FxContentControl/FxContentControl.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ImageButton">
+						<NamedResource name="ImageButton.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/ImageButton/ImageButton.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ImageToggleButton">
+						<NamedResource name="ImageToggleButton.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/ImageToggleButton/ImageToggleButton.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="InputDialog">
+						<NamedResource name="InputDialog.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/InputDialog/InputDialog.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ListItemButton">
+						<NamedResource name="ListItemButton.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/ListItemButton/ListItemButton.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="NumericUpDown">
+						<NamedResource name="NumericUpDown.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/NumericUpDown/NumericUpDown.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ToolStrip">
+						<NamedResource name="ToolStrip.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/ToolStrip/ToolStrip.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ToolWindow">
+						<NamedResource name="ToolWindow.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/ToolWindow/ToolWindow.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="TreeView">
+						<NamedResource name="TreeView.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/TreeView/TreeView.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="TreeViewItem.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/TreeView/TreeViewItem.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="TreeViewMouse.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/TreeView/TreeViewMouse.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="TreeViewTouch.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/TreeView/TreeViewTouch.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="WatermarkPasswordBox">
+						<NamedResource name="WatermarkPasswordBox.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/WatermarkPasswordBox/WatermarkPasswordBox.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="WatermarkTextBox">
+						<NamedResource name="WatermarkTextBox.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/WatermarkTextBox/WatermarkTextBox.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="WebBrowser">
+						<NamedResource name="WebBrowser.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Controls/WebBrowser/WebBrowser.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Properties">
+					<NamedResource name="WinRTXamlToolkit.rd.xml" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Properties/WinRTXamlToolkit.rd.xml">
+						<Candidate type="Path">
+							<Value>WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Themes">
+					<NamedResource name="Generic.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit/Themes/Generic.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinRTXamlToolkit.Controls.DataVisualization">
+				<NamedResource name="WinRTXamlToolkit.Controls.DataVisualization.xr.xml" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/WinRTXamlToolkit.Controls.DataVisualization.xr.xml">
+					<Candidate type="Path">
+						<Value>WinRTXamlToolkit.Controls.DataVisualization\WinRTXamlToolkit.Controls.DataVisualization.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Charting">
+					<ResourceMapSubtree name="Axis">
+						<NamedResource name="AxisLabel.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Axis/AxisLabel.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="DateTimeAxisLabel.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Axis/DateTimeAxisLabel.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="DisplayAxis.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Axis/DisplayAxis.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="NumericAxisLabel.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Axis/NumericAxisLabel.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="RangeAxis.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Axis/RangeAxis.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="Chart">
+						<NamedResource name="Chart.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Chart/Chart.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="DataPoint">
+						<NamedResource name="AreaDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/AreaDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="BarDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/BarDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="BubbleDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/BubbleDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="ColumnDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/ColumnDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="LineDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/LineDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="PieDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/PieDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="ScatterDataPoint.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/DataPoint/ScatterDataPoint.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="Primitives">
+						<NamedResource name="DelegatingListBox.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Primitives/DelegatingListBox.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="Series">
+						<NamedResource name="AreaSeries.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Series/AreaSeries.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="DataPointSeries.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Series/DataPointSeries.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="DefinitionSeries.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Series/DefinitionSeries.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="LegendItem.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Series/LegendItem.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="LineSeries.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Series/LineSeries.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="PieSeries.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Charting/Series/PieSeries.xbf">
+							<Candidate type="EmbeddedData">
+								<Base64Value>[Embedded Binary Data]</Base64Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Legend">
+					<NamedResource name="Legend.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Legend/Legend.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Properties">
+					<NamedResource name="WinRTXamlToolkit.Controls.DataVisualization.rd.xml" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Properties/WinRTXamlToolkit.Controls.DataVisualization.rd.xml">
+						<Candidate type="Path">
+							<Value>WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Themes">
+					<NamedResource name="Generic.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Themes/Generic.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Title">
+					<NamedResource name="Title.xbf" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/Files/WinRTXamlToolkit.Controls.DataVisualization/Title/Title.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources">
+			<NamedResource name="Chart_Axes_SetterNotSupported" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Chart_Axes_SetterNotSupported">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Changing the Chart's Axes property is not supported; changes to the collection should be made with its .Add/.Remove methods instead.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Chart_AxisLocationChanged_CantBeChangedToAutoWhenHostedInsideOfASeriesHost" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Chart_AxisLocationChanged_CantBeChangedToAutoWhenHostedInsideOfASeriesHost">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Axis location cannot be changed to auto when hosted inside of a series host.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Chart_Series_SetterNotSupported" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Chart_Series_SetterNotSupported">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Changing the Chart's Series property is not supported; changes to the collection should be made with its .Add/.Remove methods instead.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataPointSeriesDropTarget_set_Content_ContentMustBeAChart" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DataPointSeriesDropTarget_set_Content_ContentMustBeAChart">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The content property must be set to a Chart object.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataPointSeriesWithAxes_GetAxes_AssignedDependentAxisCannotBeUsed" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DataPointSeriesWithAxes_GetAxes_AssignedDependentAxisCannotBeUsed">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Assigned dependent axis cannot be used. This may be due to an unset Orientation property for the axis or a type mismatch between the values being plotted and those supported by the axis.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataPointSeriesWithAxes_GetAxes_AssignedIndependentAxisCannotBeUsed" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DataPointSeriesWithAxes_GetAxes_AssignedIndependentAxisCannotBeUsed">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Assigned independent axis cannot be used. This may be due to an unset Orientation property for the axis.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataPointSeriesWithAxes_NoSuitableAxisAvailableForPlottingDependentValue" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DataPointSeriesWithAxes_NoSuitableAxisAvailableForPlottingDependentValue">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>No suitable axis is available for plotting the dependent value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataPointSeriesWithAxes_ThisSeriesDoesNotSupportRadialAxes" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DataPointSeriesWithAxes_ThisSeriesDoesNotSupportRadialAxes">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>This series does not support radial axes.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DefinitionSeries_EnsureAxes_MissingDependentValueBinding" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DefinitionSeries_EnsureAxes_MissingDependentValueBinding">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>A SeriesDefinition does not have its DependentValueBinding or DependentValuePath properties set; unable to determine the source for dependent values. Please use either of these properties to identify the data model property corresponding to the dependent values.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DefinitionSeries_EnsureAxes_MissingIndependentValueBinding" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DefinitionSeries_EnsureAxes_MissingIndependentValueBinding">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>A SeriesDefinition does not have its IndependentValueBinding or IndependentValuePath properties set; unable to determine the source for independent values. Please use either of these properties to identify the data model property corresponding to the independent values.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DefinitionSeries_SeriesDefinitions_SetterNotSupported" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DefinitionSeries_SeriesDefinitions_SetterNotSupported">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Changing the SeriesDefinitions property of a DefinitionSeries is not supported; changes to the collection should be made with its .Add/.Remove methods instead.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DisplayAxis_GetLength_CannotDetermineTheLengthOfAnAxisWithAnOrientationOfNone" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/DisplayAxis_GetLength_CannotDetermineTheLengthOfAnAxisWithAnOrientationOfNone">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Cannot determine the size of an axis without an orientation.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="EdgePanel_OnEdgePropertyChanged" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/EdgePanel_OnEdgePropertyChanged">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Attempt to set Edge property to an invalid value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Interpolator_IncludeInRange_DataRangeBindingNotIConvertible" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Interpolator_IncludeInRange_DataRangeBindingNotIConvertible">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The DataRangeBinding property of the Interpolator must be bound to an IConvertible object.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="RangeAxis_MaximumValueMustBeLargerThanOrEqualToMinimumValue" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/RangeAxis_MaximumValueMustBeLargerThanOrEqualToMinimumValue">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The maximum value must be larger than or equal to the minimum value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="RangeAxis_MinimumValueMustBeLargerThanOrEqualToMaximumValue" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/RangeAxis_MinimumValueMustBeLargerThanOrEqualToMaximumValue">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The minimum value must be smaller than or equal to the maximum value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Range_ctor_MaximumValueMustBeLargerThanOrEqualToMinimumValue" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Range_ctor_MaximumValueMustBeLargerThanOrEqualToMinimumValue">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The maximum value must be larger than or equal to the minimum value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Range_get_Maximum_CannotReadTheMaximumOfAnEmptyRange" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Range_get_Maximum_CannotReadTheMaximumOfAnEmptyRange">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>"Cannot read the Maximum of an empty range."</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Range_get_Minimum_CannotReadTheMinimumOfAnEmptyRange" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Range_get_Minimum_CannotReadTheMinimumOfAnEmptyRange">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>"Cannot read the Minimum of an empty range."</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Range_ToString_Data" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Range_ToString_Data">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>[{0},{1}]</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Range_ToString_NoData" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Range_ToString_NoData">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>No Data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ReadOnlyObservableCollection_CollectionIsReadOnly" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/ReadOnlyObservableCollection_CollectionIsReadOnly">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Collection is read-only.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ResourceDictionaryEnumerator_CantResetEnumeratorResetDispenserInstead" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/ResourceDictionaryEnumerator_CantResetEnumeratorResetDispenserInstead">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Cannot reset a ResourceDictionaryEnumerator; reset the ResourceDictionaryDispenser instead.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SeriesDefinition_SeriesHost_InvalidParent" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/SeriesDefinition_SeriesHost_InvalidParent">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>A SeriesDefinition instance's SeriesHost property may only be set to an instance of the DefinitionSeries class; other SeriesHost types are not supported.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SeriesHostAxesCollection_InvalidAttemptToRemovePermanentAxisFromSeriesHost" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/SeriesHostAxesCollection_InvalidAttemptToRemovePermanentAxisFromSeriesHost">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Invalid attempt to remove permanent axis from axis collection.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SeriesHostAxesCollection_RemoveItem_AxisCannotBeRemovedFromASeriesHostWhenOneOrMoreSeriesAreListeningToIt" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/SeriesHostAxesCollection_RemoveItem_AxisCannotBeRemovedFromASeriesHostWhenOneOrMoreSeriesAreListeningToIt">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>An axis cannot be removed from a series host when one or more hosted series is listening to it.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Series_OnGlobalSeriesIndexPropertyChanged_UntitledSeriesFormatString" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Series_OnGlobalSeriesIndexPropertyChanged_UntitledSeriesFormatString">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Series {0}</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Series_SeriesHost_SeriesHostPropertyNotNull" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/Series_SeriesHost_SeriesHostPropertyNotNull">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>A series cannot be added to more than one series host.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TreeMap_BuildTreeMapTree_TemplateNotSet" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/TreeMap_BuildTreeMapTree_TemplateNotSet">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Either ItemTemplate must be set or TreeMapItemDefinitionSelector must return a non-null template.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TreeMap_CreateChildren_InterpolatorBindingNotSet" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/TreeMap_CreateChildren_InterpolatorBindingNotSet">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The value of PropertyBinding property of an interpolator cannot be null.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TreeMap_Interpolators_SetterNotSupported" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/TreeMap_Interpolators_SetterNotSupported">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Changing the TreeMap's Interpolators Property is not supported; changes to the collection should be made with its .Add/.Remove methods instead.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="UniqueObservableCollection_InvalidAttemptToInsertADuplicateItem" uri="ms-resource://a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3/WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources/UniqueObservableCollection_InvalidAttemptToInsertADuplicateItem">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Invalid attempt to insert a duplicate item.</Value>
+				</Candidate>
+			</NamedResource>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

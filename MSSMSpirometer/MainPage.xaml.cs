@@ -62,5 +62,11 @@ namespace MSSMSpirometer
             InnerFrame.Navigate(typeof(DataGraph));
             checkSesstion.IsEnabled = true;
         }
+
+        private void RawDataDisplay(object sender, RoutedEventArgs e)
+        {
+            InnerFrame.Navigate(typeof(ReadRawData));
+           
+        }
     }
 }

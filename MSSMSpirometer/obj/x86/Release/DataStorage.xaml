@@ -1,0 +1,439 @@
+﻿<Page
+    x:Class="MSSMSpirometer.DataStorage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MSSMSpirometer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+   
+        <Grid Margin="30,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Left" Text="Subject ID" Grid.Row="0"/>
+                <TextBlock HorizontalAlignment="Left" Text="Accuracy Data Time" Grid.Row="1"/>
+                <TextBlock HorizontalAlignment="Left" Text="Calibration Date Time" Grid.Row="2"/>
+                <TextBlock HorizontalAlignment="Left" Text="Session Data Time" Grid.Row="3"/>
+                <TextBlock HorizontalAlignment="Left" Text="Session Type" Grid.Row="4"/>
+
+                <TextBlock x:ConnectionId='87' HorizontalAlignment="Left" Grid.Column="1" x:Name="SubjectID" Grid.Row="0"/>
+                <TextBlock x:ConnectionId='88' HorizontalAlignment="Left" Grid.Column="1" x:Name="AccuracyDataTime" Grid.Row="1"/>
+                <TextBlock x:ConnectionId='89' HorizontalAlignment="Left" Grid.Column="1" x:Name="CalibrationDateTime" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='90' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionDataTime" Grid.Row="3"/>
+                <TextBlock x:ConnectionId='91' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionType" Grid.Row="4"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Left" Text="Session Posture" Grid.Row="0"/>
+                <TextBlock HorizontalAlignment="Left" Text="Session Grade" Grid.Row="1"/>
+                <TextBlock HorizontalAlignment="Left" Text="Pre-Session Grade" Grid.Row="2"/>
+                <TextBlock HorizontalAlignment="Left" Text="Number of Blows Performed" Grid.Row="3"/>
+                <TextBlock HorizontalAlignment="Left" Text="FEV1 Repeatability" Grid.Row="4"/>
+
+                <TextBlock x:ConnectionId='82' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionPosture" Grid.Row="0"/>
+                <TextBlock x:ConnectionId='83' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionGrade" Grid.Row="1"/>
+                <TextBlock x:ConnectionId='84' HorizontalAlignment="Left" Grid.Column="1" x:Name="PreSessionGrade" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='85' HorizontalAlignment="Left" Grid.Column="1" x:Name="NumberofBlowsPerformed" Grid.Row="3"/>
+                <TextBlock x:ConnectionId='86' HorizontalAlignment="Left" Grid.Column="1" x:Name="FEV1Repeatability" Grid.Row="4"/>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Left" Text="FEV1 Repeatability %" Grid.Row="0"/>
+                <TextBlock HorizontalAlignment="Left" Text="PEF Repeatability" Grid.Row="1"/>
+                <TextBlock HorizontalAlignment="Left" Text="PEF Repeatability %" Grid.Row="2"/>
+                <TextBlock HorizontalAlignment="Left" Text="FVC Repeatability" Grid.Row="3"/>
+                <TextBlock HorizontalAlignment="Left" Text="FVC Repeatability %" Grid.Row="4"/>
+
+                <TextBlock x:ConnectionId='77' HorizontalAlignment="Left" Grid.Column="1" x:Name="FEV1RepeatabilityP" Grid.Row="0"/>
+                <TextBlock x:ConnectionId='78' HorizontalAlignment="Left" Grid.Column="1" x:Name="PEFRepeatability" Grid.Row="1"/>
+                <TextBlock x:ConnectionId='79' HorizontalAlignment="Left" Grid.Column="1" x:Name="PEFRepeatabilityP" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='80' HorizontalAlignment="Left" Grid.Column="1" x:Name="FVCRepeatability" Grid.Row="3"/>
+                <TextBlock x:ConnectionId='81' HorizontalAlignment="Left" Grid.Column="1" x:Name="FVCRepeatabilityP" Grid.Row="4"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="15" FontStyle="Italic" Text="Person Information" Margin="0,0,0,5"/>
+            <Grid Grid.Row="1"  Margin="30, 0, 0, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Text="Date of Birth" Grid.Row="0"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Gender" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Age" Grid.Row="2"/>
+
+                    <TextBlock x:ConnectionId='74' HorizontalAlignment="Left" Grid.Column="1" x:Name="DateofBirth" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='75' HorizontalAlignment="Left" Grid.Column="1" x:Name="Gender" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='76' HorizontalAlignment="Left" Grid.Column="1" x:Name="Age" Grid.Row="2"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Text="Height" Grid.Row="0"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Weight" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Somking History" Grid.Row="2"/>
+
+                    <TextBlock x:ConnectionId='71' HorizontalAlignment="Left" Grid.Column="1" x:Name="HeightText" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='72' HorizontalAlignment="Left" Grid.Column="1" x:Name="Weight" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='73' HorizontalAlignment="Left" Grid.Column="1" x:Name="SomkingHistory" Grid.Row="2"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Text="Population Group" Grid.Row="0"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Regression Set" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Correction Factor" Grid.Row="2"/>
+
+                    <TextBlock x:ConnectionId='68' HorizontalAlignment="Left" Grid.Column="1" x:Name="PopulationGroup" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='69' HorizontalAlignment="Left" Grid.Column="1" x:Name="RegressionSet" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='70' HorizontalAlignment="Left" Grid.Column="1" x:Name="CorrectionFactor" Grid.Row="2"/>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,20">
+            <Button x:ConnectionId='61' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Prediced Value"                             />
+            <Button x:ConnectionId='62' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Best Result"                         />
+            <Button x:ConnectionId='63' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Test 1"                        />
+            <Button x:ConnectionId='64' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Test 2"                        />
+            <Button x:ConnectionId='65' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Tsat 3"                        />
+            <Button x:ConnectionId='66' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="LLN Values"                  />
+            <Button x:ConnectionId='67' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="ULN Values"                  />
+        </StackPanel>
+        
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <!--<TextBlock Grid.Column="0" Margin="10" Text="Memory Information"/>
+            <TextBlock x:Name="OutputMemoInfo" Margin="10" HorizontalAlignment="Left"  Grid.Column="1" Width="300"/>-->
+
+            <!--<TextBlock Grid.Column="0"  Grid.Row="1" Margin="10" Text="Best Test Result"/>
+            <TextBlock x:Name="BestTestResultText" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />-->
+            
+            <!--<TextBlock Grid.Column="0"  Grid.Row="2" Margin="10" Text="Rank Test Result 1"/>
+            <TextBlock x:Name="RankTestResult_1" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" />
+            
+            <TextBlock Grid.Column="0"  Grid.Row="3" Margin="10" Text="Rank Test Result 2"/>
+            <TextBlock x:Name="RankTestResult_2" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" />
+
+            <TextBlock Grid.Column="0"  Grid.Row="4" Margin="10" Text="Rank Test Result 3"/>
+            <TextBlock x:Name="RankTestResult_3" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" />-->
+
+            <!--<TextBlock Grid.Column="0"  Grid.Row="1" Margin="10" Text="Best Test Result"/>
+            <TextBlock x:Name="BestTestResultText" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />-->
+
+            <!--<TextBlock Grid.Column="0"  Grid.Row="6" Margin="10" Text="Session Information"/>
+            <TextBlock x:Name="SessionInfo" Margin="10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="6" />-->
+        </Grid>
+        
+        <ScrollViewer Grid.Row="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="VC"/>
+                    <TextBlock HorizontalAlignment="Center" Text="EVC" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Center" Text="IVC" Grid.Row="2"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FVC" Grid.Row="3"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIVC" Grid.Row="4"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIVC/FVC" Grid.Row="5"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV0.5" Grid.Row="6"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV0.5/FVC" Grid.Row="7"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV0.75" Grid.Row="8"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV0.75/FVC" Grid.Row="9"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1" Grid.Row="10"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1R" Grid.Row="11"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/VC" Grid.Row="12"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/EVC" Grid.Row="13"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/IVC" Grid.Row="14"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/FVC" Grid.Row="15"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/FIVC" Grid.Row="16"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/FEV6" Grid.Row="17"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV1/PEF" Grid.Row="18"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV3" Grid.Row="19"/>
+
+                    <TextBlock x:ConnectionId='41' HorizontalAlignment="Center" Grid.Column="1" x:Name="VCtext"/>
+                    <TextBlock x:ConnectionId='42' HorizontalAlignment="Center" Grid.Column="1" x:Name="EVC" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='43' HorizontalAlignment="Center" Grid.Column="1" x:Name="IVC" Grid.Row="2"/>
+                    <TextBlock x:ConnectionId='44' HorizontalAlignment="Center" Grid.Column="1" x:Name="FVC" Grid.Row="3"/>
+                    <TextBlock x:ConnectionId='45' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIVC" Grid.Row="4"/>
+                    <TextBlock x:ConnectionId='46' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIVC_FVC" Grid.Row="5"/>
+                    <TextBlock x:ConnectionId='47' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV05" Grid.Row="6"/>
+                    <TextBlock x:ConnectionId='48' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV05_FVC" Grid.Row="7"/>
+                    <TextBlock x:ConnectionId='49' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV075" Grid.Row="8"/>
+                    <TextBlock x:ConnectionId='50' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV075_FVC" Grid.Row="9"/>
+                    <TextBlock x:ConnectionId='51' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1" Grid.Row="10"/>
+                    <TextBlock x:ConnectionId='52' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1R" Grid.Row="11"/>
+                    <TextBlock x:ConnectionId='53' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_VC" Grid.Row="12"/>
+                    <TextBlock x:ConnectionId='54' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_EVC" Grid.Row="13"/>
+                    <TextBlock x:ConnectionId='55' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_IVC" Grid.Row="14"/>
+                    <TextBlock x:ConnectionId='56' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_FVC" Grid.Row="15"/>
+                    <TextBlock x:ConnectionId='57' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_FIVC" Grid.Row="16"/>
+                    <TextBlock x:ConnectionId='58' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_FEV6" Grid.Row="17"/>
+                    <TextBlock x:ConnectionId='59' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV1_PEF" Grid.Row="18"/>
+                    <TextBlock x:ConnectionId='60' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV3" Grid.Row="19"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV3/VC"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV3/FVC" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEV6" Grid.Row="2"/>
+                    <TextBlock HorizontalAlignment="Center" Text="PEV(l/s)" Grid.Row="3"/>
+                    <TextBlock HorizontalAlignment="Center" Text="PEF(l/min)" Grid.Row="4"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF25" Grid.Row="5"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF50" Grid.Row="6"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF75" Grid.Row="7"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF0.2-1.2" Grid.Row="8"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF2575" Grid.Row="9"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF2575/FVC" Grid.Row="10"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF7586" Grid.Row="11"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIV1" Grid.Row="12"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIV1/FVC" Grid.Row="13"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIV1/FIVC" Grid.Row="14"/>
+                    <TextBlock HorizontalAlignment="Center" Text="PIF(l/S)" Grid.Row="15"/>
+                    <TextBlock HorizontalAlignment="Center" Text="PIF(L/MIN)" Grid.Row="16"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIF25" Grid.Row="17"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIF50" Grid.Row="18"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FIF75" Grid.Row="19"/>
+
+                    <TextBlock x:ConnectionId='21' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV3_VC"/>
+                    <TextBlock x:ConnectionId='22' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV3_FVC" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='23' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEV6" Grid.Row="2"/>
+                    <TextBlock x:ConnectionId='24' HorizontalAlignment="Center" Grid.Column="1" x:Name="PEV_l_s" Grid.Row="3"/>
+                    <TextBlock x:ConnectionId='25' HorizontalAlignment="Center" Grid.Column="1" x:Name="PEF_l_min" Grid.Row="4"/>
+                    <TextBlock x:ConnectionId='26' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF25" Grid.Row="5"/>
+                    <TextBlock x:ConnectionId='27' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF50" Grid.Row="6"/>
+                    <TextBlock x:ConnectionId='28' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF75" Grid.Row="7"/>
+                    <TextBlock x:ConnectionId='29' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF02_12" Grid.Row="8"/>
+                    <TextBlock x:ConnectionId='30' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF2575" Grid.Row="9"/>
+                    <TextBlock x:ConnectionId='31' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF2575_FVC" Grid.Row="10"/>
+                    <TextBlock x:ConnectionId='32' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF7586" Grid.Row="11"/>
+                    <TextBlock x:ConnectionId='33' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIV1" Grid.Row="12"/>
+                    <TextBlock x:ConnectionId='34' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIV1_FVC" Grid.Row="13"/>
+                    <TextBlock x:ConnectionId='35' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIV1_FIVC" Grid.Row="14"/>
+                    <TextBlock x:ConnectionId='36' HorizontalAlignment="Center" Grid.Column="1" x:Name="PIF_l_S" Grid.Row="15"/>
+                    <TextBlock x:ConnectionId='37' HorizontalAlignment="Center" Grid.Column="1" x:Name="PIF_l_MIN" Grid.Row="16"/>
+                    <TextBlock x:ConnectionId='38' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF25" Grid.Row="17"/>
+                    <TextBlock x:ConnectionId='39' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF50" Grid.Row="18"/>
+                    <TextBlock x:ConnectionId='40' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF75" Grid.Row="19"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="FIF50FEF50"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FEF50FIF50" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Center" Text="MVVind" Grid.Row="2"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FMFT" Grid.Row="3"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FET" Grid.Row="4"/>
+                    <TextBlock HorizontalAlignment="Center" Text="FRC" Grid.Row="5"/>
+                    <TextBlock HorizontalAlignment="Center" Text="TV" Grid.Row="6"/>
+                    <TextBlock HorizontalAlignment="Center" Text="RV" Grid.Row="7"/>
+                    <TextBlock HorizontalAlignment="Center" Text="TLC" Grid.Row="8"/>
+                    <TextBlock HorizontalAlignment="Center" Text="IRV" Grid.Row="9"/>
+                    <TextBlock HorizontalAlignment="Center" Text="ERV" Grid.Row="10"/>
+                    <TextBlock HorizontalAlignment="Center" Text="IC" Grid.Row="11"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Rind" Grid.Row="12"/>
+                    <TextBlock HorizontalAlignment="Center" Text="LungAge" Grid.Row="13"/>
+                    <TextBlock HorizontalAlignment="Center" Text="tPEF" Grid.Row="14"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Tidal_PEF" Grid.Row="15"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Text" Grid.Row="16"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Vext" Grid.Row="17"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Vext_FVC" Grid.Row="18"/>
+
+                    <TextBlock x:ConnectionId='2' HorizontalAlignment="Center" Grid.Column="1" x:Name="FIF50FEF50"/>
+                    <TextBlock x:ConnectionId='3' HorizontalAlignment="Center" Grid.Column="1" x:Name="FEF50FIF50" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='4' HorizontalAlignment="Center" Grid.Column="1" x:Name="MVVind" Grid.Row="2"/>
+                    <TextBlock x:ConnectionId='5' HorizontalAlignment="Center" Grid.Column="1" x:Name="FMFT" Grid.Row="3"/>
+                    <TextBlock x:ConnectionId='6' HorizontalAlignment="Center" Grid.Column="1" x:Name="FET" Grid.Row="4"/>
+                    <TextBlock x:ConnectionId='7' HorizontalAlignment="Center" Grid.Column="1" x:Name="FRC" Grid.Row="5"/>
+                    <TextBlock x:ConnectionId='8' HorizontalAlignment="Center" Grid.Column="1" x:Name="TV" Grid.Row="6"/>
+                    <TextBlock x:ConnectionId='9' HorizontalAlignment="Center" Grid.Column="1" x:Name="RV" Grid.Row="7"/>
+                    <TextBlock x:ConnectionId='10' HorizontalAlignment="Center" Grid.Column="1" x:Name="TLC" Grid.Row="8"/>
+                    <TextBlock x:ConnectionId='11' HorizontalAlignment="Center" Grid.Column="1" x:Name="IRV" Grid.Row="9"/>
+                    <TextBlock x:ConnectionId='12' HorizontalAlignment="Center" Grid.Column="1" x:Name="ERV" Grid.Row="10"/>
+                    <TextBlock x:ConnectionId='13' HorizontalAlignment="Center" Grid.Column="1" x:Name="IC" Grid.Row="11"/>
+                    <TextBlock x:ConnectionId='14' HorizontalAlignment="Center" Grid.Column="1" x:Name="Rind" Grid.Row="12"/>
+                    <TextBlock x:ConnectionId='15' HorizontalAlignment="Center" Grid.Column="1" x:Name="LungAge" Grid.Row="13"/>
+                    <TextBlock x:ConnectionId='16' HorizontalAlignment="Center" Grid.Column="1" x:Name="tPEF" Grid.Row="14"/>
+                    <TextBlock x:ConnectionId='17' HorizontalAlignment="Center" Grid.Column="1" x:Name="Tidal_PEF" Grid.Row="15"/>
+                    <TextBlock x:ConnectionId='18' HorizontalAlignment="Center" Grid.Column="1" x:Name="Text" Grid.Row="16"/>
+                    <TextBlock x:ConnectionId='19' HorizontalAlignment="Center" Grid.Column="1" x:Name="Vext" Grid.Row="17"/>
+                    <TextBlock x:ConnectionId='20' HorizontalAlignment="Center" Grid.Column="1" x:Name="Vext_FVC" Grid.Row="18"/>
+
+                </Grid>
+
+            </Grid>
+           
+        </ScrollViewer>
+
+    </Grid>
+</Page>
+

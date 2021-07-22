@@ -148,6 +148,7 @@
       <RootProperty Name="NineGrid" />
       <RootProperty Name="Width" />
     </RootType>
+    <RootType FullName="MSSMSpirometer.ReadRawData" />
     <RootType FullName="MSSMSpirometer.USBDataDisplay" />
   </Roots.RootTypes>
 </Roots>

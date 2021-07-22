@@ -35,7 +35,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="data of Test"/>
+            <TextBlock Grid.Row="0" Text="Session Date Time"/>
             <!--<TextBlock Grid.Row="1" Text="Test Index"/>
             <TextBlock Grid.Row="2" Text="Test Rank"/>
             <TextBlock Grid.Row="3" Text="Test Quality Flags"/>
@@ -47,7 +47,7 @@
             <TextBlock Grid.Row="9" Text="FIVC"/>-->
             <!--<TextBlock Grid.Row="10" Text="Inspiratory curve"/>-->
 
-            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="dataoftest"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="dataoftest" Margin="20,0,0,0"/>
             <!--<TextBlock Grid.Row="1" Grid.Column="1" x:Name="testindex"/>
             <TextBlock Grid.Row="2" Grid.Column="1" x:Name="testrank"/>
             <TextBlock Grid.Row="3" Grid.Column="1" x:Name="testqualityflags"/>

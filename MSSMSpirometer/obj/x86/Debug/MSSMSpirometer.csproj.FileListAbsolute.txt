@@ -53,7 +53,6 @@ C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\obj\x86\Debug\BlankP
 C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\obj\x86\Debug\BlankPage1.g.cs
 C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\obj\x86\Debug\BlankPage1.xaml
 C:\Users\tsait06\source\repos\MSSMSpirometer\MSSMSpirometer\obj\x86\Debug\BlankPage1.xbf
-\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\MSSMSpirometer.csprojAssemblyReference.cache
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\App.g.i.cs
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\App.g.cs
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\BlankPage.g.i.cs
@@ -178,11 +177,6 @@ C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug
 C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.g.cs
 C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xaml
 C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xbf
-\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\USBDataDisplay.xbf
-\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.g.i.cs
-\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.g.cs
-\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xaml
-\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\USBDataDisplay.xbf
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\DataStorage.xbf
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Newtonsoft.Json.dll
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\DataStorage.g.i.cs
@@ -203,3 +197,32 @@ C:\Users\Helen Tsai\Project\C#Project\UWPFindDevice\MSSMSpirometer\obj\x86\Debug
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\WinRTXamlToolkit.pri.xml
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml
 \\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\WinRTXamlToolkit.Controls.DataVisualization\en-US\WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources.resw
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\MSSMSpirometer.csproj.AssemblyReference.cache
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\BouncyCastle.Crypto.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Google.Protobuf.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Google.Protobuf.pdb
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\K4os.Compression.LZ4.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\K4os.Compression.LZ4.Streams.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\K4os.Hash.xxHash.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MySql.Data.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Ubiety.Dns.Core.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Zstandard.Net.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\System.Security.Cryptography.ProtectedData.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\System.Security.Permissions.dll
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\MySql.Data\en-US\MySql.Data.Resources.resw
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\MySql.Data\en-US\MySql.Data.ResourcesX.resw
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\FxResources.System.Configuration.ConfigurationManager.SR.resw
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\FxResources.System.Security.Cryptography.ProtectedData.SR.resw
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\ReadRawData.xbf
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\ReadRawData.g.i.cs
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\ReadRawData.g.cs
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\ReadRawData.xaml
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\ReadRawData.xbf
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\PreviewDataDisplay.xbf
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PreviewDataDisplay.g.i.cs
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PreviewDataDisplay.g.cs
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PreviewDataDisplay.xaml
+\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PreviewDataDisplay.xbf

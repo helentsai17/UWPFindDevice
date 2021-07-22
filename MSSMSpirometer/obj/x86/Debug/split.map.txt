@@ -1,0 +1,21 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"language-en-us"
+"ResourceDimensions"		"scale-200"
+
+[Files]
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\split.pri"			"resources.pri"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\WinRTXamlToolkit.Controls.DataVisualization\WinRTXamlToolkit.Controls.DataVisualization.xr.xml"			"WinRTXamlToolkit.Controls.DataVisualization\WinRTXamlToolkit.Controls.DataVisualization.xr.xml"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml"			"WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml"			"WinRTXamlToolkit\WinRTXamlToolkit.xr.xml"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml"			"WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\WinMetadata\Windows.winmd"			"WinMetadata\Windows.winmd"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Properties\Default.rd.xml"			"Properties\Default.rd.xml"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\MSSMSpirometer.xr.xml"			"MSSMSpirometer.xr.xml"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\Wide310x150Logo.scale-200.png"			"Assets\Wide310x150Logo.scale-200.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\Square44x44Logo.scale-200.png"			"Assets\Square44x44Logo.scale-200.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\Square44x44Logo.targetsize-24_altform-unplated.png"			"Assets\Square44x44Logo.targetsize-24_altform-unplated.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\Square150x150Logo.scale-200.png"			"Assets\Square150x150Logo.scale-200.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\SplashScreen.scale-200.png"			"Assets\SplashScreen.scale-200.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\right.png"			"Assets\right.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\LockScreenLogo.scale-200.png"			"Assets\LockScreenLogo.scale-200.png"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\left.png"			"Assets\left.png"

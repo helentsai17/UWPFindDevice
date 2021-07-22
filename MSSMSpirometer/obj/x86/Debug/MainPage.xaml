@@ -22,6 +22,7 @@
             <Button x:ConnectionId='4' x:Name="checkSesstion" Background="Transparent" Margin="20,10,20,10" Content="Check session Data"                    />
             <Button x:ConnectionId='5' Background="Transparent" Margin="20,10,20,10" Content="Detail Disply"                           />
             <Button x:ConnectionId='6' Background="Transparent" Margin="20,10,20,10" Content="Graph"                     />
+            <Button x:ConnectionId='7' Background="Transparent" Margin="20,10,20,10" Content="raw data"                       />
 
         </StackPanel>
         <Frame x:ConnectionId='2' Grid.Row="1" x:Name="InnerFrame" Margin="10"/>

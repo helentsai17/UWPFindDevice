@@ -22,6 +22,7 @@
             <Button x:Name="checkSesstion" Background="Transparent" Margin="20,10,20,10" Content="Check session Data" Click="datadisplay"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Detail Disply" Click="dataStorageDispaly"/>
             <Button Background="Transparent" Margin="20,10,20,10" Content="Graph" Click="graphDisplay"/>
+            <Button Background="Transparent" Margin="20,10,20,10" Content="raw data" Click="RawDataDisplay"/>
 
         </StackPanel>
         <Frame Grid.Row="1" x:Name="InnerFrame" Margin="10"/>

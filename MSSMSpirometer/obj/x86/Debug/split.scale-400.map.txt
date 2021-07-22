@@ -1,0 +1,7 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.scale-400"
+"ResourceDimensions"		"scale-400"
+
+[Files]
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\split.scale-400.pri"			"resources.pri"
+"\\users9\users9$\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\obj\x86\Debug\PackageLayout\Assets\Square150x150Logo.scale-400.png"			"Assets\Square150x150Logo.scale-400.png"

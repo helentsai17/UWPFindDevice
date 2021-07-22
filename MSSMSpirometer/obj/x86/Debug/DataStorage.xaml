@@ -41,11 +41,11 @@
                 <TextBlock HorizontalAlignment="Left" Text="Session Data Time" Grid.Row="3"/>
                 <TextBlock HorizontalAlignment="Left" Text="Session Type" Grid.Row="4"/>
 
-                <TextBlock x:ConnectionId='87' HorizontalAlignment="Left" Grid.Column="1" x:Name="SubjectID" Grid.Row="0"/>
-                <TextBlock x:ConnectionId='88' HorizontalAlignment="Left" Grid.Column="1" x:Name="AccuracyDataTime" Grid.Row="1"/>
-                <TextBlock x:ConnectionId='89' HorizontalAlignment="Left" Grid.Column="1" x:Name="CalibrationDateTime" Grid.Row="2"/>
-                <TextBlock x:ConnectionId='90' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionDataTime" Grid.Row="3"/>
-                <TextBlock x:ConnectionId='91' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionType" Grid.Row="4"/>
+                <TextBlock x:ConnectionId='88' HorizontalAlignment="Left" Grid.Column="1" x:Name="SubjectID" Grid.Row="0"/>
+                <TextBlock x:ConnectionId='89' HorizontalAlignment="Left" Grid.Column="1" x:Name="AccuracyDataTime" Grid.Row="1"/>
+                <TextBlock x:ConnectionId='90' HorizontalAlignment="Left" Grid.Column="1" x:Name="CalibrationDateTime" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='91' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionDataTime" Grid.Row="3"/>
+                <TextBlock x:ConnectionId='92' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionType" Grid.Row="4"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -65,11 +65,11 @@
                 <TextBlock HorizontalAlignment="Left" Text="Number of Blows Performed" Grid.Row="3"/>
                 <TextBlock HorizontalAlignment="Left" Text="FEV1 Repeatability" Grid.Row="4"/>
 
-                <TextBlock x:ConnectionId='82' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionPosture" Grid.Row="0"/>
-                <TextBlock x:ConnectionId='83' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionGrade" Grid.Row="1"/>
-                <TextBlock x:ConnectionId='84' HorizontalAlignment="Left" Grid.Column="1" x:Name="PreSessionGrade" Grid.Row="2"/>
-                <TextBlock x:ConnectionId='85' HorizontalAlignment="Left" Grid.Column="1" x:Name="NumberofBlowsPerformed" Grid.Row="3"/>
-                <TextBlock x:ConnectionId='86' HorizontalAlignment="Left" Grid.Column="1" x:Name="FEV1Repeatability" Grid.Row="4"/>
+                <TextBlock x:ConnectionId='83' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionPosture" Grid.Row="0"/>
+                <TextBlock x:ConnectionId='84' HorizontalAlignment="Left" Grid.Column="1" x:Name="SessionGrade" Grid.Row="1"/>
+                <TextBlock x:ConnectionId='85' HorizontalAlignment="Left" Grid.Column="1" x:Name="PreSessionGrade" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='86' HorizontalAlignment="Left" Grid.Column="1" x:Name="NumberofBlowsPerformed" Grid.Row="3"/>
+                <TextBlock x:ConnectionId='87' HorizontalAlignment="Left" Grid.Column="1" x:Name="FEV1Repeatability" Grid.Row="4"/>
             </Grid>
 
             <Grid Grid.Column="2">
@@ -90,11 +90,11 @@
                 <TextBlock HorizontalAlignment="Left" Text="FVC Repeatability" Grid.Row="3"/>
                 <TextBlock HorizontalAlignment="Left" Text="FVC Repeatability %" Grid.Row="4"/>
 
-                <TextBlock x:ConnectionId='77' HorizontalAlignment="Left" Grid.Column="1" x:Name="FEV1RepeatabilityP" Grid.Row="0"/>
-                <TextBlock x:ConnectionId='78' HorizontalAlignment="Left" Grid.Column="1" x:Name="PEFRepeatability" Grid.Row="1"/>
-                <TextBlock x:ConnectionId='79' HorizontalAlignment="Left" Grid.Column="1" x:Name="PEFRepeatabilityP" Grid.Row="2"/>
-                <TextBlock x:ConnectionId='80' HorizontalAlignment="Left" Grid.Column="1" x:Name="FVCRepeatability" Grid.Row="3"/>
-                <TextBlock x:ConnectionId='81' HorizontalAlignment="Left" Grid.Column="1" x:Name="FVCRepeatabilityP" Grid.Row="4"/>
+                <TextBlock x:ConnectionId='78' HorizontalAlignment="Left" Grid.Column="1" x:Name="FEV1RepeatabilityP" Grid.Row="0"/>
+                <TextBlock x:ConnectionId='79' HorizontalAlignment="Left" Grid.Column="1" x:Name="PEFRepeatability" Grid.Row="1"/>
+                <TextBlock x:ConnectionId='80' HorizontalAlignment="Left" Grid.Column="1" x:Name="PEFRepeatabilityP" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='81' HorizontalAlignment="Left" Grid.Column="1" x:Name="FVCRepeatability" Grid.Row="3"/>
+                <TextBlock x:ConnectionId='82' HorizontalAlignment="Left" Grid.Column="1" x:Name="FVCRepeatabilityP" Grid.Row="4"/>
             </Grid>
         </Grid>
 
@@ -124,9 +124,9 @@
                     <TextBlock HorizontalAlignment="Left" Text="Gender" Grid.Row="1"/>
                     <TextBlock HorizontalAlignment="Left" Text="Age" Grid.Row="2"/>
 
-                    <TextBlock x:ConnectionId='74' HorizontalAlignment="Left" Grid.Column="1" x:Name="DateofBirth" Grid.Row="0"/>
-                    <TextBlock x:ConnectionId='75' HorizontalAlignment="Left" Grid.Column="1" x:Name="Gender" Grid.Row="1"/>
-                    <TextBlock x:ConnectionId='76' HorizontalAlignment="Left" Grid.Column="1" x:Name="Age" Grid.Row="2"/>
+                    <TextBlock x:ConnectionId='75' HorizontalAlignment="Left" Grid.Column="1" x:Name="DateofBirth" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='76' HorizontalAlignment="Left" Grid.Column="1" x:Name="Gender" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='77' HorizontalAlignment="Left" Grid.Column="1" x:Name="Age" Grid.Row="2"/>
                 </Grid>
 
                 <Grid Grid.Column="1">
@@ -143,9 +143,9 @@
                     <TextBlock HorizontalAlignment="Left" Text="Weight" Grid.Row="1"/>
                     <TextBlock HorizontalAlignment="Left" Text="Somking History" Grid.Row="2"/>
 
-                    <TextBlock x:ConnectionId='71' HorizontalAlignment="Left" Grid.Column="1" x:Name="HeightText" Grid.Row="0"/>
-                    <TextBlock x:ConnectionId='72' HorizontalAlignment="Left" Grid.Column="1" x:Name="Weight" Grid.Row="1"/>
-                    <TextBlock x:ConnectionId='73' HorizontalAlignment="Left" Grid.Column="1" x:Name="SomkingHistory" Grid.Row="2"/>
+                    <TextBlock x:ConnectionId='72' HorizontalAlignment="Left" Grid.Column="1" x:Name="HeightText" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='73' HorizontalAlignment="Left" Grid.Column="1" x:Name="Weight" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='74' HorizontalAlignment="Left" Grid.Column="1" x:Name="SomkingHistory" Grid.Row="2"/>
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.ColumnDefinitions>
@@ -161,9 +161,9 @@
                     <TextBlock HorizontalAlignment="Left" Text="Regression Set" Grid.Row="1"/>
                     <TextBlock HorizontalAlignment="Left" Text="Correction Factor" Grid.Row="2"/>
 
-                    <TextBlock x:ConnectionId='68' HorizontalAlignment="Left" Grid.Column="1" x:Name="PopulationGroup" Grid.Row="0"/>
-                    <TextBlock x:ConnectionId='69' HorizontalAlignment="Left" Grid.Column="1" x:Name="RegressionSet" Grid.Row="1"/>
-                    <TextBlock x:ConnectionId='70' HorizontalAlignment="Left" Grid.Column="1" x:Name="CorrectionFactor" Grid.Row="2"/>
+                    <TextBlock x:ConnectionId='69' HorizontalAlignment="Left" Grid.Column="1" x:Name="PopulationGroup" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='70' HorizontalAlignment="Left" Grid.Column="1" x:Name="RegressionSet" Grid.Row="1"/>
+                    <TextBlock x:ConnectionId='71' HorizontalAlignment="Left" Grid.Column="1" x:Name="CorrectionFactor" Grid.Row="2"/>
                 </Grid>
 
             </Grid>
@@ -178,6 +178,7 @@
             <Button x:ConnectionId='65' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="Rank Tsat 3"                        />
             <Button x:ConnectionId='66' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="LLN Values"                  />
             <Button x:ConnectionId='67' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="ULN Values"                  />
+            <Button x:ConnectionId='68' Style="{StaticResource ButtonStyle}" Margin="0,0,10,0" Content="store to database"                    />
         </StackPanel>
         
         <Grid Grid.Row="3">

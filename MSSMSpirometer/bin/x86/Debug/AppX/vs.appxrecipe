@@ -19,24 +19,56 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>2F120119F6587D989A17A274CC9687EBF53D4386A3A9353110FEC3A25E1F27D4</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3_1.0.0.0_x86__fpqcpkxhjspvw</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>59BE4C596E04130A47B39970CB4CD888EA70403A39D5DEC6790DF87D1AED2662</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3_1.0.9.0_x86__fpqcpkxhjspvw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3_fpqcpkxhjspvw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>a674c7ae-14a6-4f70-9fc9-bdbbd3eeeab3</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=tsait06</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>1.0.9.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-18T15:59:49.773</Modified>
+      <Modified>2021-07-22T00:31:23.800</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.exe">
       <PackagePath>entrypoint\MSSMSpirometer.exe</PackagePath>
-      <Modified>2021-05-18T15:59:48.203</Modified>
+      <Modified>2021-07-22T00:31:22.184</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\bouncycastle.netcore\1.8.5\lib\netstandard2.0\BouncyCastle.Crypto.dll">
+      <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
+      <Modified>2019-03-18T11:53:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\google.protobuf\3.14.0\lib\netstandard2.0\Google.Protobuf.dll">
+      <PackagePath>Google.Protobuf.dll</PackagePath>
+      <Modified>2020-11-13T15:09:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\k4os.compression.lz4\1.1.11\lib\netstandard2.0\K4os.Compression.LZ4.dll">
+      <PackagePath>K4os.Compression.LZ4.dll</PackagePath>
+      <Modified>2019-07-03T22:59:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\k4os.compression.lz4.streams\1.1.11\lib\netstandard2.0\K4os.Compression.LZ4.Streams.dll">
+      <PackagePath>K4os.Compression.LZ4.Streams.dll</PackagePath>
+      <Modified>2019-07-03T22:59:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\k4os.hash.xxhash\1.0.6\lib\netstandard2.0\K4os.Hash.xxHash.dll">
+      <PackagePath>K4os.Hash.xxHash.dll</PackagePath>
+      <Modified>2019-07-03T20:39:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\mysql.data\8.0.25\lib\netstandard2.0\MySql.Data.dll">
+      <PackagePath>MySql.Data.dll</PackagePath>
+      <Modified>2021-04-27T10:45:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\mysql.data\8.0.25\lib\netstandard2.0\Ubiety.Dns.Core.dll">
+      <PackagePath>Ubiety.Dns.Core.dll</PackagePath>
+      <Modified>2021-04-27T10:45:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\mysql.data\8.0.25\lib\netstandard2.0\Zstandard.Net.dll">
+      <PackagePath>Zstandard.Net.dll</PackagePath>
+      <Modified>2021-04-27T10:45:04.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -45,6 +77,22 @@
     <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
       <Modified>2021-02-05T06:15:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\system.configuration.configurationmanager\4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll">
+      <PackagePath>System.Configuration.ConfigurationManager.dll</PackagePath>
+      <Modified>2017-11-20T18:09:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+      <Modified>2018-09-18T19:38:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\system.security.cryptography.protecteddata\4.4.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll">
+      <PackagePath>System.Security.Cryptography.ProtectedData.dll</PackagePath>
+      <Modified>2017-07-19T10:01:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\system.security.permissions\4.7.0\lib\netstandard2.0\System.Security.Permissions.dll">
+      <PackagePath>System.Security.Permissions.dll</PackagePath>
+      <Modified>2019-11-15T08:37:44.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsait06\.nuget\packages\winrtxamltoolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit.dll">
       <PackagePath>WinRTXamlToolkit.dll</PackagePath>
@@ -82,6 +130,14 @@
       <PackagePath>Assets\right.png</PackagePath>
       <Modified>2021-05-14T17:20:12.922</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <Modified>2021-04-23T13:45:56.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <Modified>2021-04-23T13:45:56.748</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2021-04-23T13:45:56.638</Modified>
@@ -100,11 +156,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <Modified>2021-04-23T13:45:56.718</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2021-04-23T13:45:56.748</Modified>
+      <Modified>2021-04-23T13:45:56.699</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
@@ -116,39 +168,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MSSMSpirometer.xr.xml">
       <PackagePath>MSSMSpirometer.xr.xml</PackagePath>
-      <Modified>2021-05-18T15:32:19.392</Modified>
+      <Modified>2021-07-21T19:18:25.257</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.949</Modified>
+      <Modified>2021-07-22T00:31:21.842</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\BlankPage.xbf">
       <PackagePath>BlankPage.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.957</Modified>
+      <Modified>2021-07-22T00:31:21.851</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\BlankPage1.xbf">
       <PackagePath>BlankPage1.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.965</Modified>
+      <Modified>2021-07-22T00:31:21.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\DataGraph.xbf">
       <PackagePath>DataGraph.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.973</Modified>
+      <Modified>2021-07-22T00:31:21.868</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\DataStorage.xbf">
       <PackagePath>DataStorage.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.915</Modified>
+      <Modified>2021-07-22T00:31:21.759</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\DeviceVidPid.xbf">
       <PackagePath>DeviceVidPid.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.986</Modified>
+      <Modified>2021-07-22T00:31:21.882</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.993</Modified>
+      <Modified>2021-07-22T00:31:21.892</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\USBDataDisplay.xbf">
-      <PackagePath>USBDataDisplay.xbf</PackagePath>
-      <Modified>2021-05-18T15:59:47.946</Modified>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\ReadRawData.xbf">
+      <PackagePath>ReadRawData.xbf</PackagePath>
+      <Modified>2021-07-22T00:31:21.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\PreviewDataDisplay.xbf">
+      <PackagePath>PreviewDataDisplay.xbf</PackagePath>
+      <Modified>2021-07-22T00:31:21.839</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -156,11 +212,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-14T17:26:23.274</Modified>
+      <Modified>2021-07-21T19:24:47.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\users9\users9%24\tsait06\Data\Personal\DesktopFiles\UWPFindDevice\MSSMSpirometer\bin\x86\Debug\Core\MSSMSpirometer.exe">
       <PackagePath>MSSMSpirometer.exe</PackagePath>
-      <Modified>2021-05-18T15:59:49.608</Modified>
+      <Modified>2021-07-22T00:31:23.639</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

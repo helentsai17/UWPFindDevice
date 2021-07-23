@@ -207,6 +207,7 @@ namespace MSSMSpirometer
         int memoInfo = 1;
 
         // Read Record Message
+        string subjectID = "";
         string recordNumber = "";
         string subjectInfo = "";
         string sessionInfo = "";
@@ -660,20 +661,17 @@ namespace MSSMSpirometer
             {
                 new SpirometerData()
                 {
-                    MemoInfo = this.memoInfo.ToString(),
+                   // MemoInfo = this.memoInfo.ToString(),
                    // SessionNum = this.sessionInfo
-                    BestTestResults = this.BestTestResults,
-                    RankResults_1 = this.RankedTestResult_1,
-                    RankResults_2 = this.RankedTestResult_2,
-                    RankResults_3 = this.RankedTestResult_3,
+                    subjectID = this.subjectID,
                     SubjectInfo = this.subjectInfo,
                     SessionInfo = this.sessionInfo,
 
                     PredictedValues = this.PredictedValues,
                     LLNValue = this.LLNValues,
                     ULNValue = this.ULNValues,
-                    PercentageofPredicted = this.PercentageofPredicted,
-                    PercentagePrePost = this.PercentagePrePost,
+                    PrecentageOfPredicted = this.PercentageofPredicted,
+                    PrecentageOfPrePost = this.PercentagePrePost,
                     Zscore = this.Z_score,
                     PrePostChange = this.PrePostChange,
                     PreBestTestResult = this.PreBestTestResult,
@@ -681,9 +679,14 @@ namespace MSSMSpirometer
                     PreBestZscore = this.PreBestZ_score,
 
                     BestTestData = this.BestTestData,
-                    RankData_1 = this.RankedTestData_1,
-                    RankData_2 = this.RankedTestData_2,
-                    RankData_3 = this.RankedTestData_3,
+                    RankedTestData1 = this.RankedTestData_1,
+                    RankedTestData2 = this.RankedTestData_2,
+                    RankedTestData3 = this.RankedTestData_3,
+                    BestTestResults = this.BestTestResults,
+                    RankedTestResult1 = this.RankedTestResult_1,
+                    RankedTestResult2 = this.RankedTestResult_2,
+                    RankedTestResult3 = this.RankedTestResult_3,
+                    InterpretationInformation = this.InterpretationInformation
                 },
             };
             _data = CreateData;
@@ -700,19 +703,15 @@ namespace MSSMSpirometer
             {
                 new SpirometerData()
                 {
-                    MemoInfo = this.memoInfo.ToString(),
-                    BestTestResults = this.BestTestResults,
-                    RankResults_1 = this.RankedTestResult_1,
-                    RankResults_2 = this.RankedTestResult_2,
-                    RankResults_3 = this.RankedTestResult_3,
+                    subjectID = this.subjectID,
                     SubjectInfo = this.subjectInfo,
                     SessionInfo = this.sessionInfo,
 
                     PredictedValues = this.PredictedValues,
                     LLNValue = this.LLNValues,
                     ULNValue = this.ULNValues,
-                    PercentageofPredicted = this.PercentageofPredicted,
-                    PercentagePrePost = this.PercentagePrePost,
+                    PrecentageOfPredicted = this.PercentageofPredicted,
+                    PrecentageOfPrePost = this.PercentagePrePost,
                     Zscore = this.Z_score,
                     PrePostChange = this.PrePostChange,
                     PreBestTestResult = this.PreBestTestResult,
@@ -720,9 +719,14 @@ namespace MSSMSpirometer
                     PreBestZscore = this.PreBestZ_score,
 
                     BestTestData = this.BestTestData,
-                    RankData_1 = this.RankedTestData_1,
-                    RankData_2 = this.RankedTestData_2,
-                    RankData_3 = this.RankedTestData_3,
+                    RankedTestData1 = this.RankedTestData_1,
+                    RankedTestData2 = this.RankedTestData_2,
+                    RankedTestData3 = this.RankedTestData_3,
+                    BestTestResults = this.BestTestResults,
+                    RankedTestResult1 = this.RankedTestResult_1,
+                    RankedTestResult2 = this.RankedTestResult_2,
+                    RankedTestResult3 = this.RankedTestResult_3,
+                    InterpretationInformation = this.InterpretationInformation
                 },
             };
 

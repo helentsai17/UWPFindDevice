@@ -35,17 +35,36 @@ namespace MSSMSpirometer
         string fileName = "SpirometerData.json";
         SpirometerData[] _data = Array.Empty<SpirometerData>();
 
-        string PredictedValue;
-
-        string bestTestResult;
-        string rankTestResult1;
-        string rankTestResult2;
-        string rankTestResult3;
+        string subjectid;
         string subjectInfomation;
         string sessionInformation;
 
+        string PredictedValue;
         string LLN;
         string ULN;
+
+        string bestTestResults;
+        string precentageOfPredicted;
+        string precentageOfPrePost;
+        string zscore;
+        string prePostChange;
+        string preBestTestResult;
+        string preBestTestData;
+        string preBestPercentageofPredicted;
+        string preBestZscore;
+        string interpretationInformation;
+        string bestTestData;
+
+        string rankTestResult1;
+        string rankTestResult2;
+        string rankTestResult3;
+
+        string RankedTestData1;
+        string RankedTestData2; 
+        string RankedTestData3;
+
+
+
 
         string dbsubjectID;
         float dbPEF;
@@ -75,27 +94,30 @@ namespace MSSMSpirometer
         {
             var getdatainfo = _data[0];
 
-            //OutputMemoInfo.Text = getdatainfo.MemoInfo;
+            subjectid = getdatainfo.subjectID;
+    
             PredictedValue = getdatainfo.PredictedValues;
-
-            bestTestResult = getdatainfo.BestTestResults;
-            //BestTestResultText.Text = bestTestResult;
-
-            rankTestResult1 = getdatainfo.RankResults_1;
-            //RankTestResult_1.Text = rankTestResult1;
-
-            rankTestResult2 = getdatainfo.RankResults_2;
-            //RankTestResult_2.Text = rankTestResult2;
-
-            rankTestResult3 = getdatainfo.RankResults_3;
-            //RankTestResult_3.Text = rankTestResult3;
-
+            bestTestResults = getdatainfo.BestTestResults;
+            rankTestResult1 = getdatainfo.RankedTestResult1;
+            rankTestResult2 = getdatainfo.RankedTestResult2;
+            rankTestResult3 = getdatainfo.RankedTestResult3;
             subjectInfomation = getdatainfo.SubjectInfo;
-            //subjectInfo.Text = subjectInfomation;
-
             sessionInformation = getdatainfo.SessionInfo;
-            //SessionInfo.Text = sessionInformation;
 
+            precentageOfPredicted = getdatainfo.PrecentageOfPredicted;
+            precentageOfPrePost = getdatainfo.PrecentageOfPrePost;
+            zscore = getdatainfo.Zscore;
+            prePostChange = getdatainfo.PrePostChange;
+            preBestTestResult = getdatainfo.PreBestTestResult;
+            preBestTestData = getdatainfo.PreBestTestData;
+            preBestPercentageofPredicted = getdatainfo.PreBestPercentageofPredicted;
+            preBestZscore = getdatainfo.PreBestZscore;
+            interpretationInformation = getdatainfo.InterpretationInformation;
+            bestTestData = getdatainfo.BestTestData;
+
+            RankedTestData1 = getdatainfo.RankedTestData1;
+            RankedTestData2 = getdatainfo.RankedTestData2;
+            RankedTestData3 = getdatainfo.RankedTestData3;
 
             LLN = getdatainfo.LLNValue;
             ULN = getdatainfo.ULNValue;
@@ -104,7 +126,7 @@ namespace MSSMSpirometer
 
             subjectFormat(subjectInfomation);
 
-            testResultFormat(bestTestResult);
+            testResultFormat(bestTestResults);
         }
 
         string subjectinfo;
@@ -140,10 +162,11 @@ namespace MSSMSpirometer
             if(sessionInformation!= null && sessionInformation != "")
             {
                 var subject = subjectinfo.Split(",");
+
                 SubjectID.Text = subject[0].Substring(3);
 
-                
-                
+
+
                 var session = sessionInformation.Split(",");
                 AccuracyDataTime.Text = session[0].Substring(3);
                 CalibrationDateTime.Text = session[1];
@@ -323,7 +346,7 @@ namespace MSSMSpirometer
 
         private void BestResult_click(object sender, RoutedEventArgs e)
         {
-            testResultFormat(bestTestResult);
+            testResultFormat(bestTestResults);
         }
 
         private void RankTest1_click(object sender, RoutedEventArgs e)
@@ -387,35 +410,68 @@ namespace MSSMSpirometer
         private void to_database(object sender, RoutedEventArgs e)
         {
 
-
-
-
             string M_str_sqlcon = "server=localhost;UID=root;password=Pupu1990;database=SpirometeyResult";
-            ////string M_str_sqlcon = "server=146.203.150.198;UID=helen;password=password;database=SpirometeyResult";
             MySqlConnection mysqlcon = new MySqlConnection(M_str_sqlcon);
-
-            string lifeQuery = @"insert into ResultData values( @dbsubjectID, @dbPEF, @dbFEV1, @dbFEV6, @dbFEV1FEV6, @dbFVC, @dbflowData, @dbvolumeData)";
+            string lifeQuery = @"insert into SPdata values( @subjectid, @SubjectInfo, @SessionInfo, @PredictedValues, @LLNValues, @ULNValues, @BestTestResults,@BestTestData, @PrecentageOfPredicted,@PrecentageOfPrePost,@Zscore,@PrePostChange,@RankedTestResult1,@RankedTestData1,@RankedTestResult2,@RankedTestData2,@RankedTestResult3,@RankedTestData3,@PreBestTestResult,@PreBestTestData,@PreBestPercentageofPredicted, @PreBestZscore, @InterpretationInformation)";
             MySqlCommand mysqlcom = new MySqlCommand(lifeQuery, mysqlcon);
-            mysqlcom.Parameters.AddWithValue("@dbsubjectID", dbsubjectID);
-            mysqlcom.Parameters.AddWithValue("@dbPEF", dbPEF);
-            mysqlcom.Parameters.AddWithValue("@dbFEV1", dbFEV1);
-            mysqlcom.Parameters.AddWithValue("@dbFEV6", dbFEV6);
-            mysqlcom.Parameters.AddWithValue("@dbFEV1FEV6", dbFEV1FEV6);
-            mysqlcom.Parameters.AddWithValue("@dbFVC", dbFVC);
-            mysqlcom.Parameters.AddWithValue("@dbflowData", dbflowData);
-            mysqlcom.Parameters.AddWithValue("@dbvolumeData", dbvolumeData);
+            mysqlcom.Parameters.AddWithValue("@subjectid", subjectid);
+            mysqlcom.Parameters.AddWithValue("@SubjectInfo", subjectInfomation);
+            mysqlcom.Parameters.AddWithValue("@SessionInfo", sessionInformation);
+            mysqlcom.Parameters.AddWithValue("@PredictedValues", PredictedValue);
+            mysqlcom.Parameters.AddWithValue("@LLNValues", LLN);
+            mysqlcom.Parameters.AddWithValue("@ULNValues", ULN);
+            mysqlcom.Parameters.AddWithValue("@BestTestResults", bestTestResults);
+            mysqlcom.Parameters.AddWithValue("@BestTestData", bestTestData);
+            mysqlcom.Parameters.AddWithValue("@PrecentageOfPredicted", precentageOfPredicted);
+            mysqlcom.Parameters.AddWithValue("@PrecentageOfPrePost", precentageOfPrePost);
+
+            mysqlcom.Parameters.AddWithValue("@Zscore", zscore);
+            mysqlcom.Parameters.AddWithValue("@PrePostChange", prePostChange);
+            mysqlcom.Parameters.AddWithValue("@RankedTestResult1", rankTestResult1);
+            mysqlcom.Parameters.AddWithValue("@RankedTestData1", RankedTestData1);
+            mysqlcom.Parameters.AddWithValue("@RankedTestResult2", rankTestResult2);
+            mysqlcom.Parameters.AddWithValue("@RankedTestData2", RankedTestData2);
+            mysqlcom.Parameters.AddWithValue("@RankedTestResult3", rankTestResult3);
+            mysqlcom.Parameters.AddWithValue("@RankedTestData3", RankedTestData3);
+            mysqlcom.Parameters.AddWithValue("@PreBestTestResult", preBestTestResult);
+            mysqlcom.Parameters.AddWithValue("@PreBestTestData", preBestTestData);
+            mysqlcom.Parameters.AddWithValue("@PreBestPercentageofPredicted", preBestPercentageofPredicted);
+            mysqlcom.Parameters.AddWithValue("@PreBestZscore", preBestZscore);
+            mysqlcom.Parameters.AddWithValue("@InterpretationInformation", interpretationInformation);
 
             mysqlcon.Open();
-
             mysqlcom.ExecuteNonQuery();
+            //mysqlcon.Close();
 
-            mysqlcon.Close();
+
+            //string M_str_sqlcon = "server=localhost;UID=root;password=Pupu1990;database=SpirometeyResult";
+            ////string M_str_sqlcon = "server=146.203.150.198;UID=helen;password=password;database=SpirometeyResult";
+            //MySqlConnection mysqlcon = new MySqlConnection(M_str_sqlcon);
+
+            //string lifeQuery = @"insert into ResultData values( @dbsubjectID, @dbPEF, @dbFEV1, @dbFEV6, @dbFEV1FEV6, @dbFVC, @dbflowData, @dbvolumeData)";
+            //MySqlCommand mysqlcom = new MySqlCommand(lifeQuery, mysqlcon);
+            //mysqlcom.Parameters.AddWithValue("@dbsubjectID", dbsubjectID);
+            //mysqlcom.Parameters.AddWithValue("@dbPEF", dbPEF);
+            //mysqlcom.Parameters.AddWithValue("@dbFEV1", dbFEV1);
+            //mysqlcom.Parameters.AddWithValue("@dbFEV6", dbFEV6);
+            //mysqlcom.Parameters.AddWithValue("@dbFEV1FEV6", dbFEV1FEV6);
+            //mysqlcom.Parameters.AddWithValue("@dbFVC", dbFVC);
+            //mysqlcom.Parameters.AddWithValue("@dbflowData", dbflowData);
+            //mysqlcom.Parameters.AddWithValue("@dbvolumeData", dbvolumeData);
+
+            //mysqlcon.Open();
+
+            //mysqlcom.ExecuteNonQuery();
+
+            //mysqlcon.Close();
 
 
-           
+
         }
     }
 
 
 
 }
+
+

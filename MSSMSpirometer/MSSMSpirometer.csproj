@@ -152,6 +152,7 @@
     <Compile Include="ReadRawData.xaml.cs">
       <DependentUpon>ReadRawData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SPdata.cs" />
     <Compile Include="SpirometerData.cs" />
     <Compile Include="SpirometeyResult.cs" />
     <Compile Include="PreviewDataDisplay.xaml.cs">

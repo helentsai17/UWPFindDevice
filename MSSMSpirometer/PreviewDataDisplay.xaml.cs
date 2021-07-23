@@ -208,6 +208,9 @@ namespace MSSMSpirometer
 
         // Read Record Message
         string recordNumber = "";
+
+        string subjectID = "";
+
         string subjectInfo = "";
         string sessionInfo = "";
         string PredictedValues = "";
@@ -230,6 +233,7 @@ namespace MSSMSpirometer
         string PreBestPercentageofPredicted = "";
         string PreBestZ_score = "";
         string InterpretationInformation = "";
+       
 
 
         #region Bulk Read data
@@ -642,6 +646,44 @@ namespace MSSMSpirometer
         #endregion
 
 
+        #region
+
+
+        private void predatabaseview()
+        {
+            //if(subjectInfo!= "")
+            //{
+            //    subjectID = getsubjectID();
+            //    SPdata spdata = new SPdata();
+            //    spdata.SubjectID = subjectID;
+            //   // SPdata spdata = new SPdata(subjectID, subjectInfo, sessionInfo, PredictedValues, LLNValues, ULNValues, BestTestResults, BestTestData, PercentageofPredicted, PercentagePrePost, Z_score, PrePostChange, RankedTestResult_1, RankedTestData_1, RankedTestResult_2, RankedTestData_2, RankedTestResult_3, RankedTestData_3, PreBestTestResult, PreBestTestData, PreBestPercentageofPredicted, PreBestZ_score, InterpretationInformation);
+            //}
+            
+        }
+
+        private string getsubjectID()
+        {
+
+            var subjectArray = subjectInfo.Split(",");
+            string subject = subjectArray[0];
+            var subjectarray = subject.Split(":");
+
+            var sessionArray = sessionInfo.Split(",");
+            string session = sessionArray[1];
+
+            string returnID = subjectarray[1] + session;
+
+            return returnID;
+        }
+
+
+
+        #endregion
+
+
+
+
+
         #region data collect 
 
         //==============================Data Collect================================================================
@@ -649,41 +691,49 @@ namespace MSSMSpirometer
         private void saveData_click(object sender, RoutedEventArgs e)
         {
             updatelocaldata();
+            predatabaseview();
         }
 
+        
         string fileName = "SpirometerData.json";
         SpirometerData[] _data = Array.Empty<SpirometerData>();
 
         public async void updatelocaldata()
         {
+            subjectID = getsubjectID();
             SpirometerData[] CreateData = new SpirometerData[]
             {
                 new SpirometerData()
                 {
-                    MemoInfo = this.memoInfo.ToString(),
+                    //MemoInfo = this.memoInfo.ToString(),
                    // SessionNum = this.sessionInfo
-                    BestTestResults = this.BestTestResults,
-                    RankResults_1 = this.RankedTestResult_1,
-                    RankResults_2 = this.RankedTestResult_2,
-                    RankResults_3 = this.RankedTestResult_3,
+                    //subjectID = getsubjectID();
+                    subjectID = this.subjectID,
                     SubjectInfo = this.subjectInfo,
                     SessionInfo = this.sessionInfo,
 
                     PredictedValues = this.PredictedValues,
                     LLNValue = this.LLNValues,
                     ULNValue = this.ULNValues,
-                    PercentageofPredicted = this.PercentageofPredicted,
-                    PercentagePrePost = this.PercentagePrePost,
+                    PrecentageOfPredicted = this.PercentageofPredicted,
+                    PrecentageOfPrePost = this.PercentagePrePost,
                     Zscore = this.Z_score,
                     PrePostChange = this.PrePostChange,
                     PreBestTestResult = this.PreBestTestResult,
+                    PreBestTestData = this.PreBestTestData,
                     PreBestPercentageofPredicted = this.PreBestPercentageofPredicted,
                     PreBestZscore = this.PreBestZ_score,
 
                     BestTestData = this.BestTestData,
-                    RankData_1 = this.RankedTestData_1,
-                    RankData_2 = this.RankedTestData_2,
-                    RankData_3 = this.RankedTestData_3,
+                    RankedTestData1 = this.RankedTestData_1,
+                    RankedTestData2 = this.RankedTestData_2,
+                    RankedTestData3 = this.RankedTestData_3,
+                    BestTestResults = this.BestTestResults,
+                    RankedTestResult1 = this.RankedTestResult_1,
+                    RankedTestResult2 = this.RankedTestResult_2,
+                    RankedTestResult3 = this.RankedTestResult_3,
+                    InterpretationInformation = this.InterpretationInformation
+                    
                 },
             };
             _data = CreateData;
@@ -700,29 +750,30 @@ namespace MSSMSpirometer
             {
                 new SpirometerData()
                 {
-                    MemoInfo = this.memoInfo.ToString(),
-                    BestTestResults = this.BestTestResults,
-                    RankResults_1 = this.RankedTestResult_1,
-                    RankResults_2 = this.RankedTestResult_2,
-                    RankResults_3 = this.RankedTestResult_3,
+                    subjectID = this.subjectID,
                     SubjectInfo = this.subjectInfo,
                     SessionInfo = this.sessionInfo,
 
                     PredictedValues = this.PredictedValues,
                     LLNValue = this.LLNValues,
                     ULNValue = this.ULNValues,
-                    PercentageofPredicted = this.PercentageofPredicted,
-                    PercentagePrePost = this.PercentagePrePost,
+                    PrecentageOfPredicted = this.PercentageofPredicted,
+                    PrecentageOfPrePost = this.PercentagePrePost,
                     Zscore = this.Z_score,
                     PrePostChange = this.PrePostChange,
                     PreBestTestResult = this.PreBestTestResult,
                     PreBestPercentageofPredicted = this.PreBestPercentageofPredicted,
                     PreBestZscore = this.PreBestZ_score,
-
+                    PreBestTestData = this.PreBestTestData,
                     BestTestData = this.BestTestData,
-                    RankData_1 = this.RankedTestData_1,
-                    RankData_2 = this.RankedTestData_2,
-                    RankData_3 = this.RankedTestData_3,
+                    RankedTestData1 = this.RankedTestData_1,
+                    RankedTestData2 = this.RankedTestData_2,
+                    RankedTestData3 = this.RankedTestData_3,
+                    BestTestResults = this.BestTestResults,
+                    RankedTestResult1 = this.RankedTestResult_1,
+                    RankedTestResult2 = this.RankedTestResult_2,
+                    RankedTestResult3 = this.RankedTestResult_3,
+                    InterpretationInformation = this.InterpretationInformation
                 },
             };
 
@@ -1175,14 +1226,7 @@ namespace MSSMSpirometer
         }
 
 
-        //public byte[] checkeachrecord()
-        //{
-        //    string recordnumString = recordcount.ToString();
-
-        //    byte[] recordNum = Encoding.ASCII.GetBytes(recordnumString);
-
-        //    return recordNum;
-        //}
+  
 
 
         private byte findbyte(int unit)
@@ -1236,7 +1280,16 @@ namespace MSSMSpirometer
 
             int unit = recordcount % 10;
             int getten = recordcount / 10;
-            int gethundred = recordcount / 100; 
+            int gethundred;
+            if (recordcount / 100 > 1)
+            {
+                gethundred = recordcount / 100;
+            }
+            else
+            {
+                gethundred = 0;
+            }
+            
             
 
             byte unitbyte = findbyte(unit);
@@ -1246,7 +1299,7 @@ namespace MSSMSpirometer
 
             value[7] = unitbyte;
             value[6] = tenbyte;
-            value[5] = 0x30;
+            value[5] = hundredbyte;
 
 
             //value[7] = num[count];
@@ -1575,6 +1628,6 @@ namespace MSSMSpirometer
                 
         }
 
-      
+       
     }
 }

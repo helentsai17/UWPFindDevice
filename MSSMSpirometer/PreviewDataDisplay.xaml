@@ -18,7 +18,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel>
-                <TextBlock Text="Spirometer Data" FontSize="40"/>
+                <TextBlock Text="Spirometer Data" FontSize="30" />
             </StackPanel>
             <ScrollViewer Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
 

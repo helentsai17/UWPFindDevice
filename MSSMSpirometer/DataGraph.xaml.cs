@@ -80,9 +80,9 @@ namespace MSSMSpirometer
             var getdatainfo = _data[0];
 
             BestTestData = getdatainfo.BestTestData;
-            RankData1 = getdatainfo.RankData_1;
-            RankData2 = getdatainfo.RankData_2;
-            RankData3 = getdatainfo.RankData_3;
+            RankData1 = getdatainfo.RankedTestData1;
+            RankData2 = getdatainfo.RankedTestData2;
+            RankData3 = getdatainfo.RankedTestData3;
 
             dataFormat(BestTestData,RankData1,RankData2,RankData3);
         }

@@ -90,12 +90,20 @@ namespace MSSMSpirometer
             // Reset the buttons if the app resumed and the device is reconnected
             EventHandlerForDevice.Current.OnDeviceConnected = new TypedEventHandler<EventHandlerForDevice, DeviceInformation>(this.OnDeviceConnected);
 
-            UpdateButtonStates();
             WriteData();
 
             autoremotemode();
 
             StatusBlock.Text = "Please connect to the device first";
+
+        }
+
+        private async void autoremotemode()
+        {
+            DataRequest("RemoteMode");
+            await ReadData();
+            System.Threading.Thread.Sleep(500);
+            autoReadMemoInfo();
 
         }
 
@@ -107,7 +115,6 @@ namespace MSSMSpirometer
             getNextBlock();
             StatusBlock.Text = "Device had successfully connected. you can now read the data.";
 
-
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -118,14 +125,7 @@ namespace MSSMSpirometer
             base.OnNavigatedFrom(e);
 
         }
-        private async void autoremotemode()
-        {
-            DataRequest("RemoteMode");
-            await ReadData();
-            System.Threading.Thread.Sleep(500);
-            autoReadMemoInfo();
-            
-        }
+
 
 
         private void OnAppSuspension(object sender, SuspendingEventArgs e)
@@ -151,7 +151,7 @@ namespace MSSMSpirometer
 
         private void OnDeviceConnected(EventHandlerForDevice sender, DeviceInformation onDeviceConnectedEventArgs)
         {
-            UpdateButtonStates();
+      
         }
 
         private void ResetCancellationTokenSource()
@@ -167,11 +167,7 @@ namespace MSSMSpirometer
             await rootPage.Dispatcher.RunAsync(CoreDispatcherPriority.High,
                 new DispatchedHandler(() =>
                 {
-                    //ButtonBulkRead.IsEnabled = false;
-                    //ButtonBulkWrite.IsEnabled = false;
-
-                    //ButtonCancelAllIoTasks.IsEnabled = false;
-
+                    
                     if (!navigatedAway)
                     {
                         StatusBlock.Text = "Canceling task... Please wait...";
@@ -179,16 +175,6 @@ namespace MSSMSpirometer
                 }));
         }
 
-        private void UpdateButtonStates()
-        {
-            //ButtonBulkRead.IsEnabled = !runningReadWriteTask && !runningReadTask;
-            //ButtonBulkWrite.IsEnabled = !runningReadWriteTask && !runningWriteTask;
-            //ButtonCancelAllIoTasks.IsEnabled = IsPerformingIo();
-        }
-        private Boolean IsPerformingIo()
-        {
-            return (runningReadTask || runningWriteTask );
-        }
 
         private async void NotifyTaskCanceled()
         {
@@ -205,12 +191,11 @@ namespace MSSMSpirometer
         #endregion
 
         int memoInfo = 1;
-
         // Read Record Message
         string recordNumber = "";
 
+        #region store SPdata parameter
         string subjectID = "";
-
         string subjectInfo = "";
         string sessionInfo = "";
         string PredictedValues = "";
@@ -233,100 +218,12 @@ namespace MSSMSpirometer
         string PreBestPercentageofPredicted = "";
         string PreBestZ_score = "";
         string InterpretationInformation = "";
-       
 
+        #endregion
 
-        #region Bulk Read data
+        #region Read data into format
 
-        //=========================Bulk Read data==================================================
-
-
-
-        private async void BulkRead_Click(object sender, RoutedEventArgs e)
-        {
-            if (EventHandlerForDevice.Current.IsDeviceConnected)
-            {
-                try
-                {
-                    //StatusBlock.Text = "Reading...";
-
-                    // We need to set this to true so that the buttons can be updated to disable the read button. We will not be able to
-                    // update the button states until after the read completes.
-                    runningReadTask = true;
-                    UpdateButtonStates();
-
-                    // Both supported devices have the bulk in pipes on index 0
-                    UInt32 bulkInPipeIndex = 0;
-
-                    // Read as much data as possible in one packet
-                    UInt32 bytesToRead = 2048;
-
-                    await BulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
-                }
-                catch (OperationCanceledException /*ex*/)
-                {
-                    NotifyTaskCanceled();
-                }
-                finally
-                {
-                    runningReadTask = false;
-
-                    UpdateButtonStates();
-                }
-            }
-            else
-            {
-                Utilities.NotifyDeviceNotConnected();
-            }
-
-        }
-
-        private async Task BulkReadAsync(UInt32 bulkPipeIndex, UInt32 bytesToRead, CancellationToken cancellationToken)
-        {
-            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
-
-            DataReader reader = new DataReader(stream);
-
-            StatusBlock.Text = reader.ToString();
-
-            Task<UInt32> loadAsyncTask;
-
-            // Don't start any IO if we canceled the task
-            lock (cancelIoLock)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                loadAsyncTask = reader.LoadAsync(bytesToRead).AsTask(cancellationToken);
-            }
-
-            UInt32 bytesRead = await loadAsyncTask;
-
-            totalBytesRead += bytesRead;
-
-            //PrintTotalReadWriteBytes();
-
-            // The data that is read is stored in the reader object
-            // e.g. To read a string from the buffer:
-            // reader.ReadString(bytesRead);   
-
-            UsbBulkInPipe readPipe = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[0];
-
-            IBuffer buffer = reader.ReadBuffer(bytesRead);
-            string dataString = "";
-
-            using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
-            {
-                dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                dataString = dataReader.ReadString(buffer.Length);
-                DataDisplay.Text = dataString;
-
-                byte[] data;
-                CryptographicBuffer.CopyToByteArray(buffer, out data);
-                TestData.Text = BitConverter.ToString(data);
-            }
-
-            storageString(dataString);
-
-        }
+        //========================= Read data==================================================
 
         private void storageString(string dataString)
         {
@@ -493,7 +390,7 @@ namespace MSSMSpirometer
         private void showSessionDateTime(string sessionInfo)
         {
             var sessionInfoArray = sessionInfo.Split(",");
-            sessionDateTime.Text = sessionInfoArray[0].Substring(3);
+            sessionDateTime.Text = sessionInfoArray[3];
         }
 
         private void setdisplayBestResultToNull()
@@ -628,6 +525,8 @@ namespace MSSMSpirometer
           
         }
 
+        #endregion
+
         private async void PrintTotalReadWriteBytes()
         {
             await rootPage.Dispatcher.RunAsync(CoreDispatcherPriority.Low,
@@ -643,23 +542,10 @@ namespace MSSMSpirometer
                 }));
         }
 
-        #endregion
 
+        #region data collected and store 
 
-        #region
-
-
-        private void predatabaseview()
-        {
-            //if(subjectInfo!= "")
-            //{
-            //    subjectID = getsubjectID();
-            //    SPdata spdata = new SPdata();
-            //    spdata.SubjectID = subjectID;
-            //   // SPdata spdata = new SPdata(subjectID, subjectInfo, sessionInfo, PredictedValues, LLNValues, ULNValues, BestTestResults, BestTestData, PercentageofPredicted, PercentagePrePost, Z_score, PrePostChange, RankedTestResult_1, RankedTestData_1, RankedTestResult_2, RankedTestData_2, RankedTestResult_3, RankedTestData_3, PreBestTestResult, PreBestTestData, PreBestPercentageofPredicted, PreBestZ_score, InterpretationInformation);
-            //}
-            
-        }
+        //==============================Data Collect================================================================
 
         private string getsubjectID()
         {
@@ -669,7 +555,7 @@ namespace MSSMSpirometer
             var subjectarray = subject.Split(":");
 
             var sessionArray = sessionInfo.Split(",");
-            string session = sessionArray[1];
+            string session = sessionArray[3];
 
             string returnID = subjectarray[1] + session;
 
@@ -677,21 +563,11 @@ namespace MSSMSpirometer
         }
 
 
-
-        #endregion
-
-
-
-
-
-        #region data collect 
-
-        //==============================Data Collect================================================================
-
+        //save data only if there is an data
         private void saveData_click(object sender, RoutedEventArgs e)
         {
             updatelocaldata();
-            predatabaseview();
+           
         }
 
         
@@ -701,6 +577,7 @@ namespace MSSMSpirometer
         public async void updatelocaldata()
         {
             subjectID = getsubjectID();
+       
             SpirometerData[] CreateData = new SpirometerData[]
             {
                 new SpirometerData()
@@ -795,7 +672,6 @@ namespace MSSMSpirometer
         }
 
         #endregion
-
 
         #region all the data request button click 
 
@@ -1109,6 +985,49 @@ namespace MSSMSpirometer
         #endregion
 
 
+
+        #region 6.5. Read Record Message
+        private async void ReadRecord_Click(object sender, RoutedEventArgs e)
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+
+                    UInt32 bulkOutPipeIndex = 0;
+
+                    UInt32 bytesToWrite = 64;
+
+                    await RRBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+
+
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        #endregion
+
+
+        #endregion
+
+
+
+
         /// <summary>
         /// Button click function selected
         /// </summary>
@@ -1122,7 +1041,7 @@ namespace MSSMSpirometer
                     //StatusBlock.Text = "Reading...";
 
                     runningWriteTask = true;
-                    UpdateButtonStates();
+
 
                     UInt32 bulkOutPipeIndex = 0;
 
@@ -1138,7 +1057,7 @@ namespace MSSMSpirometer
                             await RMBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
                             break;
                         case "RemoteExit":
-                             await RXBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                            await RXBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
                             break;
                         case "MemoryInfo":
                             await MIBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
@@ -1169,7 +1088,6 @@ namespace MSSMSpirometer
                 {
                     runningWriteTask = false;
 
-                    UpdateButtonStates();
                 }
             }
             else
@@ -1178,24 +1096,64 @@ namespace MSSMSpirometer
             }
         }
 
-        #region 6.5. Read Record Message
 
-        private async void ReadRecord_Click(object sender, RoutedEventArgs e)
+
+        #region auto Read Record
+
+        private async void ALLReadRecord_Click(object sender, RoutedEventArgs e)
         {
             if (EventHandlerForDevice.Current.IsDeviceConnected)
             {
                 try
                 {
-                    StatusBlock.Text = "Writing...";
+                    StatusBlock.Text = "Reading...";
+
+                    AllReadRecord.IsEnabled = false;
+                    dataSave.IsEnabled = false;
 
                     runningWriteTask = true;
-                    UpdateButtonStates();
+
 
                     UInt32 bulkOutPipeIndex = 0;
 
                     UInt32 bytesToWrite = 64;
 
                     await RRBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                    ReadData();
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningWriteTask = false;
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+
+
+        }
+
+        private async void getNextBlock()
+        {
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
+                    //StatusBlock.Text = "Writing...";
+
+                    runningWriteTask = true;
+
+
+                    UInt32 bulkOutPipeIndex = 0;
+                    UInt32 bytesToWrite = 2;
+
+                    await NEXTBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
+                    ReadData();
                 }
                 catch (OperationCanceledException /*ex*/)
                 {
@@ -1205,7 +1163,7 @@ namespace MSSMSpirometer
                 {
                     runningWriteTask = false;
 
-                    UpdateButtonStates();
+
                 }
             }
             else
@@ -1214,19 +1172,94 @@ namespace MSSMSpirometer
             }
         }
 
-        
-
-        public byte[] checkeachrecord(int num)
+        private async Task ReadData()
         {
-            string recordnumString = num.ToString();
+            if (EventHandlerForDevice.Current.IsDeviceConnected)
+            {
+                try
+                {
 
-            byte[] recordNum = Encoding.ASCII.GetBytes(recordnumString);
+                    UInt32 bulkInPipeIndex = 0;
+                    UInt32 bytesToRead = 2048;
 
-            return recordNum;
+
+                    await autoBulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException /*ex*/)
+                {
+                    NotifyTaskCanceled();
+                }
+                finally
+                {
+                    runningReadTask = false;
+
+
+                }
+            }
+            else
+            {
+                Utilities.NotifyDeviceNotConnected();
+            }
+        }
+
+        private async Task autoBulkReadAsync(UInt32 bulkPipeIndex, UInt32 bytesToRead, CancellationToken cancellationToken)
+        {
+            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
+
+            DataReader reader = new DataReader(stream);
+            // TestData.Text = reader.ToString();
+            Task<UInt32> loadAsyncTask;
+
+            // Don't start any IO if we canceled the task
+            lock (cancelIoLock)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                loadAsyncTask = reader.LoadAsync(bytesToRead).AsTask(cancellationToken);
+            }
+
+            UInt32 bytesRead = await loadAsyncTask;
+
+            totalBytesRead += bytesRead;
+
+            // PrintTotalReadWriteBytes();
+
+            IBuffer buffer = reader.ReadBuffer(bytesRead);
+            string dataString;
+            byte[] data;
+            byte endcode = 0x03;
+            using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
+            {
+                dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+
+                //if datareader is equal to 0x03 then stop reading the data;
+
+
+
+                dataString = dataReader.ReadString(buffer.Length);
+                
+                // DataDisplay.Text = dataString;
+
+
+                CryptographicBuffer.CopyToByteArray(buffer, out data);
+                
+            }
+
+            storageString(dataString);
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                if (data[i] == endcode)
+                {
+                    getNextBlock();
+
+                }
+            }
         }
 
 
-  
+        #endregion
+
 
 
         private byte findbyte(int unit)
@@ -1290,8 +1323,6 @@ namespace MSSMSpirometer
                 gethundred = 0;
             }
             
-            
-
             byte unitbyte = findbyte(unit);
             byte tenbyte = findbyte(getten);
             byte hundredbyte = findbyte(gethundred);
@@ -1300,20 +1331,6 @@ namespace MSSMSpirometer
             value[7] = unitbyte;
             value[6] = tenbyte;
             value[5] = hundredbyte;
-
-
-            //value[7] = num[count];
-            //if (count > 1)
-            //{
-            //   value[6] = num[count - 1];
-            //   if(count > 2)
-            //    {
-            //        value[5] = num[count - 2];
-            //    }
-            //}
-
-
-             TestData.Text = hundredbyte.ToString();
 
 
             byte bccValue = Getbcc(value);
@@ -1343,7 +1360,7 @@ namespace MSSMSpirometer
 
      
 
-        #endregion
+
 
         #region Next Block
 
@@ -1356,7 +1373,7 @@ namespace MSSMSpirometer
                     StatusBlock.Text = "Writing...";
 
                     runningWriteTask = true;
-                    UpdateButtonStates();
+                
 
                     UInt32 bulkOutPipeIndex = 0;
 
@@ -1372,7 +1389,6 @@ namespace MSSMSpirometer
                 {
                     runningWriteTask = false;
 
-                    UpdateButtonStates();
                 }
             }
             else
@@ -1428,168 +1444,6 @@ namespace MSSMSpirometer
         }
 
 
-
-        #endregion
-
-
-        #region auto Read Record
-
-        
-
-        private async void ALLReadRecord_Click(object sender, RoutedEventArgs e)
-        {
-            if (EventHandlerForDevice.Current.IsDeviceConnected)
-            {
-                try
-                {
-                    StatusBlock.Text = "Reading...";
-
-                    AllReadRecord.IsEnabled = false;
-                    dataSave.IsEnabled = false;
-
-                    runningWriteTask = true;
-                    UpdateButtonStates();
-
-                    UInt32 bulkOutPipeIndex = 0;
-
-                    UInt32 bytesToWrite = 512;
-
-                    await RRBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
-                    ReadData();
-                }
-                catch (OperationCanceledException /*ex*/)
-                {
-                    NotifyTaskCanceled();
-                }
-                finally
-                {
-                    runningWriteTask = false;
-
-                    UpdateButtonStates();
-                }
-            }
-            else
-            {
-                Utilities.NotifyDeviceNotConnected();
-            }
-
-
-        }
-
-        private async void getNextBlock()
-        {
-            if (EventHandlerForDevice.Current.IsDeviceConnected)
-            {
-                try
-                {
-                    //StatusBlock.Text = "Writing...";
-
-                    runningWriteTask = true;
-                    UpdateButtonStates();
-
-                    UInt32 bulkOutPipeIndex = 0;
-                    UInt32 bytesToWrite = 2;
-
-                    await NEXTBulkWriteAsync(bulkOutPipeIndex, bytesToWrite, cancellationTokenSource.Token);
-                    ReadData();
-                }
-                catch (OperationCanceledException /*ex*/)
-                {
-                    NotifyTaskCanceled();
-                }
-                finally
-                {
-                    runningWriteTask = false;
-
-                    UpdateButtonStates();
-                }
-            }
-            else
-            {
-                Utilities.NotifyDeviceNotConnected();
-            }
-        }
-
-        private async Task ReadData()
-        {
-            if (EventHandlerForDevice.Current.IsDeviceConnected)
-            {
-                try
-                {
-                    
-
-                    UInt32 bulkInPipeIndex = 0;
-                    UInt32 bytesToRead = 2048;
-                    
-
-                    await autoBulkReadAsync(bulkInPipeIndex, bytesToRead, cancellationTokenSource.Token);
-                }
-                catch (OperationCanceledException /*ex*/)
-                {
-                    NotifyTaskCanceled();
-                }
-                finally
-                {
-                    runningReadTask = false;
-
-                    UpdateButtonStates();
-                }
-            }
-            else
-            {
-                Utilities.NotifyDeviceNotConnected();
-            }
-        }
-
-        private async Task autoBulkReadAsync(UInt32 bulkPipeIndex, UInt32 bytesToRead, CancellationToken cancellationToken)
-        {
-            var stream = EventHandlerForDevice.Current.Device.DefaultInterface.BulkInPipes[(int)bulkPipeIndex].InputStream;
-
-            DataReader reader = new DataReader(stream);
-         // TestData.Text = reader.ToString();
-            Task<UInt32> loadAsyncTask;
-
-            // Don't start any IO if we canceled the task
-            lock (cancelIoLock)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-
-                loadAsyncTask = reader.LoadAsync(bytesToRead).AsTask(cancellationToken);
-            }
-
-            UInt32 bytesRead = await loadAsyncTask;
-
-            totalBytesRead += bytesRead;
-
-           // PrintTotalReadWriteBytes();
-
-            IBuffer buffer = reader.ReadBuffer(bytesRead);
-            string dataString;
-            byte[] data;
-            byte endcode = 0x03;
-            using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
-            {
-                dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                dataString = dataReader.ReadString(buffer.Length);
-             // DataDisplay.Text = dataString;
-
-                
-                CryptographicBuffer.CopyToByteArray(buffer, out data);
-            }
-
-            storageString(dataString);
-
-            for(int i = 0; i <data.Length; i++)
-            {
-                if(data[i]== endcode)
-                {
-                    getNextBlock();
-                }
-            }
-        }
-
-
-        #endregion
 
         //================================ force Cancel input ================================================
         private void CancelAllIoTasks_Click(object sender, RoutedEventArgs e)
